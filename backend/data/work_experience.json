@@ -1,0 +1,64 @@
+{
+  "Work_Experience": [
+    {
+      "Title": "AI Project Intern",
+      "Company": "Prodigal AI",
+      "Location": "Remote",
+      "Start_Date": "September 2024",
+      "End_Date": "November 2024",
+      "Responsibilities": [
+        "Designed and developed an intelligent chatbot named 'Knowledge-AI' that uses LlamaIndex and Gemini embeddings to answer document-based queries with high accuracy (95%). This chatbot efficiently retrieves relevant information from large volumes of text data.",
+        "Enhanced the chatbot’s capability by implementing a scalable Retrieval-Augmented Generation (RAG) pipeline, ensuring that responses are contextually accurate and backed by reliable document references.",
+        "Optimized the chatbot's response time by improving document indexing mechanisms, allowing for faster and more precise retrieval of information from structured and unstructured datasets."
+      ],
+      "Technologies_Used": [
+        "LlamaIndex",
+        "Gemini Embeddings",
+        "Python",
+        "Natural Language Processing (NLP)",
+        "Retrieval-Augmented Generation (RAG)",
+        "Scalable Chatbot Architectures"
+      ]
+    },
+    {
+      "Title": "Data Scientist Intern",
+      "Company": "Deutsche Telekom Digital Labs",
+      "Location": "Gurugram, Haryana",
+      "Start_Date": "June 2024",
+      "End_Date": "August 2024",
+      "Responsibilities": [
+        "Developed an advanced document parser capable of extracting structured and unstructured content from HR policy documents with 93% accuracy. This included parsing tables, images, and text sections to improve document accessibility and analysis.",
+        "Created a real-time PDF analysis dashboard that displayed key document insights such as total page count, word distribution, and statistical corpus metrics. This helped streamline document review and increased efficiency by 30%.",
+        "Implemented NLP-based classification algorithms to automatically segment and extract crucial sections from HR compliance documents, ensuring that important policies could be easily located and referenced."
+      ],
+      "Technologies_Used": [
+        "Python",
+        "NLP",
+        "Document Parsing",
+        "PDF Processing",
+        "Dashboard Development",
+        "Data Visualization"
+      ]
+    },
+    {
+      "Title": "Python Developer Trainee",
+      "Company": "BDO in India",
+      "Location": "Noida, Uttar Pradesh, India",
+      "Start_Date": "August 2023",
+      "End_Date": "September 2023",
+      "Responsibilities": [
+        "Designed and implemented a machine learning algorithm to automatically solve complex CAPTCHA challenges, achieving a 96% success rate. This reduced the need for manual data entry and significantly improved efficiency in automated workflows.",
+        "Developed a robust PDF extraction tool capable of extracting structured data from various document formats with an accuracy rate exceeding 95%. This automation streamlined data retrieval for internal operations.",
+        "Enhanced the performance of OCR (Optical Character Recognition) systems by fine-tuning text extraction models, making them more effective at recognizing noisy and distorted alphanumeric characters in scanned documents."
+      ],
+      "Technologies_Used": [
+        "Python",
+        "OpenCV",
+        "Optical Character Recognition (OCR)",
+        "Machine Learning",
+        "PDF Processing",
+        "Automation"
+      ]
+    }
+  ]
+}

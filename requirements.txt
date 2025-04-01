@@ -1,0 +1,21 @@
+# backend/requirements.txt
+fastapi>=0.110.0
+uvicorn>=0.29.0
+chromadb>=0.4.24
+sentence-transformers>=2.7.0
+google-generativeai>=0.3.2
+langchain>=0.2.0
+langchain-google-genai>=0.1.0
+python-multipart>=0.0.9
+requests>=2.32.0
+hnswlib>=0.7.0  
+pypika
+langchain-text-splitters>=0.2.0
+pdfplumber
+google-generativeai 
+chromadb 
+sentence-transformers 
+python-dotenv
+langchain-community
+langchain-chroma
+langchain-huggingface

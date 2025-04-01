@@ -1,0 +1,66 @@
+{
+  "Contact Information": {
+    "Name": "KUSHAGRA WADHWA",
+    "Phone": "+91 7428739746",
+    "Email": "wadhwakushagra263@gmail.com",
+    "LinkedIn": "LinkedIn",
+    "GitHub": "GitHub"
+  },
+  "Summary": "Passionate AI and Data Science enthusiast with a strong foundation in Python, AI/ML, and NLP frameworks. Skilled in building innovative LLM powered solutions, RAG pipelines, and automation tools. Dedicated to solving real-world problems with cutting-edge technologies and delivering impactful results.",
+  "Education": [
+    {
+      "Degree": "B. Tech Artificial Intelligence and Machine Learning",
+      "University": "Guru Gobind Singh Indraprastha University New Delhi",
+      "Year": "2021-2025(Pursuing)",
+      "GPA": "8.3"
+    }
+  ],
+  "Skills": [
+    "Languages & Frameworks: Python, Flask., Hugging Face, ML, LLMs, RAGs",
+    "Database: SQL",
+    "Frontend: HTML, CSS",
+    "Other Skills: Teamwork, Problem Solving, Adaptability, Management, Scrum, Agile"
+  ],
+  "Work Experience": [
+    {
+      "Company": "Prodigal AI",
+      "Role": "AI Project Intern",
+      "Duration": "September \u2013November 2024",
+      "Responsibilities": "Developed an advanced \"Knowledge-AI\" chatbot leveraging Llama Index and Gemini Embeddings, and implementing RAG pipelines, achieving accurate responses for document-based queries."
+    },
+    {
+      "Company": "Deutsche Telekom Digital Labs",
+      "Role": "Data Scientist Intern",
+      "Duration": "June \u2013 August 2024",
+      "Responsibilities": "Engineered a document parser achieving 93% document coverage across HR policy documents, including structured table and image extraction. Developed a PDF analysis dashboard for real-time metrics (page count, word count, corpus stats), improving document analysis efficiency."
+    }
+  ],
+  "Projects": [
+    {
+      "Name": "No LLM PDF Extractor",
+      "Description": "Objective: Built a robust tool to parse unstructured documents and extract structured data without relying on large language models (LLMs).\nKey Features: o Extracts both tables and images from PDFs with high accuracy. o Achieved 93% document coverage, ensuring comprehensive data retrieval.",
+      "Technologies Used": "Python, PDF parsing libraries PyMuPDF), Table Recognition (Camelot)"
+    },
+    {
+      "Name": "Sales-Assist AI",
+      "Description": "Objective: Designed an AI-powered conversational assistant to enhance real-time customer interactions.\nKey Features: o Uses LLMs and Retrieval-Augmented Generation (RAG) to provide accurate, context-aware responses.",
+      "Technologies Used": "Python, LlamaIndex, Vector Databases, OpenAI/Gemini/Hugging Face APIs"
+    }
+  ],
+  "Certifications": [
+    "Diploma in Programming and Data Science (IIT Madras, 2024) Diploma in Data Science Diploma in Programming",
+    "Introduction to Generative AI (Google, 2024) Badge",
+    "Postman API Fundamental Student Expert (Postman, 2023) Badge"
+  ],
+  "Extracted Links": [
+    "mailto:wadhwakushagra263@gmail.com",
+    "https://www.linkedin.com/in/kushagra-wadhwa-864319229/",
+    "https://github.com/KushagraaWadhwa",
+    "https://drive.google.com/file/d/1oCDGMThAiJ3DimG2itJzO42vVaLPL0rx/view?usp=sharing",
+    "https://drive.google.com/file/d/1yCeXHMZ07lyMRTa25UhWJFbNQu-j0zzg/view?usp=sharing",
+    "https://drive.google.com/file/d/1yCeXHMZ07lyMRTa25UhWJFbNQu-j0zzg/view?usp=sharing",
+    "https://www.cloudskillsboost.google/public_profiles/92b5927b-a487-40a9-be89-71bf9c9db57c/badges/9503337",
+    "https://www.cloudskillsboost.google/public_profiles/92b5927b-a487-40a9-be89-71bf9c9db57c/badges/9503337",
+    "https://badgr.com/public/assertions/2FUSshuSQNaJqC5ic57Q-Q?identity__email=wadhwakushagra263@gmail.com"
+  ]
+}

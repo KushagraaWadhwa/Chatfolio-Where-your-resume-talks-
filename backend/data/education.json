@@ -1,0 +1,59 @@
+{
+    "Education": [
+      {
+        "Degree": "Bachelor's degree",
+        "Field": "Artificial Intelligence and Machine Learning",
+        "Institution": "Guru Gobind Singh Indraprastha University",
+        "Status": "Pursuing",
+        "Expected_Completion": "September 2025",
+        "Coursework": [
+          "Machine Learning",
+          "Deep Learning",
+          "Natural Language Processing",
+          "Computer Vision",
+          "Reinforcement Learning",
+          "Artificial Intelligence",
+          "Data Mining and Warehousing",
+          "DBMS",
+          "Operating System",
+          "Computer Networks",
+          "Software Engineering",
+          "Data Structures"
+        ]
+      },
+
+      {
+        "Degree": "Diploma",
+        "Field": "Programming & Data Science",
+        "Institution": "Indian Institute of Technology, Madras",
+        "Completion_Year": "2024",
+        "Coursework": [
+          "Machine Learning Practices",
+          "App Development",
+          "Python Data Structure and Algorithms",
+          "SQL and Database Management",
+          "Business Data Management",
+          "Tools for Data Science",
+          "Java Programming",
+          "Shell Programming",
+          "Statistics for Data Science"
+        ]
+      },
+
+
+      {
+        "Degree": "Secondary School (CBSE) (10+2)",
+        "Institution": "Venkateshwar International School - India",
+        "Completion_Date": "March 2021",
+        "Subjects": ["Physics", "Chemistry", "Mathematics", "Computer Science (Python)"],
+        "Percentage": "94.5%"
+      },
+      
+      {
+        "Degree": "Class X",
+        "Institution": "Venkateshwar International School - India",
+        "Percentage": "95.4%"
+      }
+    ]
+  }
+  

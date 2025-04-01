@@ -1,0 +1,100 @@
+{
+  "Projects": {
+    "Artificial Intelligence": [
+      {
+        "Project_Name": "SalesAssist AI",
+        "Description": "A conversational AI framework designed to assist sales teams by providing instant responses to customer queries. The system leverages Retrieval-Augmented Generation (RAG) to fetch the most relevant information and uses Large Language Models (LLMs) for natural language processing, ensuring accurate and real-time assistance.",
+        "Technologies": ["LLM", "RAG", "Python", "LangChain", "Vector Databases"],
+        "Core_Features": [
+          "Real-time customer query resolution",
+          "Dynamic conversational AI",
+          "Retrieves relevant information using RAG",
+          "Supports multiple languages and dialects"
+        ]
+      },
+      {
+        "Project_Name": "Recipe for Rating: Predicting Food Rating using ML",
+        "Description": "Developed a predictive model for estimating food ratings based on ingredients, cooking methods, and other culinary factors. The project involved data collection, exploratory data analysis (EDA), feature engineering, and training machine learning models to detect patterns in food preferences.",
+        "Technologies": ["Machine Learning", "Scikit-learn", "Pandas", "EDA"],
+        "Core_Features": [
+          "Food rating prediction based on ingredients and cooking styles",
+          "Data-driven approach using machine learning models",
+          "Exploratory data analysis for feature selection"
+        ]
+      }
+    ],
+    "Data Science": [
+      {
+        "Project_Name": "OpenCV Captcha Project",
+        "Organization": "BDO India",
+        "Duration": "Aug 2023 - Sep 2022",
+        "Description": "Automated the resolution of noisy, colored alphanumeric CAPTCHAs using OpenCV and deep learning. The system preprocesses images by removing noise, enhancing contrast, and segmenting characters before applying an Optical Character Recognition (OCR) model to extract text.",
+        "Technologies": ["OpenCV", "Python", "OCR", "Deep Learning"],
+        "GitHub_Link": "https://github.com/KushagraaWadhwa/Open-CV-Captcha-Solver",
+        "Core_Features": [
+          "Automated CAPTCHA solver using image processing",
+          "Noise reduction and contrast enhancement",
+          "Character segmentation and OCR-based text extraction"
+        ]
+      },
+      {
+        "Project_Name": "No-LLM Based PDF Extractor Tool",
+        "Description": "A document processing tool designed to extract structured data from PDFs without relying on Large Language Models (LLMs). The system uses rule-based natural language processing (NLP) techniques and regex patterns to parse text efficiently.",
+        "Technologies": ["Python", "Regex", "PDF Parsing", "NLP"],
+        "Core_Features": [
+          "Efficient document parsing without LLM dependencies",
+          "Structured data extraction using regex and NLP",
+          "Supports multiple document formats"
+        ]
+      }
+    ],
+    "Software Engineering": [
+      {
+        "Project_Name": "GrocExpress: Grocery Store App",
+        "Description": "A full-stack web application for managing grocery store inventory and sales. The system features an admin dashboard for inventory management, product categorization, order processing, and user authentication.",
+        "Technologies": ["Flask", "SQLite", "HTML", "CSS", "JavaScript"],
+        "Core_Features": [
+          "Inventory management and tracking",
+          "Admin dashboard for sales monitoring",
+          "Product categorization and stock updates",
+          "Order processing and user authentication"
+        ]
+      },
+      {
+        "Project_Name": "Homeyfy: Household Services App",
+        "Description": "A multi-user platform that connects customers with household service professionals. Implemented role-based access control (RBAC) to manage different user types, including administrators, service professionals, and customers. The system allows users to schedule services, manage appointments, and receive reminders.",
+        "Technologies": ["Flask", "Vue.js", "SQLite", "Redis"],
+        "Core_Features": [
+          "Role-based access control (Admin, Professionals, Customers)",
+          "Service listing and management",
+          "Scheduling system with automated reminders",
+          "Redis caching for faster service retrieval"
+        ]
+      },
+      {
+        "Project_Name": "Todoastic",
+        "Organization": "IIT Madras",
+        "Duration": "May 2022 - July 2022",
+        "Description": "A to-do list application that allows users to create, update, and delete tasks. Built with Flask for the backend and SQLite for persistent data storage, ensuring a lightweight yet efficient task management experience.",
+        "Technologies": ["Flask", "SQLite", "HTML", "CSS", "JavaScript"],
+        "GitHub_Link": "https://github.com/KushagraaWadhwa/Kushagra_21f3002930-APPDev-1-Project",
+        "Core_Features": [
+          "Task creation, editing, and deletion",
+          "User-friendly interface for managing tasks",
+          "Persistent data storage using SQLite"
+        ]
+      },
+      {
+        "Project_Name": "Ask Your PDF",
+        "Description": "A chatbot-style web application that enables users to ask questions about PDF documents and retrieve precise answers from the content. The system employs document embedding techniques and similarity searches to extract relevant information.",
+        "Technologies": ["Streamlit", "Python", "PDF Parsing", "Vector Databases"],
+        "GitHub_Link": "https://github.com/KushagraaWadhwa/AskYourPDF",
+        "Core_Features": [
+          "Question-answering chatbot for PDF documents",
+          "Document content retrieval using embeddings",
+          "User-friendly web interface for document queries"
+        ]
+      }
+    ]
+  }
+}
