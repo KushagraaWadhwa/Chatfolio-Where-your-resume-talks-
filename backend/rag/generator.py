@@ -22,7 +22,7 @@ def generate_response(query):
     """
     Retrieves relevant chunks and generates a structured response using Gemini 2.0 Flash with strict grounding.
     :param query: The user query.
-    :return: Structured response with sources.
+
     """
 
     llm = GoogleGenerativeAI(model="gemini-2.0-flash")
@@ -34,7 +34,6 @@ def generate_response(query):
     if not retrieved_chunks:
         return {
             "answer": "I do not have enough information to answer this question accurately.",
-            "sources": []
         }
 
     # Format retrieved context for clarity
@@ -68,13 +67,11 @@ def generate_response(query):
     # Get response from LLM
     response = llm.invoke(prompt).strip()
 
-    # Prepare sources list
-    sources = list(set([chunk.metadata.get("source", "Unknown") for chunk in retrieved_chunks]))
+
 
     # Return structured response
     return {
         "answer": response,
-        "sources": sources
     }
 
 # Example usage
