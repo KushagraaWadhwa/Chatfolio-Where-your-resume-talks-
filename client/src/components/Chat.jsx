@@ -124,20 +124,9 @@ export default function Chat() {
           >
             <RefreshCw className="w-4 h-4 text-white" />
           </button>
-<<<<<<< HEAD
 
 
 
-=======
-          <button 
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="p-2 hover:bg-white/20 rounded-full transition-colors duration-200"
-          >
-            <ChevronDown 
-              className={`w-4 h-4 text-white transition-transform duration-300 ${isExpanded ? '' : 'rotate-180'}`} 
-            />
-          </button>
->>>>>>> 0003e8ab800014b1614a69a41fd0c13239fed17f
         </div>
       </div>
        
@@ -145,11 +134,7 @@ export default function Chat() {
       {/* Messages Area */}
       <div className="flex-1 overflow-y-auto p-4 space-y-6 bg-gray-50 dark:bg-gray-800">
         <AnimatePresence>
-<<<<<<< HEAD
           {messages.length === 0 && (   
-=======
-          {messages.length === 0 && (
->>>>>>> 0003e8ab800014b1614a69a41fd0c13239fed17f
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -282,4 +267,4 @@ export default function Chat() {
       </form>
     </div>
   );
-}
+}t
