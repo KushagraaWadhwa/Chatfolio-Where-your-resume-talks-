@@ -267,4 +267,4 @@ export default function Chat() {
       </form>
     </div>
   );
-}t
+}
