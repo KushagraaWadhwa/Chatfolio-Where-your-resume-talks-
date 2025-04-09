@@ -56,9 +56,9 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import os
-from rag.embedding_store import create_vector_store
-from rag.generator import generate_response, load_vector_store
-from rag.github_stats import get_github_stats
+from backend.rag.embedding_store import create_vector_store
+from backend.rag.generator import generate_response, load_vector_store
+from backend.rag.github_stats import get_github_stats
 
 app = FastAPI()
 
@@ -74,8 +74,8 @@ app.add_middleware(
 # Initialize vector store on startup
 @app.on_event("startup")
 async def startup_event():
-    json_directory = os.path.join("data")
-    persist_directory = os.path.join("chroma_db")
+    json_directory = os.path.join("backend","data")
+    persist_directory = os.path.join("backend","chroma_db")
 
     if not os.path.exists(persist_directory) or not os.listdir(persist_directory):
         try:
@@ -124,7 +124,6 @@ async def chat_endpoint(request: ChatRequest):
         return ChatResponse(
             response=response["answer"],
             type="text",
-            # metadata={"sources": response.get("sources", [])}
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
