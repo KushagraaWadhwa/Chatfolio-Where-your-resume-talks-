@@ -5,7 +5,7 @@ from langchain_chroma import Chroma
 from .data_loading import load_all_json_files
 from .text_chunking import extract_section_texts, split_documents
 
-def create_vector_store(json_directory, chunk_size, overlap, persist_directory="backend/chroma_db"):
+def create_vector_store(json_directory, chunk_size, overlap, persist_directory):
     """
     Loads JSON files from the specified directory, processes them into Documents by section,
     splits the Documents into chunks using a recursive text splitter, embeds these chunks, and
