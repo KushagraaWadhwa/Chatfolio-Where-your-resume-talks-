@@ -107,7 +107,7 @@ export default function Chat() {
 
   return (
     
-    <div className="flex flex-col h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out">
+    <div className="flex min-h-0 flex-col h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out">
       {/* Chat Header */}
       <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
