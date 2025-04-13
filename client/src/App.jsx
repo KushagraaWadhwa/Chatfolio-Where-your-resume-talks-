@@ -6,6 +6,7 @@ import DocumentViewer from './components/DocumentViewer';
 import ProjectShowcase from './components/ProjectShowcase';
 import AnimatedHeader from './components/AnimatedHeader';
 
+
 const SAMPLE_DOCUMENTS = [
   {
     id: '1',
@@ -46,7 +47,7 @@ const SAMPLE_DOCUMENTS = [
 
 // Stats data
 const STATS = [
-  { label: 'Projects Explored', value: '10+', icon: <Code className="w-6 h-6 text-blue-500" /> },
+  { label: 'Projects ', value: '10+', icon: <Code className="w-6 h-6 text-blue-500" /> },
   { label: 'GitHub Contributions', value: 'Why not ask the bot for that!!', icon: <Activity className="w-6 h-6 text-green-500" /> },
   { label: 'Companies Worked With', value: 4, icon: <User className="w-6 h-6 text-purple-500" /> },
   { label: 'Years of Experience', value: 1, icon: <FileText className="w-6 h-6 text-orange-500" /> }
@@ -103,6 +104,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [activeTab, setActiveTab] = useState('chat');
 
+  
   // Ensure the page always loads at the top.
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -204,7 +206,7 @@ function App() {
 
         {/* Full-screen Animated Header */}
         <AnimatedHeader />
-
+      
         {/* Rest of App Main Content */}
         <div id="main-section" className="max-w-7xl mx-auto p-8">
           {/* Header with Tabs and Buttons */}
@@ -260,6 +262,7 @@ function App() {
           <div className="h-[36rem] md:h-[40rem] [perspective:1000px] relative flex flex-col w-full items-start justify-start">
             <div className="relative w-full h-full overflow-hidden">
               {renderTabContent()}
+              
             </div>
           </div>
         </div>

@@ -3,3 +3,4 @@ __pycache__
 .env
 chroma_db
 npm_comms.txt
+node_modules
