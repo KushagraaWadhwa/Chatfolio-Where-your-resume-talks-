@@ -25,3 +25,5 @@ openai
 python-multipart 
 aiofiles
 reportlab
+fpd2
+PyPDF2==3.0.1
