@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Code, Command, Terminal } from 'lucide-react';
+import { ChevronDown, Code, Command, Terminal, Zap, Database, Cloud } from 'lucide-react';
+// import Bot3D from './Bot3D';
 
 const AnimatedHeader = () => {
   // State for animated typing effect
   const [text, setText] = useState('');
   const fullText = "Welcome to Chatfolio";
   const [cursorVisible, setCursorVisible] = useState(true);
-  
-  // Matrix-like code rain effect state
-  const [codeRain, setCodeRain] = useState([]);
   
   // Interactive hover state
   const [hovered, setHovered] = useState(false);
@@ -32,31 +30,19 @@ const AnimatedHeader = () => {
     return () => clearInterval(interval);
   }, []);
   
-  // Generate code rain elements
+  // Animated background gradient
+  const [gradientPos, setGradientPos] = useState({ x: 0, y: 0 });
+  
   useEffect(() => {
-    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノ><[]{}';
-    const rain = Array.from({ length: 15 }, (_, i) => ({
-      id: i,
-      char: chars[Math.floor(Math.random() * chars.length)],
-      x: Math.random() * 100,
-      y: -20 - Math.random() * 100,
-      speed: 0.5 + Math.random() * 2,
-      opacity: 0.1 + Math.random() * 0.5
-    }));
-    setCodeRain(rain);
-  }, []);
-
-  // Animate code rain
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCodeRain(prev => prev.map(drop => {
-        const newY = drop.y + drop.speed;
-        return newY > 100 
-          ? { ...drop, y: -20, char: '01アイウエオカキクケコサシスセソタチツテトナニヌネノ><[]{}' [Math.floor(Math.random() * 28)] }
-          : { ...drop, y: newY };
-      }));
-    }, 100);
-    return () => clearInterval(interval);
+    const handleMouseMove = (e) => {
+      // Calculate gradient position based on mouse position
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      setGradientPos({ x, y });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   // Animation variants
@@ -74,37 +60,81 @@ const AnimatedHeader = () => {
   };
 
   const floatingIcons = [
-    { Icon: Code, delay: 0, x: -120, y: -80 },
-    { Icon: Terminal, delay: 0.3, x: 120, y: -60 },
-    { Icon: Command, delay: 0.6, x: -100, y: 80 }
+    { Icon: Code, delay: 0, x: -120, y: -80, color: "#e879f9" },  // Fuchsia
+    { Icon: Terminal, delay: 0.3, x: 120, y: -60, color: "#2dd4bf" }, // Teal
+    { Icon: Command, delay: 0.6, x: -100, y: 80, color: "#f472b6" },  // Pink
+    { Icon: Zap, delay: 0.4, x: 140, y: 70, color: "#f59e0b" },  // Amber
+    { Icon: Database, delay: 0.7, x: -80, y: -120, color: "#3b82f6" },  // Blue
+    { Icon: Cloud, delay: 0.2, x: 80, y: -120, color: "#8b5cf6" }  // Violet
   ];
+  
+  // Particle effect
+  const particles = Array.from({ length: 40 }).map((_, i) => ({
+    id: i,
+    size: Math.random() * 6 + 1,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    duration: Math.random() * 10 + 5,
+    delay: Math.random() * 5
+  }));
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center relative overflow-hidden bg-gray-900">
-      
-      
+    <div 
+      className="flex flex-col items-center justify-center min-h-screen text-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900"
+      style={{
+        backgroundImage: `radial-gradient(circle at ${gradientPos.x}% ${gradientPos.y}%, rgba(130, 58, 180, 0.3), rgba(29, 78, 216, 0.2), rgba(12, 74, 110, 0.3))`,
+      }}
+    >
       {/* Hexagon Grid Background */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="grid grid-cols-12 h-full">
           {Array.from({ length: 48 }).map((_, i) => (
-            <div key={i} className="border border-blue-500 m-4 rounded-lg"></div>
+            <div key={i} className="border border-indigo-500 m-4 rounded-lg"></div>
           ))}
         </div>
       </div>
       
+      {/* Animated Particles */}
+      {particles.map(particle => (
+        <motion.div
+          key={particle.id}
+          className="absolute rounded-full bg-white opacity-60 pointer-events-none"
+          style={{
+            width: particle.size,
+            height: particle.size,
+            left: `${particle.x}%`,
+            top: `${particle.y}%`,
+            background: `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.2})`,
+            boxShadow: `0 0 ${particle.size * 2}px rgba(255, 255, 255, 0.8)`
+          }}
+          animate={{
+            y: [0, -(Math.random() * 100 + 50)],
+            opacity: [0.8, 0]
+          }}
+          transition={{
+            duration: particle.duration,
+            repeat: Infinity,
+            delay: particle.delay,
+            ease: "linear"
+          }}
+        />
+      ))}
+      
       {/* Floating Tech Icons */}
-      {floatingIcons.map(({ Icon, delay, x, y }, index) => (
+      {floatingIcons.map(({ Icon, delay, x, y, color }, index) => (
         <motion.div
           key={index}
-          className="absolute text-blue-400 opacity-70"
+          className="absolute opacity-70"
+          style={{ color }}
           initial={{ opacity: 0 }}
           animate={{ 
             opacity: 0.7,
             y: [y, y + 10, y],
-            x: [x, x + 5, x]
+            x: [x, x + 5, x],
+            rotate: [0, 5, 0, -5, 0]
           }}
           transition={{ 
-            delay: delay,
+            delay,
             duration: 3,
             repeat: Infinity,
             repeatType: "reverse"
@@ -114,40 +144,32 @@ const AnimatedHeader = () => {
         </motion.div>
       ))}
       
-      {/* Glowing Bot */}
-      <motion.div
-        className="absolute top-10 right-10 text-5xl"
-        animate={{ 
-          y: [0, -10, 0],
-          filter: ["drop-shadow(0 0 8px rgba(0, 255, 255, 0.7))", "drop-shadow(0 0 12px rgba(0, 255, 255, 0.9))", "drop-shadow(0 0 8px rgba(0, 255, 255, 0.7))"]
-        }}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
-        🤖
-      </motion.div>
-      
       {/* Terminal Heading Container */}
       <motion.div
-        className="relative border-2 border-green-500 p-8 rounded-lg bg-black bg-opacity-80 shadow-lg shadow-green-500/20"
+        className="relative border-2 border-indigo-500 p-8 rounded-lg bg-gradient-to-br from-gray-900 to-black bg-opacity-90 shadow-lg shadow-indigo-500/30 backdrop-blur-sm"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8 }}
-        whileHover={{ scale: 1.02, boxShadow: "0 0 15px rgba(0, 255, 0, 0.3)" }}
+        whileHover={{ 
+          scale: 1.02, 
+          boxShadow: "0 0 25px rgba(99, 102, 241, 0.5)",
+          borderColor: "rgba(192, 132, 252, 1)"
+        }}
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
       >
         {/* Terminal Header */}
-        <div className="flex items-center mb-4 border-b border-green-900 pb-2">
-          <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-          <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
-          <div className="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
-          <div className="text-xs text-green-500 ml-2 font-mono">chatfolio.sh</div>
+        <div className="flex items-center mb-4 border-b border-indigo-900 pb-2">
+          <div className="w-3 h-3 rounded-full bg-rose-500 mr-2"></div>
+          <div className="w-3 h-3 rounded-full bg-amber-500 mr-2"></div>
+          <div className="w-3 h-3 rounded-full bg-emerald-500 mr-2"></div>
+          <div className="text-xs text-indigo-400 ml-2 font-mono">chatfolio.sh</div>
         </div>
         
         {/* Main Heading with Typewriter Effect */}
-        <div className="font-mono text-left mb-2 text-green-500">$ run welcome.js</div>
+        <div className="font-mono text-left mb-2 text-indigo-400">$ run welcome.js</div>
         <motion.h1
-          className="text-5xl md:text-6xl font-bold font-mono text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500"
+          className="text-5xl md:text-6xl font-bold font-mono text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400"
           initial="hidden"
           animate="visible"
           variants={headerVariants}
@@ -158,13 +180,12 @@ const AnimatedHeader = () => {
 
         {/* Subtitle */}
         <motion.p
-          className="text-xl text-blue-400 mt-4 max-w-3xl font-mono"
+          className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-400 to-indigo-400 mt-4 max-w-3xl font-mono"
           initial="hidden"
           animate="visible"
           variants={subtitleVariants}
         >
-          <span className="text-green-500"></span> An interactive gateway to know about my work, education, skills, projects......and more!!<br />
-
+          An interactive gateway to know about my work, education, skills, projects......and more!!<br />
         </motion.p>
         
         {/* Interactive Code Section */}
@@ -172,10 +193,10 @@ const AnimatedHeader = () => {
           <motion.div 
             className="absolute -bottom-3 left-0 w-full"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, x:600,y: -255 }}
-            transition={{ duration: 1 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
           >
-            <div className="w-fit text-xs text-left text-green-400 font-mono bg-black bg-opacity-70 p-2 rounded-b-lg">
+            <div className="w-fit mx-auto text-xs text-left text-pink-400 font-mono bg-black bg-opacity-70 p-2 rounded-lg border border-pink-900/50">
               const portfolio = new Developer("Fullstack AI Engineer");<br />
               portfolio.init();
             </div>
@@ -185,7 +206,7 @@ const AnimatedHeader = () => {
 
       {/* Pulsing Scroll Indicator */}
       <motion.div
-        className="absolute bottom-6 text-green-500 cursor-pointer"
+        className="absolute bottom-6 text-pink-400 cursor-pointer"
         onClick={() => {
           const mainSection = document.getElementById('main-section');
           mainSection?.scrollIntoView({ behavior: 'smooth' });
