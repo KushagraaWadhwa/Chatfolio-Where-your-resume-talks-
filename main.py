@@ -238,6 +238,13 @@ async def download_resume(filename: str):
         media_type="application/pdf"
     )
 
+@app.get("/download_resume/")
+def download_resume(file_path: str):
+    # Security: Only allow files from the generated_resumes directory
+    if not file_path.startswith("backend/generated_resumes/"):
+        raise HTTPException(status_code=403, detail="Invalid file path")
+    return FileResponse(path=file_path, filename=file_path.split("/")[-1], media_type='application/pdf')
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
