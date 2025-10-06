@@ -28,11 +28,22 @@ logger = logging.getLogger(__name__)
 app = FastAPI(title="Portfolio Chatbot API")
 
 # Configure CORS
+# Get frontend URL from environment variable or use default for local development
+frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
+
+# For production, add your Vercel domain
+allowed_origins = [
+    frontend_url,
+    "http://localhost:5173",
+    "https://kushagrawadhwa.vercel.app/",  # Replace with your actual Vercel domain
+    # Add more domains if needed
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with your frontend URL
+    allow_origins=allowed_origins,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
@@ -91,10 +102,14 @@ async def startup_event():
         vector_store = load_vector_store()
         logger.info("Vector store loaded successfully")
 
-        # Load Whisper model
-        logger.info("Loading Whisper model...")
-        whisper_model = whisper.load_model("base")
-        logger.info("Whisper model loaded successfully")
+        # Load Whisper model only if ENABLE_WHISPER env var is set
+        if os.getenv("ENABLE_WHISPER", "false").lower() == "true":
+            logger.info("Loading Whisper model...")
+            # Use tiny model to reduce memory usage
+            whisper_model = whisper.load_model("tiny")
+            logger.info("Whisper model loaded successfully")
+        else:
+            logger.info("Whisper model loading skipped (disabled by environment variable)")
         
         # Start auto-update monitoring for data changes
         logger.info("Starting auto-update system...")
@@ -215,9 +230,10 @@ async def transcribe_audio(file: UploadFile = File(...)):
     """Transcribe audio file using Whisper"""
     try:
         if not whisper_model:
-            raise HTTPException(
-                status_code=503,
-                detail="Transcription service is not initialized"
+            # Return a friendly message instead of an error when the service is disabled
+            return TranscriptionResponse(
+                text="",
+                error="Speech transcription is currently disabled on this deployment. Please type your message instead."
             )
 
         # Create a temporary file to store the audio
@@ -441,4 +457,7 @@ async def delete_document(
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    import os
+    # Get port from environment variable for cloud platforms like Render
+    port = int(os.getenv("PORT", 8083))
+    uvicorn.run(app, host="0.0.0.0", port=port)

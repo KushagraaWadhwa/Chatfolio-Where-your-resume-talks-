@@ -1,4 +1,5 @@
 import React, { useContext, useState, useRef, useEffect, useCallback, useMemo } from 'react';
+import config from '../config';
 import { ChatContext } from './ChatContext';
 import { Send, User, Bot, RefreshCw, Mic, MicOff, Loader, X, Check, Sparkles, MessageSquare } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
@@ -65,7 +66,7 @@ export default function Chat({ theme = 'light' }) {  // Accept theme as a prop w
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch(`${config.apiBaseUrl}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input }),
@@ -229,7 +230,7 @@ export default function Chat({ theme = 'light' }) {  // Accept theme as a prop w
       formData.append('file', audioBlob, 'recording.webm');
 
       // Send to transcription endpoint
-      const response = await fetch('/api/transcribe', {
+      const response = await fetch(`${config.apiBaseUrl}/transcribe`, {
         method: 'POST',
         body: formData
       });

@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://localhost:8001';
+import config from '../config';
+const API_BASE_URL = config.apiBaseUrl;
 
 class DocumentService {
   async getDocuments(category = null) {
