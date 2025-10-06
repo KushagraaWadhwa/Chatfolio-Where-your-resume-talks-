@@ -17,8 +17,8 @@ const config = {
     apiBaseUrl: envApiUrl || 'http://localhost:8001',
   },
   production: {
-    // Replace with your actual Render.com backend URL
-    apiBaseUrl: envApiUrl || 'https://chatfolio-backend.onrender.com',
+    // Your Render.com backend URL
+    apiBaseUrl: envApiUrl || 'https://chatfolio-where-your-resume-talks.onrender.com',
   },
   // You can add more environments like 'staging' if needed
 };

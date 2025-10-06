@@ -25,7 +25,7 @@ The Chatfolio application consists of two main components:
 2. **Configure the service**
    - **Runtime**: Python 3.9 or higher
    - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+   - **Start Command**: `python render_start.py`
    - **Environment Variables**:
      - `FRONTEND_URL`: Your Vercel frontend URL (e.g., https://chatfolio-kushagra.vercel.app)
      - `GEMINI_API_KEY`: Your Google Gemini API key
@@ -91,6 +91,27 @@ The connection between the frontend and backend is managed through:
 3. **API Endpoints**:
    - All API requests from the frontend are directed to the backend URL
    - This is managed through the `config.js` file in the frontend
+
+### Linking Deployed Frontend and Backend
+
+When your frontend and backend are deployed to different domains:
+
+1. **Update Frontend Configuration**:
+   - Edit `client/src/config.js` to set the production `apiBaseUrl` to your Render backend URL:
+   ```javascript
+   production: {
+     apiBaseUrl: envApiUrl || 'https://chatfolio-where-your-resume-talks.onrender.com',
+   },
+   ```
+
+2. **Update Backend CORS Settings**:
+   - In your Render dashboard, set the `FRONTEND_URL` environment variable to your frontend domain
+   - This allows your backend to accept requests from your frontend domain
+   - Example: `FRONTEND_URL=https://your-frontend-domain.vercel.app`
+
+3. **Verify Connection**:
+   - After deploying both services, test the connection by making API requests from your frontend
+   - Check browser console for any CORS errors
 
 ## Troubleshooting
 
