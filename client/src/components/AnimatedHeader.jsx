@@ -6,7 +6,7 @@ import { ChevronDown, Code, Command, Terminal, Zap, Database, Cloud } from 'luci
 const AnimatedHeader = () => {
   // State for animated typing effect
   const [text, setText] = useState('');
-  const fullText = "Welcome to Chatfolio";
+  const fullText = "Hello, I'm Kushagra!";
   const [cursorVisible, setCursorVisible] = useState(true);
   
   // Interactive hover state
@@ -68,14 +68,14 @@ const AnimatedHeader = () => {
     { Icon: Cloud, delay: 0.2, x: 80, y: -120, color: "#8b5cf6" }  // Violet
   ];
   
-  // Particle effect
-  const particles = Array.from({ length: 40 }).map((_, i) => ({
+  // Optimized particle effect - reduced from 40 to 15 particles
+  const particles = Array.from({ length: 15 }).map((_, i) => ({
     id: i,
-    size: Math.random() * 6 + 1,
+    size: Math.random() * 4 + 2,
     x: Math.random() * 100,
     y: Math.random() * 100,
-    duration: Math.random() * 10 + 5,
-    delay: Math.random() * 5
+    duration: Math.random() * 8 + 6,
+    delay: Math.random() * 3
   }));
 
   return (
@@ -167,7 +167,7 @@ const AnimatedHeader = () => {
         </div>
         
         {/* Main Heading with Typewriter Effect */}
-        <div className="font-mono text-left mb-2 text-indigo-400">$ run welcome.js</div>
+        <div className="font-mono text-left mb-2 text-indigo-400">$ run kushagra_portfolio.js</div>
         <motion.h1
           className="text-5xl md:text-6xl font-bold font-mono text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400"
           initial="hidden"
@@ -185,14 +185,14 @@ const AnimatedHeader = () => {
           animate="visible"
           variants={subtitleVariants}
         >
-          An interactive gateway to know about my work, education, skills, projects......and more!!<br />
+          |AI Engineer & Full-Stack Developer<br/>| Building intelligent systems
+          that bridge the gap between data and real-world impact 🚀
         </motion.p>
-        
         {/* Interactive Code Section */}
         {hovered && (
           <motion.div 
             className="absolute -bottom-3 left-0 w-full"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >

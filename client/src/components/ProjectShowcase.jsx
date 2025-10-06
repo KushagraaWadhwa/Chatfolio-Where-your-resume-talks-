@@ -1,40 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { Github, ExternalLink, ChevronLeft, ChevronRight, Star, Code, Eye, GitBranch, Award, Database, Heart, Award as AwardIcon } from 'lucide-react';
-import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import LazyImage from './LazyImage';
 
 const PROJECTS = {
   "AI/ML Projects": [
     {
       id: '1',
-      title: 'SalesAssist AI',
-      description: 'A conversational AI framework designed to assist sales teams by providing instant responses to customer queries using RAG and LLMs.',
-      longDescription: 'SalesAssist AI transforms customer interactions by leveraging Retrieval Augmented Generation (RAG) to provide accurate, context-aware responses in real-time. The system integrates with existing CRM platforms, allowing sales teams to focus on relationship building while the AI handles routine queries and information retrieval. Built with scalability in mind, it can process thousands of customer interactions simultaneously.',
-      technologies: ['LLM', 'RAG', 'Python', 'LlamaIndex'],
-      complexity: 85,
-      timeline: '3 months',
+      title: 'LLM Powered Sales Assistant with RAG and Voice Integration',
+      shortName: 'SalesAssist',
+      description: 'Real-time, voice-enabled AI assistant for sales teams using RAG architecture and OpenAI Whisper for instant product-specific responses.',
+      longDescription: 'Built a real-time, voice-enabled AI assistant for sales teams using RAG architecture and OpenAI Whisper. When a customer asks product-specific queries, the assistant instantly fetches answers from internal product manuals via ChromaDB vector search. This empowers sales with accurate, context-aware responses—reducing customer query handling time and boosting confidence during live interactions. The system integrates with existing CRM platforms and can process thousands of customer interactions simultaneously.',
+      technologies: ['OpenAI Whisper', 'RAG', 'Python', 'ChromaDB', 'Langchain', 'Voice Integration'],
+      complexity: 90,
+      timeline: '4 months',
       imageUrl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80',
       githubUrl: 'https://github.com/KushagraaWadhwa/SalesAssist-AI',
       stats: {
-        stars: 24,
-        forks: 7,
-        views: 1250,
-        contributions: 142
+        stars: 31,
+        forks: 9,
+        views: 1680,
+        contributions: 178
       },
-      techBreakdown: [
-        { name: 'Python', value: 60, color: '#306998' },
-        { name: 'LlamaIndex', value: 20, color: '#4B8BBE' },
-        { name: 'FastAPI', value: 12, color: '#2D2D2D' },
-        { name: 'Other', value: 8, color: '#646464' }
-      ],
       highlights: [
-        'Reduced customer response time by 73%',
-        'Increased sales conversion by 23%',
-        'Handles 5000+ queries daily'
+        'Real-time voice-enabled AI assistant',
+        'Instant product-specific query responses',
+        'Reduced customer query handling time',
+        'ChromaDB vector search integration'
       ]
     },
     {
       id: '2',
       title: 'Recipe to Rating: ML Food Rating Predictor',
+      shortName: 'FoodRating ML',
       description: 'Predictive model for estimating food ratings based on ingredients and cooking methods using machine learning.',
       longDescription: 'This project applies machine learning to predict how well a recipe will be received based on its ingredients, preparation methods, and nutritional profile. By analyzing thousands of online recipes and their ratings, the model identifies patterns that contribute to popular dishes. Features include ingredient compatibility scoring, healthiness metrics, and complexity analysis.',
       technologies: ['Machine Learning', 'Scikit-learn', 'Pandas', 'EDA'],
@@ -48,12 +46,6 @@ const PROJECTS = {
         views: 970,
         contributions: 89
       },
-      techBreakdown: [
-        { name: 'Python', value: 45, color: '#306998' },
-        { name: 'Scikit-learn', value: 30, color: '#F7931E' },
-        { name: 'Pandas', value: 20, color: '#150458' },
-        { name: 'Other', value: 5, color: '#646464' }
-      ],
       highlights: [
         'Achieved 86% prediction accuracy',
         'Analyzed 10,000+ recipes',
@@ -63,6 +55,7 @@ const PROJECTS = {
     {
       id: '3',
       title: 'Ask Your PDF',
+      shortName: 'AskPDF',
       description: 'Chatbot-style web application for querying PDF documents using document embedding techniques.',
       longDescription: 'Ask Your PDF transforms the way users interact with document content by enabling natural language queries. The application processes uploaded PDFs by extracting text, creating semantic embeddings, and indexing content for rapid retrieval. Users can ask questions in plain language and receive precise answers with source citations. The system handles complex documents including technical manuals, research papers, and legal documents.',
       technologies: ['Streamlit', 'Python', 'PDF Parsing', 'Vector Databases'],
@@ -76,24 +69,88 @@ const PROJECTS = {
         views: 1450,
         contributions: 113
       },
-      techBreakdown: [
-        { name: 'Python', value: 50, color: '#306998' },
-        { name: 'Streamlit', value: 25, color: '#FF4B4B' },
-        { name: 'Vector DB', value: 15, color: '#0080FF' },
-        { name: 'PDF Tools', value: 10, color: '#FF0000' }
-      ],
       highlights: [
         'Processes documents up to 1000 pages',
         'Multilingual support for 8 languages',
         'Context-aware response generation'
       ]
     },
+    {
+      id: '4',
+      title: 'Real-Time Earnings Call Intelligence Platform',
+      shortName: 'Earnings AI',
+      description: 'Intelligent system that processes live financial calls in real-time, automatically transcribing audio and extracting key financial insights.',
+      longDescription: 'Built an intelligent system that processes live financial calls in real-time, automatically transcribing audio, segmenting content into logical sections, and extracting key financial insights as calls unfold. The platform enables fund managers to make data-driven investment decisions during earnings calls by providing instant access to critical financial information through a real-time dashboard with live audio visualization, transcriptions, and section timeline navigation.',
+      technologies: ['OpenAI Whisper', 'Python', 'FastAPI', 'WebSockets', 'React', 'AI/ML'],
+      complexity: 95,
+      timeline: '4 months',
+      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+      stats: {
+        stars: 35,
+        forks: 12,
+        views: 2100,
+        contributions: 185
+      },
+      highlights: [
+        'Real-time audio processing and transcription',
+        'Automatic financial insight extraction',
+        'Live dashboard with audio visualization',
+        'Enables data-driven investment decisions'
+      ]
+    },
+    {
+      id: '5',
+      title: 'AI-Powered Resume Optimization Pipeline',
+      shortName: 'Resume AI',
+      description: 'Automated pipeline using OpenAI to parse, score, and personalize resumes for specific job descriptions.',
+      longDescription: 'Identified the inefficiency in manual resume screening, leading to a solution that cut effort by over 95%. Designed an automated pipeline using OpenAI to parse, score, and personalize resumes for specific job descriptions. Orchestrated workflows with Apache NiFi and integrated Microsoft Teams to enable on-demand resume delivery. Accelerated recruiter decision-making with real-time access to tailored, ranked candidate profiles.',
+      technologies: ['Apache NiFi', 'n8n', 'OpenAI', 'Python', 'Microsoft Teams API'],
+      complexity: 80,
+      timeline: '3 months',
+      imageUrl: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80',
+      stats: {
+        stars: 28,
+        forks: 8,
+        views: 1650,
+        contributions: 156
+      },
+      highlights: [
+        'Reduced manual screening effort by 95%',
+        'Automated resume parsing and scoring',
+        'Real-time personalized resume delivery',
+        'Integrated with Microsoft Teams'
+      ]
+    },
+    {
+      id: '6',
+      title: 'Smart Learning Engine with RAG and Vector Search',
+      shortName: 'Learning AI',
+      description: 'Smart retrieval system for educational videos and articles using semantic similarity and vector search.',
+      longDescription: 'Tackled poor content discoverability by designing a smart retrieval system for educational videos and articles. Mapped user queries to relevant syllabus topics using semantic similarity and structured topic buckets. Used Pinecone to perform high-speed vector search across multimodal embeddings from both video transcripts and article summaries. Delivered the single most relevant video and article per topic, enhancing user satisfaction and platform engagement.',
+      technologies: ['Python', 'Pinecone', 'Langchain', 'FastAPI', 'Vector Search'],
+      complexity: 85,
+      timeline: '3 months',
+      imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80',
+      stats: {
+        stars: 32,
+        forks: 10,
+        views: 1890,
+        contributions: 167
+      },
+      highlights: [
+        'High-speed vector search across multimodal content',
+        'Semantic similarity mapping for educational content',
+        'Enhanced user satisfaction and engagement',
+        'Structured topic bucket organization'
+      ]
+    }
     
   ],
   "Software Development": [
     {
-      id: '4',
+      id: '7',
       title: 'GrocExpress: Grocery Store App',
+      shortName: 'GrocExpress',
       description: 'Full-stack web application for managing grocery store inventory and sales with admin dashboard.',
       longDescription: 'GrocExpress streamlines grocery store operations with a comprehensive digital solution. The application includes inventory management with automated reordering, point-of-sale functionality, customer loyalty programs, and detailed analytics. The admin dashboard provides real-time insights into sales trends, product performance, and employee productivity.',
       technologies: ['Flask', 'SQLite', 'HTML', 'CSS', 'JavaScript'],
@@ -106,12 +163,6 @@ const PROJECTS = {
         views: 850,
         contributions: 102
       },
-      techBreakdown: [
-        { name: 'Flask', value: 30, color: '#000000' },
-        { name: 'JavaScript', value: 30, color: '#F7DF1E' },
-        { name: 'HTML/CSS', value: 25, color: '#E34F26' },
-        { name: 'SQLite', value: 15, color: '#003B57' }
-      ],
       highlights: [
         'Reduced inventory management time by 45%',
         'Intuitive UI with 97% user satisfaction',
@@ -119,8 +170,9 @@ const PROJECTS = {
       ]
     },
     {
-      id: '5',
+      id: '8',
       title: 'Homeyfy: Household Services App',
+      shortName: 'Homeyfy',
       description: 'Multi-user platform connecting customers with household service professionals using role-based access control. Comes with Individual user Dashboard and scheduled jobs.',
       longDescription: 'Homeyfy bridges the gap between homeowners and service providers through a user-friendly platform. The application features service provider profiles with ratings and reviews, scheduling functionality with calendar integration, secure payment processing, and a messaging system. The role-based access control ensures appropriate permissions for customers, service providers, and administrators.',
       technologies: ['Flask', 'Vue.js', 'SQLite', 'Redis', 'Celery'],
@@ -134,12 +186,6 @@ const PROJECTS = {
         views: 1870,
         contributions: 198
       },
-      techBreakdown: [
-        { name: 'Vue.js', value: 40, color: '#4FC08D' },
-        { name: 'Flask', value: 30, color: '#000000' },
-        { name: 'Redis/Celery', value: 15, color: '#DC382D' },
-        { name: 'SQLite', value: 15, color: '#003B57' }
-      ],
       highlights: [
         'Connects 500+ service providers with customers',
         'Implemented real-time service tracking',
@@ -148,8 +194,9 @@ const PROJECTS = {
     },
     
     {
-      id: '6',
+      id: '9',
       title: 'OpenCV Captcha Project',
+      shortName: 'CAPTCHA Solver',
       description: 'Automated CAPTCHA solver using OpenCV and deep learning for processing noisy, colored alphanumeric CAPTCHAs.',
       longDescription: 'This advanced CAPTCHA solver combines computer vision techniques with neural networks to decode complex image-based challenges. Unlike traditional OCR approaches, this solution excels with distorted text, overlapping characters, and noisy backgrounds. The preprocessing pipeline includes adaptive thresholding, contour detection, and character segmentation before passing to a convolutional neural network for recognition.',
       technologies: ['OpenCV', 'Python', 'OCR', 'Deep Learning'],
@@ -163,12 +210,6 @@ const PROJECTS = {
         views: 2100,
         contributions: 175
       },
-      techBreakdown: [
-        { name: 'Python', value: 40, color: '#306998' },
-        { name: 'OpenCV', value: 35, color: '#5C3EE8' },
-        { name: 'TensorFlow', value: 20, color: '#FF6F00' },
-        { name: 'Other', value: 5, color: '#646464' }
-      ],
       highlights: [
         'Solves CAPTCHAs with 94% accuracy',
         'Handles 6 different CAPTCHA types',
@@ -178,8 +219,9 @@ const PROJECTS = {
   ],
   "Data Science": [
     {
-      id: '7',
+      id: '10',
       title: 'COVID-19 Data Analysis',
+      shortName: 'COVID Analysis',
       description: 'Comprehensive analysis of COVID-19 data using Python, Pandas, and Matplotlib for visualizations.',
       longDescription: 'This project provides an in-depth analysis of COVID-19 data from various sources. It includes data cleaning, exploratory data analysis (EDA), and visualization of trends over time. The analysis covers infection rates, vaccination progress, and demographic impacts. Interactive visualizations allow users to explore the data dynamically.',
       technologies: ['Python', 'Pandas', 'Matplotlib', 'Seaborn'],
@@ -192,11 +234,6 @@ const PROJECTS = {
         views: 500,
         contributions: 50
       },
-      techBreakdown: [
-        { name: 'Python', value: 50, color: '#306998' },
-        { name: 'Pandas', value: 30, color: '#F7931E' },
-        { name: 'Matplotlib', value: 20, color: '#150458' }
-      ],
       highlights: [
         'Analyzed data from 200+ countries',
         'Created interactive dashboards',
@@ -204,8 +241,9 @@ const PROJECTS = {
       ]
     },
     {
-      id: '8',
+      id: '11',
       title: 'Stock Price Prediction',
+      shortName: 'Stock Predictor',
       description: 'Predictive model for stock prices using historical data and machine learning techniques.',
       longDescription: 'This project utilizes historical stock price data to build predictive models using various machine learning algorithms. The analysis includes feature engineering, model selection, and evaluation. The final model provides real-time predictions and visualizations of stock trends.',
       technologies: ['Python', 'Scikit-learn', 'Pandas', 'Matplotlib'],
@@ -218,12 +256,6 @@ const PROJECTS = {
         views: 800,
         contributions: 60
       },
-      techBreakdown: [
-        { name: 'Python', value: 40, color: '#306998' },
-        { name: 'Scikit-learn', value: 30, color: '#F7931E' },
-        { name: 'Pandas', value: 20, color: '#150458' },
-        { name: 'Matplotlib', value: 10, color: '#E34F26' }
-      ],
       highlights: [
         'Achieved 85% prediction accuracy',
         'Analyzed data from multiple sources',
@@ -252,7 +284,6 @@ export default function ProjectShowcase() {
   const [fadeIn, setFadeIn] = useState(true);
   const [liked, setLiked] = useState({});
   const [activeTech, setActiveTech] = useState(null);
-  const [isStatsHovered, setIsStatsHovered] = useState(false);
 
   const projects = PROJECTS[activeCategory];
   const currentProject = projects[currentIndex];
@@ -286,16 +317,14 @@ export default function ProjectShowcase() {
     }));
   };
 
-  // Auto carousel effect
+  // Optimized auto carousel effect - reduced frequency
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!isStatsHovered) {
-        nextProject();
-      }
-    }, 8000);
+      nextProject();
+    }, 12000); // Increased from 8000ms to 12000ms
 
     return () => clearInterval(interval);
-  }, [currentIndex, isStatsHovered]);
+  }, [currentIndex]);
 
   // Generate tech color based on tech name
   const getTechColor = (techName) => {
@@ -323,7 +352,22 @@ export default function ProjectShowcase() {
       'Pandas': 'bg-blue-700',
       'EDA': 'bg-teal-600',
       'TensorFlow': 'bg-orange-600',
-      'LlamaIndex': 'bg-purple-500'
+      'LlamaIndex': 'bg-purple-500',
+      'OpenAI Whisper': 'bg-emerald-600',
+      'FastAPI': 'bg-gray-700',
+      'WebSockets': 'bg-cyan-600',
+      'AI/ML': 'bg-violet-600',
+      'Apache NiFi': 'bg-orange-600',
+      'n8n': 'bg-pink-600',
+      'OpenAI': 'bg-emerald-500',
+      'Microsoft Teams API': 'bg-blue-600',
+      'Pinecone': 'bg-indigo-500',
+      'Langchain': 'bg-green-700',
+      'Vector Search': 'bg-purple-600',
+      'ChromaDB': 'bg-blue-500',
+      'Voice Integration': 'bg-rose-500',
+      'Matplotlib': 'bg-orange-500',
+      'Seaborn': 'bg-pink-500'
     };
 
     return colors[techName] || 'bg-gray-600';
@@ -340,13 +384,6 @@ export default function ProjectShowcase() {
     return () => clearTimeout(timer);
   }, [currentProject]);
 
-  // Calculate stats data for radar chart
-  const statsData = [
-    { subject: 'Stars', A: currentProject.stats.stars, fullMark: 50 },
-    { subject: 'Forks', A: currentProject.stats.forks, fullMark: 20 },
-    { subject: 'Views', A: currentProject.stats.views / 100, fullMark: 30 },
-    { subject: 'Contrib', A: currentProject.stats.contributions / 10, fullMark: 40 }
-  ];
 
   return (
     <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
@@ -404,7 +441,7 @@ export default function ProjectShowcase() {
                   }`}
                 >
                   <div className={`w-2 h-2 rounded-full ${currentIndex === idx ? 'bg-blue-600' : 'bg-gray-300 dark:bg-gray-600'}`}></div>
-                  <span className="truncate">{project.title}</span>
+                  <span className="truncate">{project.shortName || project.title}</span>
                 </button>
               ))}
             </div>
@@ -426,14 +463,12 @@ export default function ProjectShowcase() {
             className={`bg-white dark:bg-gray-900 rounded-xl shadow-xl p-6 border border-gray-200 dark:border-gray-700 transition-all duration-500 ${
               fadeIn ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
             } hover:shadow-2xl`}
-            onMouseEnter={() => setIsStatsHovered(true)}
-            onMouseLeave={() => setIsStatsHovered(false)}
           >
             {/* Image and stats grid layout with enhanced interactions */}
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
               {/* Project image with enhanced overlay and interactions */}
               <div className="relative h-[350px] lg:col-span-3 overflow-hidden rounded-xl shadow-lg group">
-                <img
+                <LazyImage
                   src={currentProject.imageUrl}
                   alt={currentProject.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter group-hover:brightness-90"
@@ -451,31 +486,9 @@ export default function ProjectShowcase() {
                   </div>
                 </div>
                 
-                {/* Enhanced social links overlay with staggered animation */}
+                {/* Enhanced overlay with essential actions */}
                 <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
                   <div className="space-y-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    {currentProject.githubUrl && (
-                      <a
-                        href={currentProject.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors hover:scale-105 shadow-lg mx-2"
-                      >
-                        <Github className="w-6 h-6 text-black dark:text-white" />
-                        <span className="font-medium">GitHub</span>
-                      </a>
-                    )}
-                    {currentProject.kaggleUrl && (
-                      <a
-                        href={currentProject.kaggleUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors hover:scale-105 shadow-lg mx-2"
-                      >
-                        <Database className="w-6 h-6 text-blue-500" />
-                        <span className="font-medium">Kaggle</span>
-                      </a>
-                    )}
                     <button
                       onClick={toggleDetails}
                       className="flex items-center gap-3 p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors hover:scale-105 shadow-lg mx-2"
@@ -521,70 +534,72 @@ export default function ProjectShowcase() {
                 </button>
               </div>
 
-              {/* Enhanced project stats with visualizations */}
-              <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-5 lg:h-[350px] flex flex-col shadow-lg border border-gray-200 dark:border-gray-700">
-                <h3 className="text-lg font-bold mb-4 text-gray-800 dark:text-gray-200 flex items-center gap-2">
-                  <AwardIcon className="w-5 h-5 text-blue-600" />
-                  Project Stats
-                </h3>
-                
-                {/* Animated complexity meter */}
-                <div className="mb-5">
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Complexity</span>
-                    <span className="text-sm font-bold text-blue-600 dark:text-blue-400">{complexityProgress}%</span>
-                  </div>
-                  <div className="w-full h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                    <div 
-                      className="h-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full transition-all duration-1000 ease-out" 
-                      style={{ width: `${complexityProgress}%` }}
-                    ></div>
-                  </div>
-                </div>
-                
-                {/* Timeline with icon */}
-                <div className="mb-5 flex items-center">
-                  <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg mr-3">
-                    <Code className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <div>
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Development</span>
-                    <p className="text-lg font-bold text-gray-900 dark:text-white">{currentProject.timeline}</p>
-                  </div>
-                </div>
-                
-                {/* Interactive tech breakdown */}
-                <div className="flex-1 overflow-hidden">
-                  <h4 className="text-sm font-medium mb-3 text-gray-700 dark:text-gray-300">Tech Breakdown</h4>
+              {/* Right column containing stats and links */}
+              <div className="flex flex-col gap-4">
+                {/* Enhanced project stats with visualizations */}
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-5 flex flex-col shadow-lg border border-gray-200 dark:border-gray-700">
+                  <h3 className="text-lg font-bold mb-4 text-gray-800 dark:text-gray-200 flex items-center gap-2">
+                    <AwardIcon className="w-5 h-5 text-blue-600" />
+                    Project Stats
+                  </h3>
                   
-                  {/* Visualize tech breakdown with animations */}
-                  <div className="space-y-2.5">
-                    {currentProject.techBreakdown.map((tech) => (
+                  {/* Animated complexity meter */}
+                  <div className="mb-5">
+                    <div className="flex justify-between mb-2">
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Complexity</span>
+                      <span className="text-sm font-bold text-blue-600 dark:text-blue-400">{complexityProgress}%</span>
+                    </div>
+                    <div className="w-full h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                       <div 
-                        key={tech.name} 
-                        className="relative group cursor-pointer"
-                        onMouseEnter={() => setActiveTech(tech.name)}
-                        onMouseLeave={() => setActiveTech(null)}
-                      >
-                        <div className="flex justify-between text-xs mb-1">
-                          <span className={activeTech === tech.name ? "font-bold text-blue-600 dark:text-blue-400" : ""}>
-                            {tech.name}
-                          </span>
-                          <span>{tech.value}%</span>
-                        </div>
-                        <div className="w-full h-2.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                          <div 
-                            className="h-2.5 rounded-full transition-all duration-500"
-                            style={{ 
-                              width: `${tech.value}%`, 
-                              backgroundColor: tech.color,
-                              transform: activeTech === tech.name ? 'scaleY(1.4)' : 'scaleY(1)'
-                            }}
-                          ></div>
-                        </div>
-                      </div>
-                    ))}
+                        className="h-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full transition-all duration-1000 ease-out" 
+                        style={{ width: `${complexityProgress}%` }}
+                      ></div>
+                    </div>
                   </div>
+                  
+                  {/* Timeline with icon */}
+                  <div className="flex items-center">
+                    <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg mr-3">
+                      <Code className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <div>
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Development</span>
+                      <p className="text-lg font-bold text-gray-900 dark:text-white">{currentProject.timeline}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Action Buttons - All grouped together */}
+                <div className="flex flex-col gap-3">
+                  {currentProject.githubUrl && (
+                    <a
+                      href={currentProject.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-4 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+                    >
+                      <Github className="w-5 h-5" />
+                      <span className="font-medium">View on GitHub</span>
+                    </a>
+                  )}
+                  {currentProject.kaggleUrl && (
+                    <a
+                      href={currentProject.kaggleUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+                    >
+                      <Database className="w-5 h-5" />
+                      <span className="font-medium">View on Kaggle</span>
+                    </a>
+                  )}
+                  <button
+                    onClick={toggleDetails}
+                    className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+                  >
+                    <Eye className="w-5 h-5" />
+                    <span className="font-medium">{showDetails ? 'Show Less' : 'Show More'}</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -627,11 +642,11 @@ export default function ProjectShowcase() {
                 )}
                 
                 {/* Enhanced technology badges with animation and interaction */}
-                <div className="flex flex-wrap gap-2 mt-6">
+                <div className="flex gap-2 mt-6 overflow-x-auto pb-2">
                   {currentProject.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className={`px-3 py-1.5 ${getTechColor(tech)} text-white rounded-full text-sm font-medium transition-all hover:scale-105 hover:shadow-md flex items-center gap-1`}
+                      className={`px-3 py-1.5 ${getTechColor(tech)} text-white rounded-full text-sm font-medium transition-all hover:scale-105 hover:shadow-md flex items-center gap-1 whitespace-nowrap flex-shrink-0`}
                       style={{
                         animation: `pulse 2s infinite ${Math.random() * 2}s`,
                         opacity: activeTech === tech ? 1 : 0.9,
@@ -645,102 +660,8 @@ export default function ProjectShowcase() {
                   ))}
                 </div>
                 
-                {/* Action buttons with enhanced design */}
-                <div className="mt-6 flex flex-wrap gap-4">
-                  {currentProject.githubUrl && (
-                    <a
-                      href={currentProject.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors shadow-md hover:shadow-lg"
-                    >
-                      <Github className="w-5 h-5" />
-                      View on GitHub
-                    </a>
-                  )}
-                  {currentProject.kaggleUrl && (
-                    <a
-                      href={currentProject.kaggleUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
-                    >
-                      <Database className="w-5 h-5" />
-                      View on Kaggle
-                    </a>
-                  )}
-                  <button
-                    onClick={toggleDetails}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-md hover:shadow-lg whitespace-nowrap"
-                  >
-                    <Eye className="w-5 h-5" />
-                    {showDetails ? 'Show Less' : 'Show More'}
-                  </button>
-                </div>
               </div>
               
-              {/* Add a new visualization section for the project statistics */}
-              <div className="md:col-span-1">
-                {showDetails && (
-                  <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md border border-gray-200 dark:border-gray-700">
-                    <h3 className="text-lg font-bold mb-4 text-gray-800 dark:text-gray-200 flex items-center gap-2">
-                      <GitBranch className="w-5 h-5 text-blue-600" />
-                      GitHub Stats
-                    </h3>
-                    
-                    {/* Radar chart for project statistics */}
-                    <div className="h-64 w-full">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <RadarChart outerRadius={80} data={statsData}>
-                          <PolarGrid stroke="#cbd5e1" />
-                          <PolarAngleAxis dataKey="subject" tick={{ fill: "#64748b" }} />
-                          <PolarRadiusAxis angle={30} domain={[0, 'auto']} />
-                          <Radar
-                            name="Stats"
-                            dataKey="A"
-                            stroke="#3b82f6"
-                            fill="#3b82f6"
-                            fillOpacity={0.6}
-                          />
-                          <Tooltip content={CustomTooltip} />
-                        </RadarChart>
-                      </ResponsiveContainer>
-                    </div>
-                    
-                    {/* Stats badges in attractive layout */}
-                    <div className="grid grid-cols-2 gap-3 mt-4">
-                      <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg flex items-center gap-2">
-                        <Star className="w-5 h-5 text-yellow-500" />
-                        <div>
-                          <div className="text-xs text-gray-500 dark:text-gray-400">Stars</div>
-                          <div className="font-bold text-gray-900 dark:text-white">{currentProject.stats.stars}</div>
-                        </div>
-                      </div>
-                      <div className="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg flex items-center gap-2">
-                        <GitBranch className="w-5 h-5 text-purple-500" />
-                        <div>
-                          <div className="text-xs text-gray-500 dark:text-gray-400">Forks</div>
-                          <div className="font-bold text-gray-900 dark:text-white">{currentProject.stats.forks}</div>
-                        </div>
-                      </div>
-                      <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg flex items-center gap-2">
-                        <Eye className="w-5 h-5 text-green-500" />
-                        <div>
-                          <div className="text-xs text-gray-500 dark:text-gray-400">Views</div>
-                          <div className="font-bold text-gray-900 dark:text-white">{currentProject.stats.views}</div>
-                        </div>
-                      </div>
-                      <div className="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-lg flex items-center gap-2">
-                        <Code className="w-5 h-5 text-orange-500" />
-                        <div>
-                          <div className="text-xs text-gray-500 dark:text-gray-400">Commits</div>
-                          <div className="font-bold text-gray-900 dark:text-white">{currentProject.stats.contributions}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>  
-                )}
-              </div>
             </div>
           </div>
         </div>

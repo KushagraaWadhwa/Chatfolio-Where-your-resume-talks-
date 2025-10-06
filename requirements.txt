@@ -1,4 +1,4 @@
-# backend/requirements.txt
+# Backend requirements
 fastapi>=0.110.0
 uvicorn>=0.29.0
 chromadb>=0.4.24
@@ -8,21 +8,19 @@ langchain>=0.2.0
 langchain-google-genai>=0.1.0
 python-multipart>=0.0.9
 requests>=2.32.0
-hnswlib>=0.7.0  
+hnswlib>=0.7.0
 pypika
 langchain-text-splitters>=0.2.0
 pdfplumber
-google-generativeai 
-chromadb 
-sentence-transformers 
 python-dotenv
 langchain-community
 langchain-chroma
 langchain-huggingface
-python-multipart==0.0.9
-openai 
-python-multipart 
+openai
 aiofiles
 reportlab
-fpd2
 PyPDF2==3.0.1
+whisper
+sqlalchemy>=2.0.0
+PyJWT>=2.8.0
+watchdog>=3.0.0

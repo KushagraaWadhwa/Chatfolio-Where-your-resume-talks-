@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: none;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
@@ -94,50 +94,60 @@
 }
 
 
-/* .bot-3d-container {
-  position: relative;
-  transition: all 0.5s ease;
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
 }
 
-.bot-3d-container canvas {
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
+/* Optimize animations for better performance */
+.gradient-text {
+  will-change: background-position;
+  transform: translateZ(0);
 }
 
-/* Create a subtle glow effect for the bot */
-/* .bot-3d-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 50%;
-  box-shadow: 0 0 20px 5px rgba(0, 200, 255, 0.4);
-  z-index: -1;
-  animation: glow-pulse 3s infinite alternate;
-} */
+.pulse {
+  will-change: box-shadow;
+  transform: translateZ(0);
+}
 
-/* @keyframes glow-pulse {
-  0% {
-    opacity: 0.4;
-    box-shadow: 0 0 10px 2px rgba(0, 200, 255, 0.2);
-  }
-  100% {
-    opacity: 0.8;
-    box-shadow: 0 0 25px 10px rgba(0, 200, 255, 0.5);
-  }
-} */
+/* Optimize scroll performance */
+.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
 
-/* Responsive adjustments for the 3D bot */
-/* @media (max-width: 768px) {
-  .bot-3d-container.header {
-    width: 120px !important;
-    height: 120px !important;
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
   
-  .bot-3d-container.sidebar {
-    width: 90px !important;
-    height: 90px !important;
+  .gradient-text {
+    animation: none !important;
   }
-}   */
+  
+  .pulse {
+    animation: none !important;
+  }
+}
+
+/* Hardware acceleration for smooth animations */
+.motion-div,
+[class*="motion-"] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Smooth transitions for theme changes */
+.dark {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from 'react';
+import React, { useContext, useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { ChatContext } from './ChatContext';
 import { Send, User, Bot, RefreshCw, Mic, MicOff, Loader, X, Check, Sparkles, MessageSquare } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
@@ -369,17 +369,17 @@ export default function Chat({ theme = 'light' }) {  // Accept theme as a prop w
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-0 left-0 w-full h-full">
-              {[...Array(10)].map((_, i) => (
+              {[...Array(5)].map((_, i) => (
                 <div 
                   key={i}
                   className="absolute rounded-full bg-white"
                   style={{
-                    width: `${Math.random() * 8 + 2}px`,
-                    height: `${Math.random() * 8 + 2}px`,
+                    width: `${Math.random() * 6 + 3}px`,
+                    height: `${Math.random() * 6 + 3}px`,
                     top: `${Math.random() * 100}%`,
                     left: `${Math.random() * 100}%`,
-                    opacity: Math.random() * 0.5 + 0.3,
-                    animation: `float ${Math.random() * 10 + 10}s linear infinite`
+                    opacity: Math.random() * 0.4 + 0.2,
+                    animation: `float ${Math.random() * 8 + 12}s linear infinite`
                   }}
                 />
               ))}
@@ -575,12 +575,12 @@ export default function Chat({ theme = 'light' }) {  // Accept theme as a prop w
               )}
             </motion.div>
             <motion.div
-              whileHover={{ y: -2 }}
-              className={`p-4 rounded-2xl max-w-[80%] relative ${
+              whileHover={{ y: -2, boxShadow: "0 8px 25px rgba(0,0,0,0.15)" }}
+              className={`p-5 rounded-2xl max-w-[85%] relative ${
                 message.role === 'user'
-                  ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-tr-none'
-                  : `${isDarkMode ? 'bg-gray-800' : 'bg-white'} ${isDarkMode ? 'text-gray-100' : 'text-gray-900'} rounded-tl-none border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`
-              } shadow-lg`}
+                  ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-tr-none'
+                  : `${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} ${isDarkMode ? 'text-gray-100' : 'text-gray-900'} rounded-tl-none border-2`
+              } shadow-xl transition-all duration-300`}
             >
               {/* Message tail */}
               <div 
@@ -597,25 +597,50 @@ export default function Chat({ theme = 'light' }) {  // Accept theme as a prop w
                 }`}
               ></div>
               
-              <div className="whitespace-pre-wrap relative z-10">
-                <ReactMarkdown className={`prose ${isDarkMode ? 'prose-invert' : 'prose-blue'} prose-sm max-w-none`}>
+              <div className="relative z-10">
+                <ReactMarkdown 
+                  className={`prose prose-base max-w-none ${
+                    isDarkMode ? 'prose-invert' : 'prose-slate'
+                  } ${
+                    message.role === 'user' 
+                      ? 'prose-headings:text-white prose-p:text-white prose-li:text-white prose-strong:text-blue-100' 
+                      : 'prose-headings:text-gray-900 dark:prose-headings:text-gray-100 prose-strong:text-indigo-600 dark:prose-strong:text-indigo-400'
+                  }`}
+                  components={{
+                    p: ({children}) => <p className="mb-3 leading-relaxed">{children}</p>,
+                    ul: ({children}) => <ul className="list-disc list-inside space-y-2 mb-4 ml-2">{children}</ul>,
+                    li: ({children}) => <li className="leading-relaxed">{children}</li>,
+                    strong: ({children}) => <strong className="font-semibold">{children}</strong>,
+                    h3: ({children}) => <h3 className="text-lg font-semibold mb-2 mt-4">{children}</h3>,
+                    h4: ({children}) => <h4 className="text-base font-medium mb-2 mt-3">{children}</h4>
+                  }}
+                >
                   {message.content}
                 </ReactMarkdown>
+                
                 {message.metadata?.sources && (
                   <motion.div 
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     transition={{ delay: 0.3 }}
-                    className={`mt-2 text-sm ${
-                      message.role === 'user' ? 'opacity-80' : 'opacity-80'
-                    } border-t pt-2 ${
-                      isDarkMode ? 'border-gray-600' : 'border-gray-200'
-                    }`}
+                    className={`mt-4 p-3 rounded-lg ${
+                      isDarkMode ? 'bg-gray-700/50 border-gray-600' : 'bg-indigo-50 border-indigo-200'
+                    } border`}
                   >
-                    <p className="font-semibold">Sources:</p>
-                    <ul className="list-disc list-inside">
+                    <p className={`font-semibold mb-2 text-sm flex items-center gap-2 ${
+                      isDarkMode ? 'text-gray-300' : 'text-indigo-800'
+                    }`}>
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      Verified Information Sources:
+                    </p>
+                    <ul className="space-y-1">
                       {message.metadata.sources.map((source, index) => (
-                        <li key={index}>{source}</li>
+                        <li key={index} className={`text-xs flex items-start gap-2 ${
+                          isDarkMode ? 'text-gray-400' : 'text-indigo-700'
+                        }`}>
+                          <span className="text-indigo-500 mt-1">▸</span>
+                          <span>{source}</span>
+                        </li>
                       ))}
                     </ul>
                   </motion.div>

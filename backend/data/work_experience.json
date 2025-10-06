@@ -1,64 +1,60 @@
 {
   "Work_Experience": [
     {
-      "Title": "AI Project Intern",
-      "Company": "Prodigal AI",
+      "Title": "Software Engineer",
+      "Company": "ShorthillsAI",
       "Location": "Remote",
-      "Start_Date": "September 2024",
-      "End_Date": "November 2024",
+      "Start_Date": "July 2025",
+      "End_Date": "Present",
       "Responsibilities": [
-        "Designed and developed an intelligent chatbot named 'Knowledge-AI' that uses LlamaIndex and Gemini embeddings to answer document-based queries with high accuracy (95%). This chatbot efficiently retrieves relevant information from large volumes of text data.",
-        "Enhanced the chatbot’s capability by implementing a scalable Retrieval-Augmented Generation (RAG) pipeline, ensuring that responses are contextually accurate and backed by reliable document references.",
-        "Optimized the chatbot's response time by improving document indexing mechanisms, allowing for faster and more precise retrieval of information from structured and unstructured datasets."
+        [
+          "Owned the complete product lifecycle of the \"HR Resume Assistant,\" an AI-powered bot deployed on Microsoft Teams to streamline recruitment workflows for HR professionals.",
+          "Led the design of core features including AI-driven resume generation and semantic candidate search, and architected the user experience using Microsoft Teams Adaptive Cards to create an intuitive interface.",
+          "Spearheaded the development of the core Generative AI engine for a \"Real-Time Earnings Call Intelligence Platform,\" an internal tool for financial analysts.",
+          "Engineered features for real-time speaker identification, summarization of key financial segments, and automated alert generation, directly enabling fund managers to make faster, data-driven decisions.",
+          "Currently leading an automation initiative for the DataDog platform to generate enhanced analysis reports for a key client, aiming to provide deeper observability and actionable insights."
+        ]
       ],
-      "Technologies_Used": [
-        "LlamaIndex",
-        "Gemini Embeddings",
-        "Python",
-        "Natural Language Processing (NLP)",
-        "Retrieval-Augmented Generation (RAG)",
-        "Scalable Chatbot Architectures"
-      ]
+      "Technologies_Used": []
+    },
+    {
+      "Title": "Software Engineer Intern",
+      "Company": "ShorthillsAI",
+      "Location": "Remote",
+      "Start_Date": "Feb 2025",
+      "End_Date": "June 2025",
+      "Responsibilities": [
+        [
+          "Developed foundational automation workflows using Apache NiFi and n8n, which became the backend engine for the HR Resume Assistant Bot, proving the business case for the full product."
+        ]
+      ],
+      "Technologies_Used": []
+    },
+    {
+      "Title": "AI Project Intern",
+      "Company": "ProdigalAI",
+      "Location": "Remote",
+      "Start_Date": "Sep 2024",
+      "End_Date": "Nov 2024",
+      "Responsibilities": [
+        [
+          "Addressed user pain points in accessing information from unstructured documents by developing a domain-specific chatbot; owned the project from conception, utilizing LlamaIndex and Gemini within a RAG pipeline to improve query retrieval accuracy."
+        ]
+      ],
+      "Technologies_Used": []
     },
     {
       "Title": "Data Scientist Intern",
       "Company": "Deutsche Telekom Digital Labs",
-      "Location": "Gurugram, Haryana",
-      "Start_Date": "June 2024",
-      "End_Date": "August 2024",
+      "Location": "Remote",
+      "Start_Date": "Jun 2024",
+      "End_Date": "Aug 2024",
       "Responsibilities": [
-        "Developed an advanced document parser capable of extracting structured and unstructured content from HR policy documents with 93% accuracy. This included parsing tables, images, and text sections to improve document accessibility and analysis.",
-        "Created a real-time PDF analysis dashboard that displayed key document insights such as total page count, word distribution, and statistical corpus metrics. This helped streamline document review and increased efficiency by 30%.",
-        "Implemented NLP-based classification algorithms to automatically segment and extract crucial sections from HR compliance documents, ensuring that important policies could be easily located and referenced."
+        [
+          "Led the design of a non-LLM document parser to solve data extraction challenges, achieving over 95% coverage from complex HR forms and delivering a real-time analytics dashboard to stakeholders using Streamlit."
+        ]
       ],
-      "Technologies_Used": [
-        "Python",
-        "NLP",
-        "Document Parsing",
-        "PDF Processing",
-        "Dashboard Development",
-        "Data Visualization"
-      ]
-    },
-    {
-      "Title": "Python Developer Trainee",
-      "Company": "BDO in India",
-      "Location": "Noida, Uttar Pradesh, India",
-      "Start_Date": "August 2023",
-      "End_Date": "September 2023",
-      "Responsibilities": [
-        "Designed and implemented a machine learning algorithm to automatically solve complex CAPTCHA challenges, achieving a 96% success rate. This reduced the need for manual data entry and significantly improved efficiency in automated workflows.",
-        "Developed a robust PDF extraction tool capable of extracting structured data from various document formats with an accuracy rate exceeding 95%. This automation streamlined data retrieval for internal operations.",
-        "Enhanced the performance of OCR (Optical Character Recognition) systems by fine-tuning text extraction models, making them more effective at recognizing noisy and distorted alphanumeric characters in scanned documents."
-      ],
-      "Technologies_Used": [
-        "Python",
-        "OpenCV",
-        "Optical Character Recognition (OCR)",
-        "Machine Learning",
-        "PDF Processing",
-        "Automation"
-      ]
+      "Technologies_Used": []
     }
   ]
 }

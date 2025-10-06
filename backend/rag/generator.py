@@ -2,6 +2,10 @@ from langchain_google_genai import GoogleGenerativeAI
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 import os
+import google.generativeai as genai
+
+# Configure Google API Key
+genai.configure(api_key="AIzaSyAqpS1VgirLYhiAbHeJU53C99pQ-o_EH4M")
 
 # Load the vector database (Chroma)
 def load_vector_store(persist_directory = os.path.join("backend", "chroma_db")):
@@ -29,7 +33,7 @@ def generate_response(query):
 
     """
 
-    llm = GoogleGenerativeAI(model="gemini-2.0-flash")
+    llm = GoogleGenerativeAI(model="gemini-2.0-flash", google_api_key="AIzaSyAqpS1VgirLYhiAbHeJU53C99pQ-o_EH4M")
 
     retrieved_chunks = retrieve_documents(query, top_k=5)
     # print(f"Retrieved {len(retrieved_chunks)} chunks.")
@@ -40,32 +44,44 @@ def generate_response(query):
             "answer": "I do not have enough information to answer this question accurately.",
         }
 
-    # Format retrieved context for clarity
-    context_text = "\n\n".join([
-        f"Source: {chunk.metadata.get('source', 'Unknown')}\nContent: {chunk.page_content}" 
-        for chunk in retrieved_chunks
-    ])
+    # Format retrieved context for maximum clarity
+    context_text = ""
+    for i, chunk in enumerate(retrieved_chunks, 1):
+        source = chunk.metadata.get('source', 'Unknown')
+        section = chunk.metadata.get('section', 'General')
+        context_text += f"[CONTEXT {i}]\n"
+        context_text += f"Source: {source} | Section: {section}\n"
+        context_text += f"Content: {chunk.page_content}\n\n"
 
-    # Strict instruction prompt
+    # Professional interview-focused RAG prompt
     prompt = (
-        "You are a personal AI assistant for Kushagra, answering queries on his behalf. "
-        "Your responses must be strictly grounded in the retrieved context. "
-        "Each chunk of information belongs to a specific section. Use this section context to improve accuracy. "
-        "Do not generate or assume any information beyond what is explicitly provided. "
-        "If the context lacks relevant details, respond with: "
-        "'I do not have enough information to answer this question accurately.'\n\n"
-        "### User Query:\n"
-        f"{query}\n\n"
-        "### Retrieved Context:\n"
+        "You are Kushagra Wadhwa's professional portfolio assistant, designed for recruiters, HR professionals, and interviewers. "
+        "Provide precise, professional responses that help evaluate Kushagra's candidacy for technical roles.\n\n"
+        
+        "PROFESSIONAL RESPONSE GUIDELINES:\n"
+        "1. Use ONLY verified information from the retrieved context\n"
+        "2. Maintain professional, interview-appropriate tone\n"
+        "3. Highlight quantifiable achievements and measurable impact\n"
+        "4. Include specific technical competencies and tools\n"
+        "5. Mention relevant experience duration and progression\n"
+        "6. Focus on business value and problem-solving capabilities\n"
+        "7. Structure responses for easy scanning by busy professionals\n"
+        "8. If information is unavailable, state: 'This specific information is not available in Kushagra's portfolio'\n"
+        "9. Answer from third person perspective for professional context\n"
+        "10. Emphasize skills relevant to hiring decisions\n\n"
+        
+        "RESPONSE FORMAT FOR DIFFERENT QUERIES:\n"
+        "• Work Experience: Role → Company → Duration → Key Achievements → Technologies → Impact\n"
+        "• Projects: Project Name → Technologies → Problem Solved → Measurable Results → Business Value\n"
+        "• Skills: Technical Stack → Proficiency Level → Real-world Applications → Project Examples\n"
+        "• Education: Degree → Institution → Relevant Coursework → Academic Performance\n\n"
+        
+        f"RECRUITER QUERY: {query}\n\n"
+        
+        "CANDIDATE INFORMATION:\n"
         f"{context_text}\n\n"
-        "### Response Guidelines:\n"
-        "- Provide an answer only using the retrieved context.\n"
-        "- If no relevant information is found, explicitly state it.\n"
-        "- Keep the response factual and professional.\n"
-        "- Do not generate or assume any information beyond what is explicitly provided.\n"
-        "- Give detailed answer when asked for specific details.\n"
-        "- Answer from Kushagra's perspective or third person, as and when required as per the user's way of asking questions.\n\n"
-        "**Answer:**"
+        
+        "PROFESSIONAL ASSESSMENT:"
     )
 
     # Get response from LLM

@@ -61,7 +61,7 @@ def save_json(data, output_path):
     print(f"Resume data saved to {output_path}")
 
 if __name__ == "__main__":
-    pdf_path = "backend/data/KushagraWadhwa_Resume.pdf"  # Replace with your resume PDF
+    pdf_path = "backend/data/KushagraWadhwa_Resume.pdf"  # Path to your resume PDF
     output_path = "backend/data/parsed_resume.json"
     
     print("Extracting text from PDF...")

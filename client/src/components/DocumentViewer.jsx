@@ -2,16 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FileText, Download, ExternalLink, ChevronLeft, ChevronRight, 
-  ZoomIn, ZoomOut, X, Award, Briefcase, GraduationCap
+  ZoomIn, ZoomOut, X, Award, Briefcase, GraduationCap, AlertCircle, RefreshCw
 } from 'lucide-react';
+import documentService from '../services/documentService';
 
-export default function DocumentViewer({ documents }) {
-  const [selectedDoc, setSelectedDoc] = useState(documents[0]);
+export default function DocumentViewer({ documents: initialDocuments = [] }) {
+  const [documents, setDocuments] = useState(initialDocuments);
+  const [selectedDoc, setSelectedDoc] = useState(null);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [zoom, setZoom] = useState(100);
   const [isLoading, setIsLoading] = useState(true);
   const [showSidebar, setShowSidebar] = useState(true);
+  const [error, setError] = useState(null);
+  const [loadingDocuments, setLoadingDocuments] = useState(false);
+
+  // Load documents from API on component mount
+  useEffect(() => {
+    loadDocuments();
+  }, []);
 
   // Reset loading state when document changes
   useEffect(() => {
@@ -21,10 +30,41 @@ export default function DocumentViewer({ documents }) {
     return () => clearTimeout(timer);
   }, [selectedDoc]);
 
+  const loadDocuments = async () => {
+    setLoadingDocuments(true);
+    setError(null);
+    try {
+      const docs = await documentService.getDocuments();
+      setDocuments(docs);
+      if (docs.length > 0 && !selectedDoc) {
+        setSelectedDoc(docs[0]);
+      }
+    } catch (err) {
+      console.error('Failed to load documents:', err);
+      setError('Failed to load documents. Please try again.');
+      // Fallback to initial documents if API fails
+      if (initialDocuments.length > 0) {
+        setDocuments(initialDocuments);
+        setSelectedDoc(initialDocuments[0]);
+      }
+    } finally {
+      setLoadingDocuments(false);
+    }
+  };
+
   const handleSelectDoc = (doc) => {
     setSelectedDoc(doc);
     setPage(1);
     setZoom(100);
+  };
+
+  const handleDownload = async (doc) => {
+    try {
+      await documentService.downloadDocument(doc.id);
+    } catch (err) {
+      console.error('Download failed:', err);
+      setError('Failed to download document. Please try again.');
+    }
   };
 
   const handleNextPage = () => {
@@ -73,7 +113,30 @@ export default function DocumentViewer({ documents }) {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="col-span-12 md:col-span-3 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-lg shadow-lg p-4 space-y-4 border border-gray-200 dark:border-gray-700 overflow-y-auto max-h-full"
           >
-            <h3 className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-500">Documents Library</h3>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-500">Documents Library</h3>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={loadDocuments}
+                disabled={loadingDocuments}
+                className="p-2 rounded-lg bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 transition-colors disabled:opacity-50"
+                title="Refresh documents"
+              >
+                <RefreshCw className={`w-4 h-4 text-blue-600 dark:text-blue-400 ${loadingDocuments ? 'animate-spin' : ''}`} />
+              </motion.button>
+            </div>
+
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg flex items-center gap-2"
+              >
+                <AlertCircle className="w-4 h-4 text-red-500" />
+                <span className="text-sm text-red-700 dark:text-red-300">{error}</span>
+              </motion.div>
+            )}
             
             <div className="grid grid-cols-1 gap-3">
               {documents.map((doc) => (
@@ -168,7 +231,7 @@ export default function DocumentViewer({ documents }) {
                 </div>
                 
                 <a
-                  href={selectedDoc.url}
+                  href={selectedDoc.downloadUrl || selectedDoc.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
@@ -176,14 +239,13 @@ export default function DocumentViewer({ documents }) {
                 >
                   <ExternalLink className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                 </a>
-                <a
-                  href={selectedDoc.url}
-                  download
+                <button
+                  onClick={() => handleDownload(selectedDoc)}
                   className="p-2 rounded-lg bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white transition-colors"
                   title="Download document"
                 >
                   <Download className="w-5 h-5" />
-                </a>
+                </button>
               </div>
             </div>
             

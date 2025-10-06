@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Request, UploadFile, File
+from fastapi import FastAPI, HTTPException, Request, UploadFile, File, Depends, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, FileResponse
 from pydantic import BaseModel
@@ -8,7 +8,15 @@ from backend.rag.embedding_store import create_vector_store
 from backend.rag.generator import generate_response, load_vector_store
 from backend.rag.github_stats import get_github_stats
 from backend.rag.resume_tailoring import detect_resume_command, tailor_resume  # Add this import
-from typing import Optional
+from backend.rag.auto_update import start_auto_update, stop_auto_update
+from backend.models import Document, create_tables, get_db
+from backend.document_service import DocumentService
+from backend.security import (
+    check_rate_limit, sanitize_filename, validate_file_type, 
+    validate_file_size, authenticate_admin, create_access_token
+)
+from sqlalchemy.orm import Session
+from typing import Optional, List
 import logging
 import whisper
 import tempfile
@@ -32,6 +40,8 @@ app.add_middleware(
 vector_store = None
 # Global Whisper model reference
 whisper_model = None
+# Global document service
+document_service = DocumentService()
 
 class ChatRequest(BaseModel):
     message: str
@@ -47,10 +57,22 @@ class TranscriptionResponse(BaseModel):
 
 @app.on_event("startup")
 async def startup_event():
-    """Initialize vector store and Whisper model on startup"""
+    """Initialize vector store, Whisper model, and database on startup"""
     global vector_store, whisper_model
     
     try:
+        # Create database tables
+        create_tables()
+        logger.info("Database tables created/verified")
+        
+        # Migrate existing documents to database
+        db = next(get_db())
+        try:
+            document_service.migrate_existing_documents(db)
+            logger.info("Document migration completed")
+        finally:
+            db.close()
+        
         # Use Path for cross-platform compatibility
         json_directory = Path("backend/data")
         persist_directory = Path("backend/chroma_db")
@@ -74,6 +96,11 @@ async def startup_event():
         whisper_model = whisper.load_model("base")
         logger.info("Whisper model loaded successfully")
         
+        # Start auto-update monitoring for data changes
+        logger.info("Starting auto-update system...")
+        start_auto_update()
+        logger.info("🔄 Auto-update system started - embeddings will regenerate when data changes!")
+        
     except Exception as e:
         logger.error(f"Failed to initialize services: {str(e)}")
         raise RuntimeError(f"Failed to initialize services: {str(e)}")
@@ -82,6 +109,11 @@ async def startup_event():
 async def shutdown_event():
     """Cleanup resources on shutdown"""
     global vector_store, whisper_model
+    
+    # Stop auto-update monitoring
+    logger.info("Stopping auto-update system...")
+    stop_auto_update()
+    
     if vector_store:
         try:
             vector_store = None
@@ -100,9 +132,16 @@ async def global_exception_handler(request: Request, exc: Exception):
     )
 
 @app.post("/chat", response_model=ChatResponse)
-async def chat_endpoint(request: ChatRequest):
+async def chat_endpoint(request: ChatRequest, http_request: Request):
     """Handle chat requests"""
     try:
+        # Rate limiting
+        client_ip = http_request.client.host
+        if not check_rate_limit(client_ip, "chat", max_requests=50, window_minutes=60):
+            raise HTTPException(
+                status_code=429, 
+                detail="Too many requests. Please try again later."
+            )
         query = request.message.strip()
         
         # Handle greetings
@@ -245,6 +284,161 @@ def download_resume(file_path: str):
         raise HTTPException(status_code=403, detail="Invalid file path")
     return FileResponse(path=file_path, filename=file_path.split("/")[-1], media_type='application/pdf')
 
+# Document Management Endpoints
+@app.get("/documents/", response_model=List[dict])
+async def get_documents(
+    category: Optional[str] = None,
+    db: Session = Depends(get_db)
+):
+    """Get all documents, optionally filtered by category"""
+    documents = document_service.get_documents(db, category=category, public_only=True)
+    return [doc.to_dict() for doc in documents]
+
+@app.get("/documents/{document_id}")
+async def get_document(
+    document_id: int,
+    db: Session = Depends(get_db)
+):
+    """Get a specific document by ID"""
+    document = document_service.get_document_by_id(db, document_id)
+    if not document:
+        raise HTTPException(status_code=404, detail="Document not found")
+    return document.to_dict()
+
+@app.get("/documents/{document_id}/view")
+async def view_document(
+    document_id: int,
+    db: Session = Depends(get_db)
+):
+    """View a document file in browser (for iframe embedding)"""
+    document = document_service.get_document_by_id(db, document_id)
+    if not document:
+        raise HTTPException(status_code=404, detail="Document not found")
+    
+    if not document.is_public:
+        raise HTTPException(status_code=403, detail="Document is not public")
+    
+    if not os.path.exists(document.file_path):
+        raise HTTPException(status_code=404, detail="File not found on disk")
+    
+    # Serve file for viewing without download headers
+    return FileResponse(
+        path=document.file_path,
+        media_type="application/pdf" if document.file_type == "pdf" else "application/octet-stream",
+        headers={"Content-Disposition": "inline"}  # Display in browser instead of download
+    )
+
+@app.get("/documents/{document_id}/download")
+async def download_document(
+    document_id: int,
+    db: Session = Depends(get_db)
+):
+    """Download a document file"""
+    document = document_service.get_document_by_id(db, document_id)
+    if not document:
+        raise HTTPException(status_code=404, detail="Document not found")
+    
+    if not document.is_public:
+        raise HTTPException(status_code=403, detail="Document is not public")
+    
+    if not os.path.exists(document.file_path):
+        raise HTTPException(status_code=404, detail="File not found on disk")
+    
+    # Increment download count
+    document_service.increment_download_count(db, document_id)
+    
+    return FileResponse(
+        path=document.file_path,
+        filename=document.filename,
+        media_type="application/pdf" if document.file_type == "pdf" else "application/octet-stream"
+    )
+
+@app.post("/documents/upload")
+async def upload_document(
+    file: UploadFile = File(...),
+    title: str = Form(...),
+    description: str = Form(""),
+    category: str = Form("others"),
+    db: Session = Depends(get_db),
+    http_request: Request = None
+):
+    """Upload a new document"""
+    # Rate limiting
+    client_ip = http_request.client.host
+    if not check_rate_limit(client_ip, "upload", max_requests=10, window_minutes=60):
+        raise HTTPException(
+            status_code=429, 
+            detail="Too many upload requests. Please try again later."
+        )
+    
+    # Sanitize filename
+    if not file.filename:
+        raise HTTPException(status_code=400, detail="No filename provided")
+    
+    sanitized_filename = sanitize_filename(file.filename)
+    
+    # Validate file type
+    allowed_extensions = [".pdf", ".doc", ".docx", ".txt"]
+    if not validate_file_type(sanitized_filename, allowed_extensions):
+        raise HTTPException(
+            status_code=400, 
+            detail=f"File type not allowed. Allowed types: {', '.join(allowed_extensions)}"
+        )
+    
+    # Validate file size (10MB limit)
+    content = await file.read()
+    file_size = len(content)
+    file.file.seek(0)  # Reset file pointer
+    
+    if not validate_file_size(file_size, max_size_mb=10):
+        raise HTTPException(status_code=400, detail="File size too large. Maximum 10MB allowed.")
+    
+    # Validate title length
+    if len(title) > 255:
+        raise HTTPException(status_code=400, detail="Title too long. Maximum 255 characters allowed.")
+    
+    # Validate category
+    allowed_categories = ["resumes", "certificates", "others"]
+    if category not in allowed_categories:
+        raise HTTPException(
+            status_code=400, 
+            detail=f"Invalid category. Allowed categories: {', '.join(allowed_categories)}"
+        )
+    
+    try:
+        document = document_service.create_document(db, file, title, description, category)
+        return document.to_dict()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to upload document: {str(e)}")
+
+@app.put("/documents/{document_id}")
+async def update_document(
+    document_id: int,
+    title: Optional[str] = Form(None),
+    description: Optional[str] = Form(None),
+    category: Optional[str] = Form(None),
+    is_public: Optional[bool] = Form(None),
+    db: Session = Depends(get_db)
+):
+    """Update document metadata"""
+    document = document_service.update_document(
+        db, document_id, title, description, category, is_public
+    )
+    if not document:
+        raise HTTPException(status_code=404, detail="Document not found")
+    return document.to_dict()
+
+@app.delete("/documents/{document_id}")
+async def delete_document(
+    document_id: int,
+    db: Session = Depends(get_db)
+):
+    """Delete a document"""
+    success = document_service.delete_document(db, document_id)
+    if not success:
+        raise HTTPException(status_code=404, detail="Document not found")
+    return {"message": "Document deleted successfully"}
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8001)
