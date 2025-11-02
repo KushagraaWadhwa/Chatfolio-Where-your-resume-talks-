@@ -5,8 +5,8 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import os
 from pathlib import Path
-from backend.rag.embedding_store import create_vector_store
-from backend.rag.generator import generate_response, load_vector_store
+from backend.rag.pinecone_store import create_pinecone_embeddings, get_pinecone_index
+from backend.rag.generator import generate_response
 from backend.rag.github_stats import get_github_stats
 from backend.rag.resume_tailoring import detect_resume_command, tailor_resume  # Add this import
 from backend.rag.auto_update import start_auto_update, stop_auto_update
@@ -54,8 +54,8 @@ if client_dist_path.exists():
     app.mount("/assets", StaticFiles(directory=str(client_dist_path / "assets")), name="assets")
     logger.info("Static files mounted from client/dist")
 
-# Global vector store reference
-vector_store = None
+# Global Pinecone index reference
+pinecone_index = None
 # Global Whisper model reference
 whisper_model = None
 # Global document service
@@ -75,8 +75,8 @@ class TranscriptionResponse(BaseModel):
 
 @app.on_event("startup")
 async def startup_event():
-    """Initialize vector store, Whisper model, and database on startup"""
-    global vector_store, whisper_model
+    """Initialize Pinecone index, Whisper model, and database on startup"""
+    global pinecone_index, whisper_model
     
     try:
         # Create database tables
@@ -91,23 +91,23 @@ async def startup_event():
         finally:
             db.close()
         
-        # Use Path for cross-platform compatibility
-        json_directory = Path("backend/data")
-        persist_directory = Path("backend/chroma_db")
-
-        if not persist_directory.exists() or not any(persist_directory.iterdir()):
-            logger.info("Creating new vector store...")
-            create_vector_store(
+        # Initialize Pinecone
+        logger.info("Initializing Pinecone vector store...")
+        pinecone_index = get_pinecone_index()
+        
+        # Check if we need to create embeddings
+        stats = pinecone_index.describe_index_stats()
+        if stats['total_vector_count'] == 0:
+            logger.info("No embeddings found. Creating new embeddings...")
+            json_directory = Path("backend/data")
+            create_pinecone_embeddings(
                 json_directory=str(json_directory),
                 chunk_size=512,
-                overlap=120,
-                persist_directory=str(persist_directory)
+                overlap=120
             )
-            logger.info("Vector store created successfully")
-        
-        # Load vector store
-        vector_store = load_vector_store()
-        logger.info("Vector store loaded successfully")
+            logger.info("✅ Pinecone embeddings created successfully")
+        else:
+            logger.info(f"✅ Pinecone index loaded with {stats['total_vector_count']} vectors")
 
         # Load Whisper model only if ENABLE_WHISPER env var is set
         if os.getenv("ENABLE_WHISPER", "false").lower() == "true":
@@ -130,16 +130,16 @@ async def startup_event():
 @app.on_event("shutdown")
 async def shutdown_event():
     """Cleanup resources on shutdown"""
-    global vector_store, whisper_model
+    global pinecone_index, whisper_model
     
     # Stop auto-update monitoring
     logger.info("Stopping auto-update system...")
     stop_auto_update()
     
-    if vector_store:
+    if pinecone_index:
         try:
-            vector_store = None
-            logger.info("Vector store cleaned up successfully")
+            pinecone_index = None
+            logger.info("Pinecone index cleaned up successfully")
         except Exception as e:
             logger.error(f"Error during cleanup: {str(e)}")
     whisper_model = None
@@ -175,7 +175,7 @@ async def chat_endpoint(request: ChatRequest, http_request: Request):
         is_resume_request, job_description = detect_resume_command(query)
         if is_resume_request:
             try:
-                result = tailor_resume(job_description, vector_store)
+                result = tailor_resume(job_description, pinecone_index)
                 # Pass either the full path or just the filename, depending on your frontend needs
                 return ChatResponse(
                     response=result["answer"],
@@ -204,11 +204,11 @@ async def chat_endpoint(request: ChatRequest, http_request: Request):
                     detail="Failed to fetch GitHub statistics. Please try again later."
                 )
         
-        # Handle general queries using RAG
-        if not vector_store:
+        # Handle general queries using RAG with Pinecone
+        if not pinecone_index:
             raise HTTPException(
                 status_code=503,
-                detail="Vector store is not initialized. Please try again later."
+                detail="Pinecone vector store is not initialized. Please try again later."
             )
             
         response = generate_response(query)
@@ -274,10 +274,10 @@ async def transcribe_audio(file: UploadFile = File(...)):
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
-    global vector_store, whisper_model
+    global pinecone_index, whisper_model
     return {
         "status": "healthy",
-        "vector_store_initialized": vector_store is not None,
+        "pinecone_initialized": pinecone_index is not None,
         "whisper_model_initialized": whisper_model is not None
     }
 

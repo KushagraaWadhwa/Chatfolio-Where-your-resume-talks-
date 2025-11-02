@@ -4,9 +4,19 @@
       "Degree": "Bachelor",
       "Field": "of Technology in Artificial Intelligence and Machine Learning",
       "Institution": "Guru Gobind Singh Indraprastha University, New Delhi",
-      "Status": "Pursuing",
-      "Expected_Completion": "September 2025",
-      "Coursework": []
+      "Status": "Graduated",
+      "Coursework": [
+        "Python",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Natural Language Processing (NLP)",
+        "Data Warehousing",
+        "Statistics",
+        "Artificial Neural Networks (ANN)",
+        "Business Intelligence",
+        "Database Management Systems (DBMS)",
+        "Operating Systems"
+      ]
     }
   ]
 }

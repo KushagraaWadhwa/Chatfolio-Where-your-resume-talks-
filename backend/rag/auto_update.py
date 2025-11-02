@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-from .embedding_store import create_vector_store
+from .pinecone_store import create_pinecone_embeddings, clear_pinecone_index
 import logging
 
 logger = logging.getLogger(__name__)
@@ -12,9 +12,8 @@ logger = logging.getLogger(__name__)
 class DataUpdateHandler(FileSystemEventHandler):
     """Handler for monitoring changes in the data directory"""
     
-    def __init__(self, json_directory, persist_directory):
+    def __init__(self, json_directory):
         self.json_directory = json_directory
-        self.persist_directory = persist_directory
         self.last_update = time.time()
         self.update_delay = 2  # Wait 2 seconds before updating to batch multiple changes
         
@@ -57,45 +56,42 @@ class DataUpdateHandler(FileSystemEventHandler):
         timer.start()
     
     def _update_embeddings(self):
-        """Regenerate embeddings if enough time has passed"""
+        """Regenerate embeddings in Pinecone if enough time has passed"""
         if time.time() - self.last_update < self.update_delay:
             return  # Another change happened, skip this update
             
         try:
-            logger.info("🔄 Regenerating embeddings due to data changes...")
+            logger.info("🔄 Regenerating Pinecone embeddings due to data changes...")
             
-            # Remove old vector store
-            if os.path.exists(self.persist_directory):
-                import shutil
-                shutil.rmtree(self.persist_directory)
-                logger.info("🗑️ Removed old vector store")
+            # Clear old embeddings from Pinecone
+            logger.info("🗑️ Clearing old embeddings from Pinecone...")
+            clear_pinecone_index()
             
-            # Create new vector store
-            create_vector_store(
+            # Create new embeddings
+            logger.info("🌲 Creating new embeddings...")
+            create_pinecone_embeddings(
                 json_directory=self.json_directory,
                 chunk_size=512,
-                overlap=120,
-                persist_directory=self.persist_directory
+                overlap=120
             )
             
-            logger.info("✅ Embeddings successfully regenerated!")
+            logger.info("✅ Pinecone embeddings successfully regenerated!")
             
         except Exception as e:
-            logger.error(f"❌ Error regenerating embeddings: {str(e)}")
+            logger.error(f"❌ Error regenerating Pinecone embeddings: {str(e)}")
 
 class AutoUpdateVectorStore:
     """Main class for automatic vector store updates"""
     
-    def __init__(self, json_directory="backend/data", persist_directory="backend/chroma_db"):
+    def __init__(self, json_directory="backend/data"):
         self.json_directory = json_directory
-        self.persist_directory = persist_directory
         self.observer = None
         self.handler = None
     
     def start_monitoring(self):
         """Start monitoring the data directory for changes"""
         try:
-            self.handler = DataUpdateHandler(self.json_directory, self.persist_directory)
+            self.handler = DataUpdateHandler(self.json_directory)
             self.observer = Observer()
             
             # Watch the data directory

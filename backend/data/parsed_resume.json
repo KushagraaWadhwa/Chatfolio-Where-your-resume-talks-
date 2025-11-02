@@ -11,7 +11,8 @@
     {
       "Degree": "Bachelor of Technology in Artificial Intelligence and Machine Learning",
       "University": "Guru Gobind Singh Indraprastha University, New Delhi",
-      "Year": "2021\u20132025"
+      "Year": "2021\u20132025",
+      "CGPA": "8.4"
     }
   ],
   "Skills": [
@@ -21,13 +22,13 @@
     "RAG Pipelines",
     "Hugging Face",
     "OpenAI API",
-    "Semantic Search",
-    "Summarization",
+    "MCP",
+    "NLP",
+    "Machine Learning",
     "FastAPI",
     "Flask",
     "REST APIs",
     "Microsoft Teams Bot Framework",
-    "WebSockets",
     "SQL",
     "MongoDB",
     "Pinecone",
@@ -42,7 +43,7 @@
       "Role": "Software Engineer",
       "Duration": "July 2025 \u2013 Present",
       "Responsibilities": [
-        "Owned the complete product lifecycle of the \"HR Resume Assistant,\" an AI-powered bot deployed on Microsoft Teams to streamline recruitment workflows for HR professionals.",
+        "Owned the complete product lifecycle of the \"HR Resume Assistant\" an AI-powered bot deployed on Microsoft Teams to streamline recruitment workflows for HR professionals.",
         "Led the design of core features including AI-driven resume generation and semantic candidate search, and architected the user experience using Microsoft Teams Adaptive Cards to create an intuitive interface.",
         "Spearheaded the development of the core Generative AI engine for a \"Real-Time Earnings Call Intelligence Platform,\" an internal tool for financial analysts.",
         "Engineered features for real-time speaker identification, summarization of key financial segments, and automated alert generation, directly enabling fund managers to make faster, data-driven decisions.",
@@ -62,7 +63,7 @@
       "Role": "AI Project Intern",
       "Duration": "Sep 2024 \u2013 Nov 2024",
       "Responsibilities": [
-        "Addressed user pain points in accessing information from unstructured documents by developing a domain-specific chatbot; owned the project from conception, utilizing LlamaIndex and Gemini within a RAG pipeline to improve query retrieval accuracy."
+        "Developed a RAG based chatbot for helping users get effective relevant answers from their unstructured documents"
       ]
     },
     {

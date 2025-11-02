@@ -1,7 +1,8 @@
 import pdfplumber
 import json
-import google.generativeai as genai
 import os
+import sys
+import google.generativeai as genai
 from dotenv import load_dotenv
 import regex as re
 
@@ -61,10 +62,18 @@ def save_json(data, output_path):
     print(f"Resume data saved to {output_path}")
 
 if __name__ == "__main__":
-    pdf_path = "backend/data/KushagraWadhwa_Resume.pdf"  # Path to your resume PDF
-    output_path = "backend/data/parsed_resume.json"
+    # Get the directory where this script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    pdf_path = os.path.join(script_dir, "KushagraWadhwa_Resume.pdf")
+    output_path = os.path.join(script_dir, "parsed_resume.json")
     
     print("Extracting text from PDF...")
+    print(f"Looking for PDF at: {pdf_path}")
+    
+    if not os.path.exists(pdf_path):
+        print(f"❌ Error: PDF not found at {pdf_path}")
+        sys.exit(1)
+    
     resume_text,links = extract_pdf(pdf_path)
     
     if resume_text:

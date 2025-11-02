@@ -1,9 +1,8 @@
 from langchain_google_genai import GoogleGenerativeAI
-from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
 import os
 import google.generativeai as genai
 from dotenv import load_dotenv
+from .pinecone_store import retrieve_from_pinecone
 
 # Load environment variables
 load_dotenv()
@@ -15,23 +14,17 @@ if not GEMINI_API_KEY:
 
 genai.configure(api_key=GEMINI_API_KEY)
 
-# Load the vector database (Chroma)
-def load_vector_store(persist_directory = os.path.join("backend", "chroma_db")):
-    embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-    vector_store = Chroma(persist_directory=persist_directory, embedding_function=embedding_model)
-    return vector_store
-
-# Retrieve relevant documents based on vector similarity
-def retrieve_documents(query, top_k):
-    vector_store = load_vector_store()
-    print(f"🧠 Loaded vector store with {vector_store._collection.count()} documents")
-    retriever = vector_store.as_retriever(search_kwargs={"k": top_k})
-    docs = retriever.invoke(query)
-    # print(f"Retrieved {len(docs)} chunks.")
-    print(f"\n🔍 Retrieved {len(docs)} chunks:")
+# Retrieve relevant documents from Pinecone
+def retrieve_documents(query, top_k=5):
+    """Retrieve documents using Pinecone vector store"""
+    docs = retrieve_from_pinecone(query, top_k=top_k)
+    
+    print(f"\n🔍 Retrieved {len(docs)} chunks from Pinecone:")
     for doc in docs:
-        print("Retrieved Doc:", doc.page_content, "Metadata:", doc.metadata)
-
+        print(f"  • Section: {doc.metadata.get('section', 'unknown')}")
+        print(f"    Score: {doc.metadata.get('score', 0):.3f}")
+        print(f"    Preview: {doc.page_content[:100]}...")
+    
     return docs
 
 def generate_response(query):
