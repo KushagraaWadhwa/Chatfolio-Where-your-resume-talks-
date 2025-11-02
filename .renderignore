@@ -1,0 +1,13 @@
+client/node_modules
+client/dist
+venv
+*.pyc
+__pycache__
+.env.local
+.DS_Store
+*.log
+.git
+.gitignore
+docs/
+README.md
+

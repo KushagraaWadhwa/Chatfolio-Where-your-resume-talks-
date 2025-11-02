@@ -36,7 +36,10 @@ frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
 allowed_origins = [
     frontend_url,
     "http://localhost:5173",
-    "https://kushagrawadhwa.vercel.app/",  # Replace with your actual Vercel domain
+    "http://localhost:8083",
+    "https://kushagrawadhwa.vercel.app",
+    "https://kushagrawadhwa.vercel.app/",
+    "https://*.vercel.app",  # Allow all Vercel preview deployments
     # Add more domains if needed
 ]
 

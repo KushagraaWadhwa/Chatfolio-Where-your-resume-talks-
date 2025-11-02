@@ -1,35 +1,11 @@
-3:49:44 PM [vite] Internal server error: [postcss] /Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/src/index.css:1:1: The `border-border` class does not exist. If `border-border` is a custom class, make sure it is defined within a `@layer` directive.
-  Plugin: vite:css
-  File: /Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/src/index.css:1:0
-  1  |  @tailwind base;
-     |  ^
-  2  |  @tailwind components;
-  3  |  @tailwind utilities;
-      at Input.error (/Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/node_modules/postcss/lib/input.js:113:16)
-      at AtRule.error (/Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/node_modules/postcss/lib/node.js:149:32)
-      at processApply (/Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:380:29)
-      at /Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:551:9
-      at /Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/node_modules/tailwindcss/lib/processTailwindFeatures.js:55:50
-      at async plugins (/Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/node_modules/tailwindcss/lib/plugin.js:38:17)
-      at async LazyResult.runAsync (/Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/node_modules/postcss/lib/lazy-result.js:293:11)
-      at async compileCSS (file:///Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/node_modules/vite/dist/node/chunks/dep-Pj_jxEzN.js:49168:21)
-      at async TransformPluginContext.transform (file:///Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/node_modules/vite/dist/node/chunks/dep-Pj_jxEzN.js:48349:11)
-      at async EnvironmentPluginContainer.transform (file:///Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/node_modules/vite/dist/node/chunks/dep-Pj_jxEzN.js:47680:18)
-      at async loadAndTransform (file:///Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/node_modules/vite/dist/node/chunks/dep-Pj_jxEzN.js:41327:27)
-3:49:44 PM [vite] (client) Pre-transform error: [postcss] /Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/src/index.css:1:1: The `border-border` class does not exist. If `border-border` is a custom class, make sure it is defined within a `@layer` directive.
-  Plugin: vite:css
-  File: /Users/shtlpmac027/Documents/Chatfolio-Where-your-resume-talks-/client/src/index.css:1:0
-  1  |  @tailwind base;
-     |  ^
-  2  |  @tailwind components;
-  3  |  @tailwind utilities;services:
-  # Web Service (Backend + Frontend)
+services:
+  # Web Service (Backend API)
   - type: web
-    name: chatfolio
+    name: chatfolio-backend
     env: python
     region: oregon
     plan: free
-    buildCommand: "./build.sh"
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
     startCommand: "python render_start.py"
     healthCheckPath: /health
     envVars:
@@ -40,8 +16,10 @@
       - key: ENABLE_WHISPER
         value: false
       - key: FRONTEND_URL
-        generateValue: true
+        value: https://kushagrawadhwa.vercel.app
+      - key: PINECONE_API_KEY
         sync: false
+        # Add your Pinecone API key in Render dashboard
       - key: GOOGLE_API_KEY
         sync: false
         # Add your Google API key in Render dashboard
@@ -52,20 +30,3 @@
         sync: false
         # Add your GitHub username
     autoDeploy: true
-    
-  # Optional: Background Worker (if you need scheduled tasks)
-  # - type: worker
-  #   name: chatfolio-worker
-  #   env: python
-  #   buildCommand: "pip install -r requirements.txt"
-  #   startCommand: "python -m backend.rag.auto_update"
-  #   envVars:
-  #     - fromGroup: chatfolio-env-group
-
-# Optional: Database (PostgreSQL)
-# databases:
-#   - name: chatfolio-db
-#     databaseName: chatfolio
-#     user: chatfolio_user
-#     plan: free
-
