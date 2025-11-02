@@ -138,21 +138,21 @@ const WorkTimeline = () => {
   const currentExperience = allExperiences[activeIndex];
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-4">
+    <div className="w-full h-full flex flex-col">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-6"
+        className="text-center mb-4 flex-shrink-0"
       >
-        <h2 className="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <h2 className="text-2xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           Professional Journey
         </h2>
       </motion.div>
 
       {/* Enhanced Horizontal Timeline Navigation */}
-      <div className="mb-8">
+      <div className="mb-4 flex-shrink-0">
         <div className="relative max-w-6xl mx-auto flex items-center">
           {/* Left Arrow */}
           <button
@@ -223,25 +223,25 @@ const WorkTimeline = () => {
             className="relative"
           >
 
-            {/* Experience Card - Full Width */}
-            <div className="flex justify-center">
+            {/* Experience Card - Compact */}
+            <div className="flex justify-center flex-1 overflow-auto px-4">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className={`max-w-4xl w-full p-8 rounded-3xl ${currentExperience.bgColor} border ${currentExperience.borderColor} shadow-xl`}
+                className={`max-w-4xl w-full p-6 rounded-2xl ${currentExperience.bgColor} border ${currentExperience.borderColor} shadow-xl h-fit`}
               >
                 {/* Header with Icon */}
-                <div className="flex items-start justify-between mb-6">
+                <div className="flex items-start justify-between mb-4">
                   <div className="flex items-start gap-4">
                     <div className={`p-4 rounded-2xl bg-gradient-to-br ${currentExperience.color} text-white shadow-lg`}>
                       {currentExperience.icon}
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
                         {currentExperience.title}
                       </h3>
-                      <div className="flex items-center text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <div className="flex items-center text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
                         <Building2 className="w-5 h-5 mr-2" />
                         {currentExperience.company}
                       </div>
@@ -260,14 +260,14 @@ const WorkTimeline = () => {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   {/* Highlights */}
                   <div>
-                    <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center">
                       <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${currentExperience.color} mr-3`}></div>
                       Key Achievements
                     </h4>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2">
                       {currentExperience.highlights.map((highlight, idx) => (
                         <li key={idx} className="flex items-start">
                           <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${currentExperience.color} mt-2 mr-3 flex-shrink-0`}></div>

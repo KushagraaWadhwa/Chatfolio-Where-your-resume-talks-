@@ -41,12 +41,62 @@ export default function DocumentViewer({ documents: initialDocuments = [] }) {
       }
     } catch (err) {
       console.error('Failed to load documents:', err);
-      setError('Failed to load documents. Please try again.');
-      // Fallback to initial documents if API fails
-      if (initialDocuments.length > 0) {
-        setDocuments(initialDocuments);
-        setSelectedDoc(initialDocuments[0]);
+      
+      // Use fallback documents when API is not available
+      const fallbackDocs = [
+        {
+          id: '1',
+          title: 'Resume - Kushagra Wadhwa',
+          description: 'Professional resume showcasing experience and skills',
+          type: 'pdf',
+          url: '/documents/KushagraWadhwa_Resume.pdf',
+          category: 'resumes',
+          filename: 'KushagraWadhwa_Resume.pdf'
+        },
+        {
+          id: '2',
+          title: 'Data Science Diploma',
+          description: 'IIT Madras Data Science Diploma Certificate',
+          type: 'pdf',
+          url: '/documents/Diploma DS.pdf',
+          category: 'certificates',
+          filename: 'Diploma DS.pdf'
+        },
+        {
+          id: '3',
+          title: 'Programming Diploma',
+          description: 'IIT Madras Programming Diploma Certificate',
+          type: 'pdf',
+          url: '/documents/Diploma Prog.pdf',
+          category: 'certificates',
+          filename: 'Diploma Prog.pdf'
+        },
+        {
+          id: '4',
+          title: 'Foundation Certificate',
+          description: 'IIT Madras Foundation Certificate',
+          type: 'pdf',
+          url: '/documents/Foundation Cert.pdf',
+          category: 'certificates',
+          filename: 'Foundation Cert.pdf'
+        },
+        {
+          id: '5',
+          title: 'GATE Scorecard',
+          description: 'GATE examination scorecard',
+          type: 'pdf',
+          url: '/documents/Gate Scorecard.pdf',
+          category: 'certificates',
+          filename: 'Gate Scorecard.pdf'
+        }
+      ];
+      
+      setDocuments(fallbackDocs);
+      if (!selectedDoc) {
+        setSelectedDoc(fallbackDocs[0]);
       }
+      // Don't show error message, just use fallback silently
+      setError(null);
     } finally {
       setLoadingDocuments(false);
     }

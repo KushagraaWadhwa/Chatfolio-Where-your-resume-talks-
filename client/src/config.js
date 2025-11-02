@@ -14,7 +14,7 @@ const envApiUrl = import.meta.env.VITE_API_URL;
 // Configuration for different environments
 const config = {
   development: {
-    apiBaseUrl: envApiUrl || 'http://localhost:8001',
+    apiBaseUrl: envApiUrl || 'http://localhost:8083',
   },
   production: {
     // Your Render.com backend URL

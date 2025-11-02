@@ -3,9 +3,17 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 import os
 import google.generativeai as genai
+from dotenv import load_dotenv
 
-# Configure Google API Key
-genai.configure(api_key="AIzaSyAqpS1VgirLYhiAbHeJU53C99pQ-o_EH4M")
+# Load environment variables
+load_dotenv()
+
+# Configure Google API Key from environment variable
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if not GEMINI_API_KEY:
+    raise ValueError("GEMINI_API_KEY environment variable is not set")
+
+genai.configure(api_key=GEMINI_API_KEY)
 
 # Load the vector database (Chroma)
 def load_vector_store(persist_directory = os.path.join("backend", "chroma_db")):
@@ -33,7 +41,7 @@ def generate_response(query):
 
     """
 
-    llm = GoogleGenerativeAI(model="gemini-2.0-flash", google_api_key="AIzaSyAqpS1VgirLYhiAbHeJU53C99pQ-o_EH4M")
+    llm = GoogleGenerativeAI(model="gemini-2.0-flash-exp", google_api_key=GEMINI_API_KEY)
 
     retrieved_chunks = retrieve_documents(query, top_k=5)
     # print(f"Retrieved {len(retrieved_chunks)} chunks.")

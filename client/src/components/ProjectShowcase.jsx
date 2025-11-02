@@ -386,12 +386,12 @@ export default function ProjectShowcase() {
 
 
   return (
-    <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+    <div className="h-full py-4 px-4 overflow-auto">
       {/* Main container with left-right layout */}
-      <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+      <div className="flex flex-col lg:flex-row gap-4 max-w-7xl mx-auto">
         
         {/* Left side - Title and Navigation */}
-        <div className="lg:w-1/4 space-y-8 sticky top-8 self-start">
+        <div className="lg:w-1/4 space-y-4 flex-shrink-0">
           {/* Header with subtle animation */}
           <div className="opacity-0 animate-fadeInUp" style={{ animation: "fadeInUp 0.8s forwards" }}>
             <h1 className="text-3xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-3">
@@ -460,12 +460,12 @@ export default function ProjectShowcase() {
 
           {/* Enhanced project showcase with animations and interactions */}
           <div 
-            className={`bg-white dark:bg-gray-900 rounded-xl shadow-xl p-6 border border-gray-200 dark:border-gray-700 transition-all duration-500 ${
+            className={`bg-white dark:bg-gray-900 rounded-xl shadow-xl p-4 border border-gray-200 dark:border-gray-700 transition-all duration-500 ${
               fadeIn ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
             } hover:shadow-2xl`}
           >
             {/* Image and stats grid layout with enhanced interactions */}
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-4">
               {/* Project image with enhanced overlay and interactions */}
               <div className="relative h-[350px] lg:col-span-3 overflow-hidden rounded-xl shadow-lg group">
                 <LazyImage
@@ -605,7 +605,7 @@ export default function ProjectShowcase() {
             </div>
 
             {/* Project details section with enhanced layout */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="md:col-span-2">
                 <h2 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
                   <span>{currentProject.title}</span>

@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException, Request, UploadFile, File, Depends, Form
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, FileResponse
+from fastapi.responses import JSONResponse, FileResponse, HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import os
 from pathlib import Path
@@ -46,6 +47,12 @@ app.add_middleware(
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
+
+# Serve static files from the built React app (for production)
+client_dist_path = Path("client/dist")
+if client_dist_path.exists():
+    app.mount("/assets", StaticFiles(directory=str(client_dist_path / "assets")), name="assets")
+    logger.info("Static files mounted from client/dist")
 
 # Global vector store reference
 vector_store = None
@@ -454,6 +461,33 @@ async def delete_document(
     if not success:
         raise HTTPException(status_code=404, detail="Document not found")
     return {"message": "Document deleted successfully"}
+
+# Catch-all route to serve React app for client-side routing (must be last)
+@app.get("/{full_path:path}")
+async def serve_react_app(full_path: str):
+    """Serve the React app for all non-API routes"""
+    # Don't serve React app for API routes
+    if full_path.startswith("api/") or full_path.startswith("documents/"):
+        raise HTTPException(status_code=404, detail="Not found")
+    
+    index_path = client_dist_path / "index.html"
+    if index_path.exists():
+        return FileResponse(index_path)
+    else:
+        # If frontend not built, return helpful message
+        return HTMLResponse(
+            content="""
+            <html>
+                <body>
+                    <h1>Frontend Not Built</h1>
+                    <p>The React frontend has not been built yet.</p>
+                    <p>Run <code>cd client && npm install && npm run build</code> to build it.</p>
+                    <p>API is running at <a href="/health">/health</a></p>
+                </body>
+            </html>
+            """,
+            status_code=200
+        )
 
 if __name__ == "__main__":
     import uvicorn
