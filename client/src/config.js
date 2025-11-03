@@ -17,8 +17,8 @@ const config = {
     apiBaseUrl: envApiUrl || 'http://localhost:8083',
   },
   production: {
-    // Your Render.com backend URL
-    apiBaseUrl: envApiUrl || 'https://chatfolio-where-your-resume-talks.onrender.com',
+    // Your Railway backend URL
+    apiBaseUrl: envApiUrl || 'https://web-production-e20d.up.railway.app',
   },
   // You can add more environments like 'staging' if needed
 };
