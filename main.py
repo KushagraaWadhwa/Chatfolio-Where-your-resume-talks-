@@ -19,8 +19,11 @@ from backend.security import (
 from sqlalchemy.orm import Session
 from typing import Optional, List
 import logging
-import whisper
 import tempfile
+
+# Conditionally import whisper only if enabled
+if os.getenv("ENABLE_WHISPER", "false").lower() == "true":
+    import whisper
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -243,7 +246,7 @@ async def transcribe_audio(file: UploadFile = File(...)):
             # Return a friendly message instead of an error when the service is disabled
             return TranscriptionResponse(
                 text="",
-                error="Speech transcription is currently disabled on this deployment. Please type your message instead."
+                error="🎤 Voice input coming soon! Currently disabled due to limited server resources. Please type your message instead."
             )
 
         # Create a temporary file to store the audio

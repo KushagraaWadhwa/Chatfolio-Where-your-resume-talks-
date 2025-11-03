@@ -263,7 +263,7 @@ export default function Chat({ theme = 'light' }) {  // Accept theme as a prop w
       console.error('Audio processing error:', error);
       setMessages(prev => [...prev, {
         id: Date.now().toString(),
-        content: `Sorry, I couldn't process the audio: ${error.message}. Please try again or type your message.`,
+        content: error.message.includes('🎤') ? error.message : `Sorry, I couldn't process the audio: ${error.message}. Please try again or type your message.`,
         role: 'assistant',
         timestamp: new Date()
       }]);
