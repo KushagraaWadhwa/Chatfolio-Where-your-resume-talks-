@@ -54,11 +54,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Serve static files from the built React app (for production)
-client_dist_path = Path("client/dist")
-if client_dist_path.exists():
-    app.mount("/assets", StaticFiles(directory=str(client_dist_path / "assets")), name="assets")
-    logger.info("Static files mounted from client/dist")
+# Backend API only - Frontend is deployed on Vercel
 
 # Global Pinecone index reference
 pinecone_index = None
@@ -468,32 +464,20 @@ async def delete_document(
         raise HTTPException(status_code=404, detail="Document not found")
     return {"message": "Document deleted successfully"}
 
-# Catch-all route to serve React app for client-side routing (must be last)
-@app.get("/{full_path:path}")
-async def serve_react_app(full_path: str):
-    """Serve the React app for all non-API routes"""
-    # Don't serve React app for API routes
-    if full_path.startswith("api/") or full_path.startswith("documents/"):
-        raise HTTPException(status_code=404, detail="Not found")
-    
-    index_path = client_dist_path / "index.html"
-    if index_path.exists():
-        return FileResponse(index_path)
-    else:
-        # If frontend not built, return helpful message
-        return HTMLResponse(
-            content="""
-            <html>
-                <body>
-                    <h1>Frontend Not Built</h1>
-                    <p>The React frontend has not been built yet.</p>
-                    <p>Run <code>cd client && npm install && npm run build</code> to build it.</p>
-                    <p>API is running at <a href="/health">/health</a></p>
-                </body>
-            </html>
-            """,
-            status_code=200
-        )
+@app.get("/")
+async def root():
+    """API root endpoint"""
+    return {
+        "message": "Chatfolio API",
+        "status": "running",
+        "endpoints": {
+            "health": "/health",
+            "docs": "/docs",
+            "chat": "/chat",
+            "documents": "/documents/"
+        },
+        "frontend": "Deployed separately on Vercel"
+    }
 
 if __name__ == "__main__":
     import uvicorn
