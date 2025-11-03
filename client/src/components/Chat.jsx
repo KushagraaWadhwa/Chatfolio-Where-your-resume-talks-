@@ -505,18 +505,11 @@ export default function Chat({ theme = 'light' }) {  // Accept theme as a prop w
                 className="mt-6 flex flex-col items-center"
               >
                 <p className={`text-sm mb-3 ${isDarkMode ? 'text-blue-400' : 'text-blue-500'} font-medium`}>
-                  Now with voice input capability!
+                  🎤 Voice input coming soon!
                 </p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={startRecording}
-                  disabled={isRecording}
-                  className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:shadow-lg transition-all"
-                >
-                  <Mic className="w-4 h-4" />
-                  <span>Try Voice Input</span>
-                </motion.button>
+                <p className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                  Currently disabled due to limited server resources
+                </p>
               </motion.div>
               
               {/* Sample questions */}
