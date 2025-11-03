@@ -39,71 +39,64 @@ chatfolio/
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.11+
 - Node.js 16+
-- SQLite
+- Pinecone API Key
+- Google Gemini API Key
 
-### Backend Setup
+### Local Development
 
-1. Clone the repository:
+1. Clone and install backend:
 ```bash
 git clone https://github.com/yourusername/chatfolio.git
 cd chatfolio
-```
-
-2. Create and activate a virtual environment:
-```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-```bash
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Set up environment variables:
+2. Create `.env` file:
 ```bash
-# Create a .env file with the following:
 GEMINI_API_KEY=your_gemini_api_key
+PINECONE_API_KEY=your_pinecone_api_key
+GITHUB_USERNAME=your_github_username
+ENABLE_WHISPER=false
 ```
 
-5. Run database migrations:
-```bash
-python -m backend.scripts.db.migrate_documents
-```
-
-### Frontend Setup
-
-1. Navigate to the client directory:
+3. Install and run frontend:
 ```bash
 cd client
-```
-
-2. Install dependencies:
-```bash
 npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
-## Running the Application
-
-1. Start the backend server:
+4. Run backend:
 ```bash
-uvicorn main:app --reload --port 8001
+uvicorn main:app --reload --host 0.0.0.0 --port 8083
 ```
 
-2. In a separate terminal, start the frontend:
+Access at http://localhost:5173
+
+## Deployment
+
+**Backend:** Railway  
+**Frontend:** Vercel
+
+### Deploy Backend to Railway
+
+1. Push to GitHub
+2. Connect repo to Railway
+3. Add environment variables: `GEMINI_API_KEY`, `PINECONE_API_KEY`, `GITHUB_USERNAME`, `ENABLE_WHISPER=false`
+4. Railway auto-deploys on push
+
+### Deploy Frontend to Vercel
+
 ```bash
 cd client
-npm run dev
+vercel --prod
 ```
 
-3. Access the application at http://localhost:5173
+Update `client/src/config.js` with your Railway backend URL
 
 ## Updating Resume Data
 
