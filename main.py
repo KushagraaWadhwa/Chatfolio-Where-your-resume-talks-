@@ -41,8 +41,7 @@ allowed_origins = [
     "http://localhost:5173",
     "http://localhost:8083",
     "https://kushagrawadhwa.vercel.app",
-    "https://kushagrawadhwa.vercel.app/",
-    "https://*.vercel.app",  # Allow all Vercel preview deployments
+    "https://www.kushagrawadhwa.vercel.app",
     # Add more domains if needed
 ]
 

@@ -31,13 +31,13 @@ RUN mkdir -p backend/uploads/resumes \
     backend/uploads/others \
     backend/generated_resumes
 
-# Expose port
+# Expose port (Render/cloud platforms set this via PORT env var)
 EXPOSE 8083
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD python -c "import requests; requests.get('http://localhost:8083/health')" || exit 1
+    CMD python -c "import requests; requests.get('http://localhost:' + __import__('os').getenv('PORT', '8083') + '/health')" || exit 1
 
-# Run the application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8083"]
+# Run the application - use PORT env var (Render provides this)
+CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8083}
 
