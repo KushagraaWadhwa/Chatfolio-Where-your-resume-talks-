@@ -79,34 +79,37 @@ Access at http://localhost:5173
 
 ## Deployment
 
-**Backend:** Vercel Serverless Functions  
+**Backend:** Docker (Render/Fly.io/Railway/DigitalOcean)  
 **Frontend:** Vercel
 
-### Quick Deploy to Vercel
+### Quick Deploy
 
-See detailed deployment guides:
-- 📖 [Complete Deployment Guide](DEPLOYMENT_GUIDE.md) - Full step-by-step instructions
-- ⚡ [Quick Deploy Guide](QUICK_DEPLOY.md) - TL;DR version
-- ✅ [Deployment Checklist](DEPLOYMENT_CHECKLIST.md) - Pre-flight checklist
-- ⚠️ [Vercel Considerations](VERCEL_CONSIDERATIONS.md) - Important limitations & solutions
-
-### Quick Start
-
-1. **Deploy Backend:**
-   ```bash
-   vercel --prod
-   ```
-   Set environment variables in Vercel dashboard: `PINECONE_API_KEY`, `GOOGLE_API_KEY`, `OPENAI_API_KEY`, `ENABLE_WHISPER=false`
-
-2. **Deploy Frontend:**
+1. **Deploy Backend with Docker:**
+   
+   See [DOCKER_DEPLOY.md](DOCKER_DEPLOY.md) for detailed instructions.
+   
+   **Quick:** Deploy to Render.com (free tier):
+   - Connect GitHub repo
+   - Select Docker environment
+   - Add environment variables
+   - Deploy
+   
+2. **Deploy Frontend to Vercel:**
    ```bash
    cd client
    vercel --prod
    ```
-   Set `VITE_API_URL` to your backend URL in Vercel dashboard
+   Set `VITE_API_URL` to your backend URL
 
 3. **Update Backend CORS:**
-   Set `FRONTEND_URL` in backend project to your frontend URL and redeploy
+   Set `FRONTEND_URL` environment variable to your frontend URL
+
+### Local Development with Docker
+
+```bash
+# Copy .env.example to .env and fill in your values
+docker-compose up --build
+```
 
 ## Updating Resume Data
 

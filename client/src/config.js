@@ -18,8 +18,9 @@ const config = {
   },
   production: {
     // Backend URL - MUST be set via Vercel environment variable (VITE_API_URL)
-    // Set this in your Vercel frontend project settings to your backend URL
-    apiBaseUrl: envApiUrl || 'https://your-backend.vercel.app',
+    // Set this in your Vercel frontend project settings to your Docker backend URL
+    // e.g., https://chatfolio.onrender.com or https://chatfolio.fly.dev
+    apiBaseUrl: envApiUrl || 'http://localhost:8083',
   },
   // You can add more environments like 'staging' if needed
 };
