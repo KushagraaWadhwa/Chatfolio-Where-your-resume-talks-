@@ -17,8 +17,9 @@ const config = {
     apiBaseUrl: envApiUrl || 'http://localhost:8083',
   },
   production: {
-    // Your Railway backend URL
-    apiBaseUrl: envApiUrl || 'https://web-production-e20d.up.railway.app',
+    // Backend URL - MUST be set via Vercel environment variable (VITE_API_URL)
+    // Set this in your Vercel frontend project settings to your backend URL
+    apiBaseUrl: envApiUrl || 'https://your-backend.vercel.app',
   },
   // You can add more environments like 'staging' if needed
 };

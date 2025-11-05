@@ -79,24 +79,34 @@ Access at http://localhost:5173
 
 ## Deployment
 
-**Backend:** Railway  
+**Backend:** Vercel Serverless Functions  
 **Frontend:** Vercel
 
-### Deploy Backend to Railway
+### Quick Deploy to Vercel
 
-1. Push to GitHub
-2. Connect repo to Railway
-3. Add environment variables: `GEMINI_API_KEY`, `PINECONE_API_KEY`, `GITHUB_USERNAME`, `ENABLE_WHISPER=false`
-4. Railway auto-deploys on push
+See detailed deployment guides:
+- 📖 [Complete Deployment Guide](DEPLOYMENT_GUIDE.md) - Full step-by-step instructions
+- ⚡ [Quick Deploy Guide](QUICK_DEPLOY.md) - TL;DR version
+- ✅ [Deployment Checklist](DEPLOYMENT_CHECKLIST.md) - Pre-flight checklist
+- ⚠️ [Vercel Considerations](VERCEL_CONSIDERATIONS.md) - Important limitations & solutions
 
-### Deploy Frontend to Vercel
+### Quick Start
 
-```bash
-cd client
-vercel --prod
-```
+1. **Deploy Backend:**
+   ```bash
+   vercel --prod
+   ```
+   Set environment variables in Vercel dashboard: `PINECONE_API_KEY`, `GOOGLE_API_KEY`, `OPENAI_API_KEY`, `ENABLE_WHISPER=false`
 
-Update `client/src/config.js` with your Railway backend URL
+2. **Deploy Frontend:**
+   ```bash
+   cd client
+   vercel --prod
+   ```
+   Set `VITE_API_URL` to your backend URL in Vercel dashboard
+
+3. **Update Backend CORS:**
+   Set `FRONTEND_URL` in backend project to your frontend URL and redeploy
 
 ## Updating Resume Data
 
