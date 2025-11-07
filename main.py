@@ -84,13 +84,21 @@ async def startup_event():
         create_tables()
         logger.info("Database tables created/verified")
         
-        # Migrate existing documents to database
-        db = next(get_db())
+        # Seed database with static documents for deployment
         try:
-            document_service.migrate_existing_documents(db)
-            logger.info("Document migration completed")
-        finally:
-            db.close()
+            from backend.scripts.seed_documents import seed_documents
+            seed_documents()
+        except Exception as e:
+            logger.warning(f"Document seeding skipped: {str(e)}")
+        
+        # Migrate existing documents to database (only for local development)
+        if not os.getenv("VERCEL") and not os.getenv("RENDER"):
+            db = next(get_db())
+            try:
+                document_service.migrate_existing_documents(db)
+                logger.info("Document migration completed")
+            finally:
+                db.close()
         
         # Initialize Pinecone
         logger.info("Initializing Pinecone vector store...")
@@ -342,6 +350,15 @@ async def view_document(
     if not document.is_public:
         raise HTTPException(status_code=403, detail="Document is not public")
     
+    # For deployed environments, redirect to frontend static files
+    if document.file_path.startswith("static/documents/"):
+        filename = document.file_path.replace("static/documents/", "")
+        frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
+        redirect_url = f"{frontend_url}/documents/{filename}"
+        from fastapi.responses import RedirectResponse
+        return RedirectResponse(url=redirect_url)
+    
+    # For local development with actual files
     if not os.path.exists(document.file_path):
         raise HTTPException(status_code=404, detail="File not found on disk")
     
@@ -365,11 +382,20 @@ async def download_document(
     if not document.is_public:
         raise HTTPException(status_code=403, detail="Document is not public")
     
-    if not os.path.exists(document.file_path):
-        raise HTTPException(status_code=404, detail="File not found on disk")
-    
     # Increment download count
     document_service.increment_download_count(db, document_id)
+    
+    # For deployed environments, redirect to frontend static files
+    if document.file_path.startswith("static/documents/"):
+        filename = document.file_path.replace("static/documents/", "")
+        frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
+        redirect_url = f"{frontend_url}/documents/{filename}"
+        from fastapi.responses import RedirectResponse
+        return RedirectResponse(url=redirect_url)
+    
+    # For local development with actual files
+    if not os.path.exists(document.file_path):
+        raise HTTPException(status_code=404, detail="File not found on disk")
     
     return FileResponse(
         path=document.file_path,
