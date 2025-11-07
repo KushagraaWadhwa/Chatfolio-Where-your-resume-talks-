@@ -7,8 +7,8 @@ const PROJECTS = {
   "AI/ML Projects": [
     {
       id: '1',
-      title: 'LLM Powered Sales Assistant with RAG and Voice Integration',
-      shortName: 'SalesAssist',
+      title: 'SalesAssist AI - LLM Powered Sales Assistant with RAG',
+      shortName: 'SalesAssist AI',
       description: 'Real-time, voice-enabled AI assistant for sales teams using RAG architecture and OpenAI Whisper for instant product-specific responses.',
       longDescription: 'Built a real-time, voice-enabled AI assistant for sales teams using RAG architecture and OpenAI Whisper. When a customer asks product-specific queries, the assistant instantly fetches answers from internal product manuals via ChromaDB vector search. This empowers sales with accurate, context-aware responses—reducing customer query handling time and boosting confidence during live interactions. The system integrates with existing CRM platforms and can process thousands of customer interactions simultaneously.',
       technologies: ['OpenAI Whisper', 'RAG', 'Python', 'ChromaDB', 'Langchain', 'Voice Integration'],
@@ -31,8 +31,8 @@ const PROJECTS = {
     },
     {
       id: '2',
-      title: 'Recipe to Rating: ML Food Rating Predictor',
-      shortName: 'FoodRating ML',
+      title: 'Recipe Rating Predictor - ML-Based Food Analysis',
+      shortName: 'Food Rating ML',
       description: 'Predictive model for estimating food ratings based on ingredients and cooking methods using machine learning.',
       longDescription: 'This project applies machine learning to predict how well a recipe will be received based on its ingredients, preparation methods, and nutritional profile. By analyzing thousands of online recipes and their ratings, the model identifies patterns that contribute to popular dishes. Features include ingredient compatibility scoring, healthiness metrics, and complexity analysis.',
       technologies: ['Machine Learning', 'Scikit-learn', 'Pandas', 'EDA'],
@@ -54,8 +54,8 @@ const PROJECTS = {
     },
     {
       id: '3',
-      title: 'Ask Your PDF',
-      shortName: 'AskPDF',
+      title: 'AskYourPDF - AI Document Q&A System',
+      shortName: 'AskYourPDF',
       description: 'Chatbot-style web application for querying PDF documents using document embedding techniques.',
       longDescription: 'Ask Your PDF transforms the way users interact with document content by enabling natural language queries. The application processes uploaded PDFs by extracting text, creating semantic embeddings, and indexing content for rapid retrieval. Users can ask questions in plain language and receive precise answers with source citations. The system handles complex documents including technical manuals, research papers, and legal documents.',
       technologies: ['Streamlit', 'Python', 'PDF Parsing', 'Vector Databases'],
@@ -77,8 +77,8 @@ const PROJECTS = {
     },
     {
       id: '4',
-      title: 'Real-Time Earnings Call Intelligence Platform',
-      shortName: 'Earnings AI',
+      title: 'Earnings Call Intelligence Platform - Real-Time Financial Analysis',
+      shortName: 'Earnings Call AI',
       description: 'Intelligent system that processes live financial calls in real-time, automatically transcribing audio and extracting key financial insights.',
       longDescription: 'Built an intelligent system that processes live financial calls in real-time, automatically transcribing audio, segmenting content into logical sections, and extracting key financial insights as calls unfold. The platform enables fund managers to make data-driven investment decisions during earnings calls by providing instant access to critical financial information through a real-time dashboard with live audio visualization, transcriptions, and section timeline navigation.',
       technologies: ['OpenAI Whisper', 'Python', 'FastAPI', 'WebSockets', 'React', 'AI/ML'],
@@ -100,8 +100,8 @@ const PROJECTS = {
     },
     {
       id: '5',
-      title: 'AI-Powered Resume Optimization Pipeline',
-      shortName: 'Resume AI',
+      title: 'Resume Optimization Pipeline - AI-Powered Recruitment Tool',
+      shortName: 'Resume Optimizer AI',
       description: 'Automated pipeline using OpenAI to parse, score, and personalize resumes for specific job descriptions.',
       longDescription: 'Identified the inefficiency in manual resume screening, leading to a solution that cut effort by over 95%. Designed an automated pipeline using OpenAI to parse, score, and personalize resumes for specific job descriptions. Orchestrated workflows with Apache NiFi and integrated Microsoft Teams to enable on-demand resume delivery. Accelerated recruiter decision-making with real-time access to tailored, ranked candidate profiles.',
       technologies: ['Apache NiFi', 'n8n', 'OpenAI', 'Python', 'Microsoft Teams API'],
@@ -123,8 +123,8 @@ const PROJECTS = {
     },
     {
       id: '6',
-      title: 'Smart Learning Engine with RAG and Vector Search',
-      shortName: 'Learning AI',
+      title: 'Smart Learning Engine - Educational Content Discovery with RAG',
+      shortName: 'Learning Engine AI',
       description: 'Smart retrieval system for educational videos and articles using semantic similarity and vector search.',
       longDescription: 'Tackled poor content discoverability by designing a smart retrieval system for educational videos and articles. Mapped user queries to relevant syllabus topics using semantic similarity and structured topic buckets. Used Pinecone to perform high-speed vector search across multimodal embeddings from both video transcripts and article summaries. Delivered the single most relevant video and article per topic, enhancing user satisfaction and platform engagement.',
       technologies: ['Python', 'Pinecone', 'Langchain', 'FastAPI', 'Vector Search'],
@@ -217,49 +217,30 @@ const PROJECTS = {
       ]
     }  
   ],
-  "Data Science": [
+  "Automation & Integration": [
     {
       id: '10',
-      title: 'COVID-19 Data Analysis',
-      shortName: 'COVID Analysis',
-      description: 'Comprehensive analysis of COVID-19 data using Python, Pandas, and Matplotlib for visualizations.',
-      longDescription: 'This project provides an in-depth analysis of COVID-19 data from various sources. It includes data cleaning, exploratory data analysis (EDA), and visualization of trends over time. The analysis covers infection rates, vaccination progress, and demographic impacts. Interactive visualizations allow users to explore the data dynamically.',
-      technologies: ['Python', 'Pandas', 'Matplotlib', 'Seaborn'],
-      complexity: 60,
-      timeline: '1 month',
-      imageUrl: 'https://images.unsplash.com/photo-1581091012180-4f3b8c2d5a6e?auto=format&fit=crop&q=80',
-      stats: {
-        stars: 10,
-        forks: 2,
-        views: 500,
-        contributions: 50
-      },
-      highlights: [
-        'Analyzed data from 200+ countries',
-        'Created interactive dashboards',
-        'Identified key trends and insights'
-      ]
-    },
-    {
-      id: '11',
-      title: 'Stock Price Prediction',
-      shortName: 'Stock Predictor',
-      description: 'Predictive model for stock prices using historical data and machine learning techniques.',
-      longDescription: 'This project utilizes historical stock price data to build predictive models using various machine learning algorithms. The analysis includes feature engineering, model selection, and evaluation. The final model provides real-time predictions and visualizations of stock trends.',
-      technologies: ['Python', 'Scikit-learn', 'Pandas', 'Matplotlib'],
-      complexity: 70,
+      title: 'Excel Report Automation - DataDog & Jira Integration',
+      shortName: 'Report Automation',
+      description: 'Automated Excel report generation system that integrates with DataDog and Jira to create comprehensive analytics reports.',
+      longDescription: 'Built an automated reporting system that pulls real-time data from DataDog monitoring metrics and Jira project management data, processes the information, and generates professional Excel reports with charts, pivot tables, and formatted dashboards. The system runs on schedule via cron jobs and can be triggered on-demand. It has reduced manual reporting effort by over 90% and ensures consistency across all reports. Features include custom templates, dynamic data refresh, email distribution, and historical trend analysis.',
+      technologies: ['Python', 'Pandas', 'openpyxl', 'DataDog API', 'Jira API', 'Excel Automation'],
+      complexity: 75,
       timeline: '2 months',
-      imageUrl: 'https://images.unsplash.com/photo-1517436072-4b0a1e3c7f3d?auto=format&fit=crop&q=80',
+      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
       stats: {
-        stars: 15,
-        forks: 4,
-        views: 800,
-        contributions: 60
+        stars: 24,
+        forks: 7,
+        views: 1200,
+        contributions: 95
       },
       highlights: [
-        'Achieved 85% prediction accuracy',
-        'Analyzed data from multiple sources',
-        'Interactive visualizations for insights'
+        'Reduced manual reporting effort by 90%',
+        'Automated data collection from multiple platforms',
+        'Scheduled report generation and email distribution',
+        'Custom Excel templates with charts and pivot tables',
+        'Real-time metrics from DataDog and Jira',
+        'Historical trend analysis and forecasting'
       ]
     }
   ]
@@ -367,7 +348,11 @@ export default function ProjectShowcase() {
       'ChromaDB': 'bg-blue-500',
       'Voice Integration': 'bg-rose-500',
       'Matplotlib': 'bg-orange-500',
-      'Seaborn': 'bg-pink-500'
+      'Seaborn': 'bg-pink-500',
+      'openpyxl': 'bg-green-600',
+      'DataDog API': 'bg-purple-700',
+      'Jira API': 'bg-blue-700',
+      'Excel Automation': 'bg-emerald-600'
     };
 
     return colors[techName] || 'bg-gray-600';
