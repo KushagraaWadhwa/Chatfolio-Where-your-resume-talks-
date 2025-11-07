@@ -12,9 +12,9 @@ const WorkTimeline = () => {
       title: "Software Engineer",
       company: "ShorthillsAI",
       location: "Remote",
-      startDate: "July 2024",
+      startDate: "February 2024",
       endDate: "Present",
-      duration: "6+ months",
+      duration: "10+ months",
       type: "Full-time",
       icon: <Brain className="w-6 h-6" />,
       color: "from-violet-500 to-purple-500",
@@ -25,35 +25,15 @@ const WorkTimeline = () => {
         "Led core AI features: resume generation & semantic candidate search with Adaptive Cards UI",
         "Spearheaded GenAI engine for 'Real-Time Earnings Call Intelligence Platform' for financial analysts",
         "Engineered real-time speaker identification, financial segment summarization, and automated alerts",
-        "Leading DataDog automation initiative for enhanced analysis reports and observability insights"
+        "Developed foundational automation workflows using Apache NiFi and n8n",
+        "Leading DataDog automation initiative for enhanced analysis reports and observability insights",
+        "Reduced manual resume screening effort by 95%"
       ],
-      technologies: ["Microsoft Teams API", "OpenAI", "Apache NiFi", "n8n", "Python", "FastAPI", "RAG", "GenAI"],
-      achievements: "Enabled data-driven investment decisions for fund managers"
+      technologies: ["Microsoft Teams API", "OpenAI", "Apache NiFi", "n8n", "Python", "FastAPI", "RAG", "GenAI", "Workflow Automation"],
+      achievements: "Enabled data-driven investment decisions • 95% reduction in screening effort"
     },
     {
       id: 2,
-      title: "Software Engineer Intern",
-      company: "ShorthillsAI",
-      location: "Remote",
-      startDate: "February 2024",
-      endDate: "June 2024",
-      duration: "5 months",
-      type: "Internship",
-      icon: <Code className="w-6 h-6" />,
-      color: "from-blue-500 to-indigo-500",
-      bgColor: "bg-blue-50 dark:bg-blue-900/20",
-      borderColor: "border-blue-200 dark:border-blue-700",
-      highlights: [
-        "Developed foundational automation workflows using Apache NiFi and n8n",
-        "Built backend engine that became foundation for HR Resume Assistant Bot",
-        "Proved business case for full product development",
-        "Reduced manual resume screening effort by 95%"
-      ],
-      technologies: ["Apache NiFi", "n8n", "Python", "Workflow Automation", "API Integration"],
-      achievements: "95% reduction in manual screening effort"
-    },
-    {
-      id: 3,
       title: "AI Project Intern",
       company: "Prodigal AI",
       location: "Remote",
@@ -74,7 +54,7 @@ const WorkTimeline = () => {
       achievements: "95% accuracy in document-based queries"
     },
     {
-      id: 4,
+      id: 3,
       title: "Data Scientist Intern",
       company: "Deutsche Telekom Digital Labs",
       location: "Gurugram, Haryana",
@@ -95,7 +75,7 @@ const WorkTimeline = () => {
       achievements: "95% coverage in data extraction from complex forms"
     },
     {
-      id: 5,
+      id: 4,
       title: "Python Developer Trainee",
       company: "BDO in India",
       location: "Noida, Uttar Pradesh",
@@ -119,7 +99,7 @@ const WorkTimeline = () => {
 
   const education = [
     {
-      id: 6,
+      id: 5,
       title: "Bachelor's in AI & ML",
       company: "Guru Gobind Singh Indraprastha University",
       location: "New Delhi",
@@ -140,7 +120,7 @@ const WorkTimeline = () => {
       achievements: "Currently pursuing with focus on AI/ML"
     },
     {
-      id: 7,
+      id: 6,
       title: "Diploma in Programming & Data Science",
       company: "Indian Institute of Technology, Madras",
       location: "Chennai",
