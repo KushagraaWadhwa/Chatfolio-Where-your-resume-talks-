@@ -9,11 +9,12 @@ const TechStackShowcase = () => {
       icon: Brain,
       gradient: 'from-violet-500 to-purple-500',
       techs: [
-        { name: 'LangChain', color: 'text-emerald-400' },
-        { name: 'LlamaIndex', color: 'text-blue-400' },
-        { name: 'OpenAI', color: 'text-teal-400' },
+        { name: 'OpenAI GPT', color: 'text-emerald-400' },
         { name: 'Gemini', color: 'text-violet-400' },
-        { name: 'Hugging Face', color: 'text-amber-400' }
+        { name: 'LangChain', color: 'text-teal-400' },
+        { name: 'LlamaIndex', color: 'text-blue-400' },
+        { name: 'RAG Systems', color: 'text-purple-400' },
+        { name: 'Whisper AI', color: 'text-rose-400' }
       ]
     },
     {
@@ -21,10 +22,11 @@ const TechStackShowcase = () => {
       icon: Database,
       gradient: 'from-cyan-500 to-blue-500',
       techs: [
-        { name: 'ChromaDB', color: 'text-orange-400' },
         { name: 'Pinecone', color: 'text-cyan-400' },
+        { name: 'ChromaDB', color: 'text-orange-400' },
         { name: 'FAISS', color: 'text-blue-400' },
-        { name: 'Weaviate', color: 'text-green-400' }
+        { name: 'Weaviate', color: 'text-green-400' },
+        { name: 'Semantic Search', color: 'text-indigo-400' }
       ]
     },
     {
@@ -33,9 +35,11 @@ const TechStackShowcase = () => {
       gradient: 'from-amber-500 to-orange-500',
       techs: [
         { name: 'FastAPI', color: 'text-teal-400' },
-        { name: 'Flask', color: 'text-slate-300' },
         { name: 'Python', color: 'text-blue-400' },
-        { name: 'SQLAlchemy', color: 'text-red-400' }
+        { name: 'Flask', color: 'text-slate-300' },
+        { name: 'SQLAlchemy', color: 'text-red-400' },
+        { name: 'WebSockets', color: 'text-cyan-400' },
+        { name: 'REST APIs', color: 'text-green-400' }
       ]
     },
     {
@@ -45,8 +49,9 @@ const TechStackShowcase = () => {
       techs: [
         { name: 'React', color: 'text-cyan-400' },
         { name: 'Vue.js', color: 'text-emerald-400' },
-        { name: 'Tailwind', color: 'text-sky-400' },
-        { name: 'Framer Motion', color: 'text-purple-400' }
+        { name: 'Tailwind CSS', color: 'text-sky-400' },
+        { name: 'Framer Motion', color: 'text-purple-400' },
+        { name: 'Streamlit', color: 'text-red-400' }
       ]
     },
     {
@@ -57,18 +62,22 @@ const TechStackShowcase = () => {
         { name: 'Scikit-learn', color: 'text-orange-400' },
         { name: 'Pandas', color: 'text-blue-400' },
         { name: 'NumPy', color: 'text-sky-400' },
-        { name: 'OpenCV', color: 'text-green-400' }
+        { name: 'OpenCV', color: 'text-green-400' },
+        { name: 'NLP', color: 'text-purple-400' },
+        { name: 'PDF Processing', color: 'text-amber-400' }
       ]
     },
     {
-      title: 'DevOps',
+      title: 'DevOps & Tools',
       icon: Network,
       gradient: 'from-indigo-500 to-purple-500',
       techs: [
         { name: 'Docker', color: 'text-blue-400' },
+        { name: 'Apache NiFi', color: 'text-orange-400' },
+        { name: 'n8n', color: 'text-pink-400' },
+        { name: 'Git', color: 'text-red-400' },
         { name: 'Render', color: 'text-purple-400' },
-        { name: 'Vercel', color: 'text-slate-300' },
-        { name: 'Git', color: 'text-orange-400' }
+        { name: 'Vercel', color: 'text-slate-300' }
       ]
     }
   ];
