@@ -100,24 +100,26 @@ const WorkTimeline = () => {
   const education = [
     {
       id: 5,
-      title: "Bachelor's in AI & ML",
+      title: "BTech in Artificial Intelligence & Machine Learning",
       company: "Guru Gobind Singh Indraprastha University",
-      location: "New Delhi",
+      location: "New Delhi, India",
       startDate: "2022",
       endDate: "2025",
-      duration: "3 years",
+      duration: "4 years",
       type: "Education",
       icon: <Award className="w-6 h-6" />,
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50 dark:bg-orange-900/20",
       borderColor: "border-orange-200 dark:border-orange-700",
       highlights: [
-        "Pursuing Bachelor's in Artificial Intelligence and Machine Learning",
-        "Comprehensive coursework in ML, Deep Learning, NLP, Computer Vision",
-        "Expected completion: September 2025"
+        "Graduated with Bachelor of Technology in AI & Machine Learning",
+        "Specialized in Advanced Machine Learning, Deep Neural Networks, and Natural Language Processing",
+        "Built production-grade AI systems including RAG pipelines, recommendation engines, and real-time analytics platforms",
+        "Completed major projects in Computer Vision, GenAI, and Distributed Systems",
+        "Strong foundation in Data Structures, Algorithms, and Software Engineering principles"
       ],
-      technologies: ["Machine Learning", "Deep Learning", "NLP", "Computer Vision", "Data Structures"],
-      achievements: "Currently pursuing with focus on AI/ML"
+      technologies: ["Machine Learning", "Deep Learning", "NLP", "Computer Vision", "Data Structures", "Algorithms", "Software Engineering"],
+      achievements: "Graduated with specialization in AI/ML Engineering"
     },
     {
       id: 6,
