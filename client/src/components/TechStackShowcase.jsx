@@ -25,8 +25,7 @@ const TechStackShowcase = () => {
         { name: 'Pinecone', color: 'text-cyan-400' },
         { name: 'ChromaDB', color: 'text-orange-400' },
         { name: 'FAISS', color: 'text-blue-400' },
-        { name: 'Weaviate', color: 'text-green-400' },
-        { name: 'Semantic Search', color: 'text-indigo-400' }
+        { name: 'Weaviate', color: 'text-green-400' }
       ]
     },
     {
@@ -68,11 +67,10 @@ const TechStackShowcase = () => {
       ]
     },
     {
-      title: 'DevOps & Tools',
+      title: 'Tools',
       icon: Network,
       gradient: 'from-indigo-500 to-purple-500',
       techs: [
-        { name: 'Docker', color: 'text-blue-400' },
         { name: 'Apache NiFi', color: 'text-orange-400' },
         { name: 'n8n', color: 'text-pink-400' },
         { name: 'Git', color: 'text-red-400' },
