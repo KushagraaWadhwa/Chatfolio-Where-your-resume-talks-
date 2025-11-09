@@ -198,13 +198,18 @@ def generate_response(query):
     print(f"   Category: {intent.get('category')}")
     print(f"   Complexity: {intent.get('complexity')}")
     
-    # Step 2: Adaptive retrieval based on complexity
+    # Step 2: Adaptive retrieval based on complexity and category
+    # Increased retrieval to ensure we get relevant context
     if intent.get('complexity') == 'simple':
-        top_k = 3  # Fewer chunks for simple queries
+        top_k = 5  # Increased from 3 for better coverage
     elif intent.get('complexity') == 'moderate':
-        top_k = 6  # Standard retrieval
+        top_k = 8  # Increased from 6
     else:
-        top_k = 10  # More chunks for complex queries
+        top_k = 12  # Increased from 10 for complex queries
+    
+    # For work experience queries, retrieve more to catch all relevant context
+    if 'work' in intent.get('category', '').lower() or 'experience' in intent.get('category', '').lower():
+        top_k = max(top_k, 8)
     
     llm = GoogleGenerativeAI(model="gemini-2.0-flash-exp", google_api_key=GEMINI_API_KEY)
     

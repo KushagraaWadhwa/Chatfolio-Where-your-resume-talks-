@@ -1,0 +1,3548 @@
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 45.483602686s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 45
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 5.750522267s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 5
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 1.626243511s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 1
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 57.49522178s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 57
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 22.444644175s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 22
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 10.167740297s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 10
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 47.00509977s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 47
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 42.882632558s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 42
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 38.754033735s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 38
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 30.629105908s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 30
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 11.26140257s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 11
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 7.140514724s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 7
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 3.002359269s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 3
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 58.865987235s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 58
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+
+🚀 Starting RAG System Evaluation...
+This will test 50 recruiter questions against your RAG system.
+
+====================================================================================================
+RAG SYSTEM COMPREHENSIVE EVALUATION
+====================================================================================================
+
+Starting evaluation at: 2025-11-09 10:05:56
+Total questions: 50
+
+
+====================================================================================================
+Question 1/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: What is Kushagra's current role and company?
+
+📋 EXPECTED: Software Engineer at ShorthillsAI
+
+🔑 KEY FACTS: Software Engineer, ShorthillsAI, July 2025, Present
+
+🧠 Analyzing query intent...
+Intent classification error: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: name (Score: 0.343)
+   2. Section: Contact Information (Score: 0.341)
+   3. Section: Extracted Links (Score: 0.323)
+   4. Section: Work_Experience (Score: 0.242)
+   5. Section: Education (Score: 0.224)
+   6. Section: Projects (Score: 0.223)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: name
+    Score: 0.343
+    Preview: name:
+name:
+My name is Kushagra Wadhwa....
+  • Section: Contact Information
+    Score: 0.341
+    Preview: Contact Information:
+Contact Information:
+{'Name': 'Kushagra Wadhwa', 'Phone': '+91-7428739746', 'Em...
+  • Section: Extracted Links
+    Score: 0.323
+    Preview: Extracted Links:
+Extracted Links:
+mailto:wadhwakushagra263@gmail.com
+https://github.com/KushagraaWad...
+  • Section: Work_Experience
+    Score: 0.242
+    Preview: Work_Experience:
+segments, and automated alert generation, directly enabling fund managers to make f...
+  • Section: Education
+    Score: 0.224
+    Preview: Education:
+Education:
+{'Degree': 'Bachelor of Technology in Artificial Intelligence and Machine Lear...
+  • Section: Projects
+    Score: 0.223
+    Preview: Projects:
+empowering sales reps with context-aware responses and reducing customer query handling ti...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 19.032355067s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 19
+}
+]
+
+====================================================================================================
+Question 2/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: Tell me about the HR Resume Assistant project at ShorthillsAI
+
+📋 EXPECTED: AI-powered bot on Microsoft Teams for recruitment workflows, includes resume generation and semantic candidate search
+
+🔑 KEY FACTS: HR Resume Assistant, Microsoft Teams, AI-powered, recruitment, semantic search
+
+🧠 Analyzing query intent...
+Intent classification error: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Work Experience (Score: 0.520)
+   2. Section: Work Experience (Score: 0.520)
+   3. Section: Work_Experience (Score: 0.496)
+   4. Section: Work_Experience (Score: 0.479)
+   5. Section: Projects (Score: 0.455)
+   6. Section: Projects (Score: 0.400)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Work Experience
+    Score: 0.520
+    Preview: Work Experience:
+{'Company': 'ShorthillsAI', 'Role': 'Software Engineer Intern', 'Duration': 'Feb 20...
+  • Section: Work Experience
+    Score: 0.520
+    Preview: Work Experience:
+{'Company': 'ShorthillsAI', 'Role': 'Software Engineer', 'Duration': 'July 2025 – P...
+  • Section: Work_Experience
+    Score: 0.496
+    Preview: Work_Experience:
+{'Title': 'Software Engineer Intern', 'Company': 'ShorthillsAI', 'Location': 'Remot...
+  • Section: Work_Experience
+    Score: 0.479
+    Preview: Work_Experience:
+{'Title': 'Software Engineer', 'Company': 'ShorthillsAI', 'Location': 'Remote', 'St...
+  • Section: Projects
+    Score: 0.455
+    Preview: Projects:
+{'Artificial Intelligence': [{'Project_Name': 'SalesAssist AI', 'Short_Name': 'SalesAssist...
+  • Section: Projects
+    Score: 0.400
+    Preview: Projects:
+[]}, {'Project_Name': 'LLM-Powered Sales Assistant with Voice Integration', 'Short_Name': ...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 39.264425618s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 39
+}
+]
+
+====================================================================================================
+Question 3/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: What technologies did Kushagra use for the Earnings Call Intelligence Platform?
+
+📋 EXPECTED: Generative AI, real-time speaker identification, financial segment summarization, automated alerts
+
+🔑 KEY FACTS: Generative AI, speaker identification, financial, real-time
+
+🧠 Analyzing query intent...
+Intent classification error: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Work_Experience (Score: 0.376)
+   2. Section: Work Experience (Score: 0.359)
+   3. Section: Projects (Score: 0.310)
+   4. Section: Projects (Score: 0.309)
+   5. Section: Projects (Score: 0.306)
+   6. Section: Projects (Score: 0.283)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Work_Experience
+    Score: 0.376
+    Preview: Work_Experience:
+and semantic candidate search, and architected the user experience using Microsoft ...
+  • Section: Work Experience
+    Score: 0.359
+    Preview: Work Experience:
+architected the user experience using Microsoft Teams Adaptive Cards to create an i...
+  • Section: Projects
+    Score: 0.310
+    Preview: Projects:
+{'Name': 'LLM-Powered Sales Assistant with Voice Integration', 'Description': 'Identified ...Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 31.661144454s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 31
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 27.54287764s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 27
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 19.327574266s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 19
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 11.199333995s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 11
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 51.563422698s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 51
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 47.431763292s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 47
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 43.298533857s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 43
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 39.180475807s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 39
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 31.048968795s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 31
+}
+].
+
+  • Section: Projects
+    Score: 0.309
+    Preview: Projects:
+empowering sales reps with context-aware responses and reducing customer query handling ti...
+  • Section: Projects
+    Score: 0.306
+    Preview: Projects:
+accurate and real-time assistance.', 'Technologies': ['LLM', 'RAG', 'Python', 'LangChain',...
+  • Section: Projects
+    Score: 0.283
+    Preview: Projects:
+{'Artificial Intelligence': [{'Project_Name': 'SalesAssist AI', 'Short_Name': 'SalesAssist...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 12.191242ms. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+}
+]
+
+====================================================================================================
+Question 4/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: How long has Kushagra been working at ShorthillsAI?
+
+📋 EXPECTED: Started as intern in February 2025, then became Software Engineer in July 2025, currently working
+
+🔑 KEY FACTS: February 2025, intern, July 2025, Software Engineer
+
+🧠 Analyzing query intent...
+Intent classification error: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Work Experience (Score: 0.334)
+   2. Section: Work Experience (Score: 0.317)
+   3. Section: Work Experience (Score: 0.310)
+   4. Section: name (Score: 0.310)
+   5. Section: Work_Experience (Score: 0.305)
+   6. Section: Projects (Score: 0.299)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Work Experience
+    Score: 0.334
+    Preview: Work Experience:
+{'Company': 'ShorthillsAI', 'Role': 'Software Engineer', 'Duration': 'July 2025 – P...
+  • Section: Work Experience
+    Score: 0.317
+    Preview: Work Experience:
+{'Company': 'ShorthillsAI', 'Role': 'Software Engineer Intern', 'Duration': 'Feb 20...
+  • Section: Work Experience
+    Score: 0.310
+    Preview: Work Experience:
+{'Company': 'ProdigalAI', 'Role': 'AI Project Intern', 'Duration': 'Sep 2024 – Nov ...
+  • Section: name
+    Score: 0.310
+    Preview: name:
+name:
+My name is Kushagra Wadhwa....
+  • Section: Work_Experience
+    Score: 0.305
+    Preview: Work_Experience:
+{'Title': 'Software Engineer Intern', 'Company': 'ShorthillsAI', 'Location': 'Remot...
+  • Section: Projects
+    Score: 0.299
+    Preview: Projects:
+empowering sales reps with context-aware responses and reducing customer query handling ti...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 20.513626912s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 20
+}
+]
+
+====================================================================================================
+Question 5/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: What did Kushagra work on at ProdigalAI?
+
+📋 EXPECTED: Domain-specific chatbot using LlamaIndex and Gemini with RAG pipeline for document queries
+
+🔑 KEY FACTS: chatbot, LlamaIndex, Gemini, RAG, documents
+
+🧠 Analyzing query intent...
+Intent classification error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 20.407043801s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 20
+}
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Work Experience (Score: 0.304)
+   2. Section: Extracted Links (Score: 0.276)
+   3. Section: Projects (Score: 0.267)
+   4. Section: Work_Experience (Score: 0.259)
+   5. Section: Contact Information (Score: 0.257)
+   6. Section: name (Score: 0.254)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Work Experience
+    Score: 0.304
+    Preview: Work Experience:
+{'Company': 'ProdigalAI', 'Role': 'AI Project Intern', 'Duration': 'Sep 2024 – Nov ...
+  • Section: Extracted Links
+    Score: 0.276
+    Preview: Extracted Links:
+Extracted Links:
+mailto:wadhwakushagra263@gmail.com
+https://github.com/KushagraaWad...
+  • Section: Projects
+    Score: 0.267
+    Preview: Projects:
+{'Artificial Intelligence': [{'Project_Name': 'SalesAssist AI', 'Short_Name': 'SalesAssist...
+  • Section: Work_Experience
+    Score: 0.259
+    Preview: Work_Experience:
+{'Title': 'AI Project Intern', 'Company': 'ProdigalAI', 'Location': 'Remote', 'Star...
+  • Section: Contact Information
+    Score: 0.257
+    Preview: Contact Information:
+Contact Information:
+{'Name': 'Kushagra Wadhwa', 'Phone': '+91-7428739746', 'Em...
+  • Section: name
+    Score: 0.254
+    Preview: name:
+name:
+My name is Kushagra Wadhwa....
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 40.635981783s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 40
+}
+]
+
+====================================================================================================
+Question 6/50 [Category: WORK_EXPERIENCE]Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 12.265327917s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 12
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 51.82440605s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 51
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 32.656117156s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 32
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 28.484785484s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 28
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 24.376090671s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 24
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 20.257548593s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 20
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 12.122220936s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 12
+}
+].
+
+====================================================================================================
+
+❓ QUESTION: What was Kushagra's achievement at Deutsche Telekom?
+
+📋 EXPECTED: Designed document parser achieving 95% coverage from HR forms, built Streamlit dashboard
+
+🔑 KEY FACTS: document parser, 95%, HR forms, Streamlit, dashboard
+
+🧠 Analyzing query intent...
+Intent classification error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 40.518273528s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 40
+}
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Contact Information (Score: 0.289)
+   2. Section: name (Score: 0.265)
+   3. Section: Extracted Links (Score: 0.264)
+   4. Section: Work Experience (Score: 0.235)
+   5. Section: Work_Experience (Score: 0.217)
+   6. Section: Education (Score: 0.211)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Contact Information
+    Score: 0.289
+    Preview: Contact Information:
+Contact Information:
+{'Name': 'Kushagra Wadhwa', 'Phone': '+91-7428739746', 'Em...
+  • Section: name
+    Score: 0.265
+    Preview: name:
+name:
+My name is Kushagra Wadhwa....
+  • Section: Extracted Links
+    Score: 0.264
+    Preview: Extracted Links:
+Extracted Links:
+mailto:wadhwakushagra263@gmail.com
+https://github.com/KushagraaWad...
+  • Section: Work Experience
+    Score: 0.235
+    Preview: Work Experience:
+{'Company': 'Deutsche Telekom Digital Labs', 'Role': 'Data Scientist Intern', 'Dura...
+  • Section: Work_Experience
+    Score: 0.217
+    Preview: Work_Experience:
+{'Title': 'Data Scientist Intern', 'Company': 'Deutsche Telekom Digital Labs', 'Loc...
+  • Section: Education
+    Score: 0.211
+    Preview: Education:
+Education:
+{'Degree': 'Bachelor of Technology in Artificial Intelligence and Machine Lear...
+🤖 Generating enhanced response...
+
+❌ ERROR: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+
+====================================================================================================
+Question 7/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: What automation tools did Kushagra use at ShorthillsAI?
+
+📋 EXPECTED: Apache NiFi and n8n for workflow automation
+
+🔑 KEY FACTS: Apache NiFi, n8n, automation, workflow
+
+🧠 Analyzing query intent...
+Intent classification error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 985.869884ms. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+}
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Projects (Score: 0.323)
+   2. Section: Work_Experience (Score: 0.320)
+   3. Section: Work Experience (Score: 0.317)
+   4. Section: Projects (Score: 0.317)
+   5. Section: Projects (Score: 0.315)
+   6. Section: Projects (Score: 0.301)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Projects
+    Score: 0.323
+    Preview: Projects:
+natural language processing (NLP) techniques and regex patterns to parse text efficiently....
+  • Section: Work_Experience
+    Score: 0.320
+    Preview: Work_Experience:
+{'Title': 'Software Engineer Intern', 'Company': 'ShorthillsAI', 'Location': 'Remot...
+  • Section: Work Experience
+    Score: 0.317
+    Preview: Work Experience:
+{'Company': 'ShorthillsAI', 'Role': 'Software Engineer Intern', 'Duration': 'Feb 20...
+  • Section: Projects
+    Score: 0.317
+    Preview: Projects:
+{'Artificial Intelligence': [{'Project_Name': 'SalesAssist AI', 'Short_Name': 'SalesAssist...
+  • Section: Projects
+    Score: 0.315
+    Preview: Projects:
+empowering sales reps with context-aware responses and reducing customer query handling ti...
+  • Section: Projects
+    Score: 0.301
+    Preview: Projects:
+CAPTCHA solver using image processing', 'Noise reduction and contrast enhancement', 'Chara...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 20.911284038s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 20
+}
+]
+
+====================================================================================================
+Question 8/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: What is Kushagra currently working on?
+
+📋 EXPECTED: DataDog automation initiative for enhanced analysis reports and observability insights
+
+🔑 KEY FACTS: DataDog, automation, analysis reports, observability
+
+🧠 Analyzing query intent...
+Intent classification error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 20.807923185s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 20
+}
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: name (Score: 0.327)
+   2. Section: Extracted Links (Score: 0.305)
+   3. Section: Contact Information (Score: 0.292)
+   4. Section: Work Experience (Score: 0.237)
+   5. Section: Work_Experience (Score: 0.234)Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 53.347059526s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 53
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 49.172573208s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 49
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 45.056217294s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 45
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 40.933523622s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 40
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 32.774120409s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 32
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 13.755044005s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 13
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 5.503962145s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 5
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 1.37118728s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 1
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 33.425544798s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 33
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 25.166392399s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 25
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 20.780731956s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 20
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 12.643656729s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 12
+}
+].
+
+   6. Section: Projects (Score: 0.230)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: name
+    Score: 0.327
+    Preview: name:
+name:
+My name is Kushagra Wadhwa....
+  • Section: Extracted Links
+    Score: 0.305
+    Preview: Extracted Links:
+Extracted Links:
+mailto:wadhwakushagra263@gmail.com
+https://github.com/KushagraaWad...
+  • Section: Contact Information
+    Score: 0.292
+    Preview: Contact Information:
+Contact Information:
+{'Name': 'Kushagra Wadhwa', 'Phone': '+91-7428739746', 'Em...
+  • Section: Work Experience
+    Score: 0.237
+    Preview: Work Experience:
+{'Company': 'ProdigalAI', 'Role': 'AI Project Intern', 'Duration': 'Sep 2024 – Nov ...
+  • Section: Work_Experience
+    Score: 0.234
+    Preview: Work_Experience:
+segments, and automated alert generation, directly enabling fund managers to make f...
+  • Section: Projects
+    Score: 0.230
+    Preview: Projects:
+task management experience.', 'Technologies': ['Flask', 'SQLite', 'HTML', 'CSS', 'JavaScri...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 41.701297752s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 41
+}
+]
+
+====================================================================================================
+Question 9/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: When did Kushagra work at Deutsche Telekom Digital Labs?
+
+📋 EXPECTED: June 2024 to August 2024
+
+🔑 KEY FACTS: June 2024, August 2024, Deutsche Telekom
+
+🧠 Analyzing query intent...
+Intent classification error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 41.594397639s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 41
+}
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Work Experience (Score: 0.263)
+   2. Section: Contact Information (Score: 0.258)
+   3. Section: Work_Experience (Score: 0.252)
+   4. Section: Extracted Links (Score: 0.248)
+   5. Section: name (Score: 0.246)
+   6. Section: Projects (Score: 0.190)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Work Experience
+    Score: 0.263
+    Preview: Work Experience:
+{'Company': 'Deutsche Telekom Digital Labs', 'Role': 'Data Scientist Intern', 'Dura...
+  • Section: Contact Information
+    Score: 0.258
+    Preview: Contact Information:
+Contact Information:
+{'Name': 'Kushagra Wadhwa', 'Phone': '+91-7428739746', 'Em...
+  • Section: Work_Experience
+    Score: 0.252
+    Preview: Work_Experience:
+{'Title': 'Data Scientist Intern', 'Company': 'Deutsche Telekom Digital Labs', 'Loc...
+  • Section: Extracted Links
+    Score: 0.248
+    Preview: Extracted Links:
+Extracted Links:
+mailto:wadhwakushagra263@gmail.com
+https://github.com/KushagraaWad...
+  • Section: name
+    Score: 0.246
+    Preview: name:
+name:
+My name is Kushagra Wadhwa....
+  • Section: Projects
+    Score: 0.190
+    Preview: Projects:
+empowering sales reps with context-aware responses and reducing customer query handling ti...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 1.993526352s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 1
+}
+]
+
+====================================================================================================
+Question 10/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: When was Kushagra at ProdigalAI?
+
+📋 EXPECTED: September 2024 to November 2024
+
+🔑 KEY FACTS: September 2024, November 2024, ProdigalAI
+
+🧠 Analyzing query intent...
+Intent classification error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 1.886625308s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 1
+}
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Work Experience (Score: 0.292)
+   2. Section: Extracted Links (Score: 0.272)
+   3. Section: name (Score: 0.257)
+   4. Section: Contact Information (Score: 0.256)
+   5. Section: Work_Experience (Score: 0.229)
+   6. Section: Projects (Score: 0.218)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Work Experience
+    Score: 0.292
+    Preview: Work Experience:
+{'Company': 'ProdigalAI', 'Role': 'AI Project Intern', 'Duration': 'Sep 2024 – Nov ...
+  • Section: Extracted Links
+    Score: 0.272
+    Preview: Extracted Links:
+Extracted Links:
+mailto:wadhwakushagra263@gmail.com
+https://github.com/KushagraaWad...
+  • Section: name
+    Score: 0.257
+    Preview: name:
+name:
+My name is Kushagra Wadhwa....
+  • Section: Contact Information
+    Score: 0.256
+    Preview: Contact Information:
+Contact Information:
+{'Name': 'Kushagra Wadhwa', 'Phone': '+91-7428739746', 'Em...
+  • Section: Work_Experience
+    Score: 0.229
+    Preview: Work_Experience:
+{'Title': 'AI Project Intern', 'Company': 'ProdigalAI', 'Location': 'Remote', 'Star...
+  • Section: Projects
+    Score: 0.218
+    Preview: Projects:
+empowering sales reps with context-aware responses and reducing customer query handling ti...
+🤖 Generating enhanced response...Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 53.584991904s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 53
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 49.458793445s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 49
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 45.338187042s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 45
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 41.225969376s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 41
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 33.112835729s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 33
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 14.554309904s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 14
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 6.317284314s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 6
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 2.177308812s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 2
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 54.046305031s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 54
+}
+].
+
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 22.655497719s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 22
+}
+]
+
+====================================================================================================
+Question 11/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: What Microsoft Teams features did Kushagra implement?
+
+📋 EXPECTED: Adaptive Cards for intuitive UI in HR Resume Assistant
+
+🔑 KEY FACTS: Adaptive Cards, Microsoft Teams, UI, HR Resume
+
+🧠 Analyzing query intent...
+Intent classification error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 22.55472173s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 22
+}
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Work_Experience (Score: 0.361)
+   2. Section: Work Experience (Score: 0.352)
+   3. Section: Extracted Links (Score: 0.306)
+   4. Section: Contact Information (Score: 0.300)
+   5. Section: Skills (Score: 0.296)
+   6. Section: Projects (Score: 0.280)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Work_Experience
+    Score: 0.361
+    Preview: Work_Experience:
+and semantic candidate search, and architected the user experience using Microsoft ...
+  • Section: Work Experience
+    Score: 0.352
+    Preview: Work Experience:
+architected the user experience using Microsoft Teams Adaptive Cards to create an i...
+  • Section: Extracted Links
+    Score: 0.306
+    Preview: Extracted Links:
+Extracted Links:
+mailto:wadhwakushagra263@gmail.com
+https://github.com/KushagraaWad...
+  • Section: Contact Information
+    Score: 0.300
+    Preview: Contact Information:
+Contact Information:
+{'Name': 'Kushagra Wadhwa', 'Phone': '+91-7428739746', 'Em...
+  • Section: Skills
+    Score: 0.296
+    Preview: Skills:
+Skills:
+Python
+JavaScript
+Generative AI
+RAG Pipelines
+Hugging Face
+OpenAI API
+MCP
+NLP
+Machin...
+  • Section: Projects
+    Score: 0.280
+    Preview: Projects:
+empowering sales reps with context-aware responses and reducing customer query handling ti...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 43.10176991s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 43
+}
+]
+
+====================================================================================================
+Question 12/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: Who are the end users of the Earnings Call platform?
+
+📋 EXPECTED: Financial analysts and fund managers
+
+🔑 KEY FACTS: financial analysts, fund managers, investment decisions
+
+🧠 Analyzing query intent...
+Intent classification error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 42.987294812s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 42
+}
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Work_Experience (Score: 0.359)
+   2. Section: Work Experience (Score: 0.355)
+   3. Section: Work_Experience (Score: 0.209)
+   4. Section: Projects (Score: 0.182)
+   5. Section: Work Experience (Score: 0.172)
+   6. Section: Projects (Score: 0.171)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Work_Experience
+    Score: 0.359
+    Preview: Work_Experience:
+and semantic candidate search, and architected the user experience using Microsoft ...
+  • Section: Work Experience
+    Score: 0.355
+    Preview: Work Experience:
+architected the user experience using Microsoft Teams Adaptive Cards to create an i...
+  • Section: Work_Experience
+    Score: 0.209
+    Preview: Work_Experience:
+segments, and automated alert generation, directly enabling fund managers to make f...
+  • Section: Projects
+    Score: 0.182
+    Preview: Projects:
+{'Name': 'LLM-Powered Sales Assistant with Voice Integration', 'Description': 'Identified ...
+  • Section: Work Experience
+    Score: 0.172
+    Preview: Work Experience:
+generation, directly enabling fund managers to make faster, data-driven decisions.'...
+  • Section: Projects
+    Score: 0.171
+    Preview: Projects:
+[]}, {'Project_Name': 'LLM-Powered Sales Assistant with Voice Integration', 'Short_Name': ...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 2.524024821s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 2
+}
+]Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 35.254785723s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 35
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 31.107992087s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 31
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 26.952845025s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 26
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 51.07489395s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 51
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 46.945362381s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 46
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 42.821978552s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 42
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 14.762840305s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 14
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 10.62978863s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 10
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 6.5099895s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 6
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 2.377688014s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 2
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 54.258384899s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 54
+}
+].
+
+
+====================================================================================================
+Question 13/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: What role did Kushagra have at ShorthillsAI before becoming Software Engineer?
+
+📋 EXPECTED: Software Engineer Intern from February to June 2025
+
+🔑 KEY FACTS: intern, February, June, 2025
+
+🧠 Analyzing query intent...
+Intent classification error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 2.420526266s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 2
+}
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: name (Score: 0.375)
+   2. Section: Work Experience (Score: 0.374)
+   3. Section: Work_Experience (Score: 0.356)
+   4. Section: Work Experience (Score: 0.356)
+   5. Section: Work_Experience (Score: 0.332)
+   6. Section: Projects (Score: 0.328)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: name
+    Score: 0.375
+    Preview: name:
+name:
+My name is Kushagra Wadhwa....
+  • Section: Work Experience
+    Score: 0.374
+    Preview: Work Experience:
+{'Company': 'ShorthillsAI', 'Role': 'Software Engineer Intern', 'Duration': 'Feb 20...
+  • Section: Work_Experience
+    Score: 0.356
+    Preview: Work_Experience:
+{'Title': 'Software Engineer Intern', 'Company': 'ShorthillsAI', 'Location': 'Remot...
+  • Section: Work Experience
+    Score: 0.356
+    Preview: Work Experience:
+{'Company': 'ShorthillsAI', 'Role': 'Software Engineer', 'Duration': 'July 2025 – P...
+  • Section: Work_Experience
+    Score: 0.332
+    Preview: Work_Experience:
+{'Title': 'Software Engineer', 'Company': 'ShorthillsAI', 'Location': 'Remote', 'St...
+  • Section: Projects
+    Score: 0.328
+    Preview: Projects:
+natural language processing (NLP) techniques and regex patterns to parse text efficiently....
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 22.991547562s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 22
+}
+]
+
+====================================================================================================
+Question 14/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: What product lifecycle responsibilities did Kushagra have?
+
+📋 EXPECTED: Owned complete product lifecycle of HR Resume Assistant
+
+🔑 KEY FACTS: product lifecycle, owned, HR Resume Assistant
+
+🧠 Analyzing query intent...
+Intent classification error: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Contact Information (Score: 0.271)
+   2. Section: Extracted Links (Score: 0.246)
+   3. Section: name (Score: 0.238)
+   4. Section: Summary (Score: 0.212)
+   5. Section: Projects (Score: 0.172)
+   6. Section: Work_Experience (Score: 0.166)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Contact Information
+    Score: 0.271
+    Preview: Contact Information:
+Contact Information:
+{'Name': 'Kushagra Wadhwa', 'Phone': '+91-7428739746', 'Em...
+  • Section: Extracted Links
+    Score: 0.246
+    Preview: Extracted Links:
+Extracted Links:
+mailto:wadhwakushagra263@gmail.com
+https://github.com/KushagraaWad...
+  • Section: name
+    Score: 0.238
+    Preview: name:
+name:
+My name is Kushagra Wadhwa....
+  • Section: Summary
+    Score: 0.212
+    Preview: Summary:
+Summary:
+Technologist with a passion for solving complex user problems and leading products...
+  • Section: Projects
+    Score: 0.172
+    Preview: Projects:
+{'Name': 'LLM-Powered Sales Assistant with Voice Integration', 'Description': 'Identified ...
+  • Section: Work_Experience
+    Score: 0.166
+    Preview: Work_Experience:
+segments, and automated alert generation, directly enabling fund managers to make f...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 43.915611644s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 43
+}
+]
+
+====================================================================================================
+Question 15/50 [Category: WORK_EXPERIENCE]
+====================================================================================================
+
+❓ QUESTION: What AI-driven features did Kushagra design?
+
+📋 EXPECTED: AI-driven resume generation and semantic candidate search
+
+🔑 KEY FACTS: AI-driven, resume generation, semantic search, candidate
+
+🧠 Analyzing query intent...
+Intent classification error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 43.790602394s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 43
+}
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Projects (Score: 0.285)
+   2. Section: Work_Experience (Score: 0.277)
+   3. Section: Projects (Score: 0.274)Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 40.118131175s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 40
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 35.972372504s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 35
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 31.841550773s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 31
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 27.708213937s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 27
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 19.578084436s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 19
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 390.28287ms. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 56.256369767s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 56
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 52.124825202s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 52
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 48.003950308s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 48
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 39.868840879s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 39
+}
+].
+
+   4. Section: Work Experience (Score: 0.273)
+   5. Section: Projects (Score: 0.261)
+   6. Section: Extracted Links (Score: 0.257)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Projects
+    Score: 0.285
+    Preview: Projects:
+accurate and real-time assistance.', 'Technologies': ['LLM', 'RAG', 'Python', 'LangChain',...
+  • Section: Work_Experience
+    Score: 0.277
+    Preview: Work_Experience:
+and semantic candidate search, and architected the user experience using Microsoft ...
+  • Section: Projects
+    Score: 0.274
+    Preview: Projects:
+empowering sales reps with context-aware responses and reducing customer query handling ti...
+  • Section: Work Experience
+    Score: 0.273
+    Preview: Work Experience:
+architected the user experience using Microsoft Teams Adaptive Cards to create an i...
+  • Section: Projects
+    Score: 0.261
+    Preview: Projects:
+{'Artificial Intelligence': [{'Project_Name': 'SalesAssist AI', 'Short_Name': 'SalesAssist...
+  • Section: Extracted Links
+    Score: 0.257
+    Preview: Extracted Links:
+Extracted Links:
+mailto:wadhwakushagra263@gmail.com
+https://github.com/KushagraaWad...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 4.543488416s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 4
+}
+]
+
+====================================================================================================
+Question 16/50 [Category: PROJECTS]
+====================================================================================================
+
+❓ QUESTION: Tell me about the SalesAssist AI project
+
+📋 EXPECTED: Conversational AI framework using RAG and LLM for real-time customer query resolution
+
+🔑 KEY FACTS: SalesAssist, RAG, LLM, real-time, customer queries
+
+🧠 Analyzing query intent...
+Intent classification error: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Projects (Score: 0.500)
+   2. Section: Projects (Score: 0.450)
+   3. Section: Projects (Score: 0.447)
+   4. Section: Projects (Score: 0.388)
+   5. Section: Projects (Score: 0.338)
+   6. Section: Projects (Score: 0.322)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Projects
+    Score: 0.500
+    Preview: Projects:
+{'Artificial Intelligence': [{'Project_Name': 'SalesAssist AI', 'Short_Name': 'SalesAssist...
+  • Section: Projects
+    Score: 0.450
+    Preview: Projects:
+{'Name': 'LLM-Powered Sales Assistant with Voice Integration', 'Description': 'Identified ...
+  • Section: Projects
+    Score: 0.447
+    Preview: Projects:
+[]}, {'Project_Name': 'LLM-Powered Sales Assistant with Voice Integration', 'Short_Name': ...
+  • Section: Projects
+    Score: 0.388
+    Preview: Projects:
+by designing a smart retrieval system that mapped queries to syllabus topics using semanti...
+  • Section: Projects
+    Score: 0.338
+    Preview: Projects:
+empowering sales reps with context-aware responses and reducing customer query handling ti...
+  • Section: Projects
+    Score: 0.322
+    Preview: Projects:
+accurate and real-time assistance.', 'Technologies': ['LLM', 'RAG', 'Python', 'LangChain',...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 24.597975358s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 24
+}
+]
+
+====================================================================================================
+Question 17/50 [Category: PROJECTS]
+====================================================================================================
+
+❓ QUESTION: What technologies are used in SalesAssist AI?
+
+📋 EXPECTED: LLM, RAG, Python, LangChain, Vector Databases
+
+🔑 KEY FACTS: LLM, RAG, Python, LangChain, Vector Databases
+
+🧠 Analyzing query intent...
+Intent classification error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 24.498300819s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 24
+}
+]
+   Category: general
+   Complexity: moderate
+🔍 Retrieved 6 documents from Pinecone
+   1. Section: Projects (Score: 0.448)
+   2. Section: Projects (Score: 0.387)
+   3. Section: Projects (Score: 0.372)
+   4. Section: Projects (Score: 0.347)
+   5. Section: Projects (Score: 0.331)
+   6. Section: Projects (Score: 0.315)
+
+🔍 Retrieved 6 chunks from Pinecone:
+  • Section: Projects
+    Score: 0.448
+    Preview: Projects:
+{'Artificial Intelligence': [{'Project_Name': 'SalesAssist AI', 'Short_Name': 'SalesAssist...
+  • Section: Projects
+    Score: 0.387
+    Preview: Projects:
+{'Name': 'LLM-Powered Sales Assistant with Voice Integration', 'Description': 'Identified ...
+  • Section: Projects
+    Score: 0.372
+    Preview: Projects:
+[]}, {'Project_Name': 'LLM-Powered Sales Assistant with Voice Integration', 'Short_Name': ...
+  • Section: Projects
+    Score: 0.347
+    Preview: Projects:
+by designing a smart retrieval system that mapped queries to syllabus topics using semanti...
+  • Section: Projects
+    Score: 0.331
+    Preview: Projects:
+accurate and real-time assistance.', 'Technologies': ['LLM', 'RAG', 'Python', 'LangChain',...
+  • Section: Projects
+    Score: 0.315
+    Preview: Projects:
+empowering sales reps with context-aware responses and reducing customer query handling ti...
+🤖 Generating enhanced response...
+
+❌ ERROR: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 44.128696526s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 44
+}
+]Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 20.948415033s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 20
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 16.822217119s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 16
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 12.691121437s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 12
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 8.56533388s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+  seconds: 8
+}
+].
+Retrying langchain_google_genai.llms._completion_with_retry.<locals>._completion_with_retry in 10.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 50
+Please retry in 432.665813ms. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash-exp"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, retry_delay {
+}
+].

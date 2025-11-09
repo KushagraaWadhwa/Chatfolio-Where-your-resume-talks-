@@ -3,58 +3,97 @@
     {
       "Title": "Software Engineer",
       "Company": "ShorthillsAI",
-      "Location": "Remote",
-      "Start_Date": "July 2025",
+      "Location": "Gurugram, Haryana",
+      "Start_Date": "February 2025",
       "End_Date": "Present",
-      "Responsibilities": [
-        [
-          "Owned the complete product lifecycle of the \"HR Resume Assistant,\" an AI-powered bot deployed on Microsoft Teams to streamline recruitment workflows for HR professionals.",
-          "Led the design of core features including AI-driven resume generation and semantic candidate search, and architected the user experience using Microsoft Teams Adaptive Cards to create an intuitive interface.",
-          "Spearheaded the development of the core Generative AI engine for a \"Real-Time Earnings Call Intelligence Platform,\" an internal tool for financial analysts.",
-          "Engineered features for real-time speaker identification, summarization of key financial segments, and automated alert generation, directly enabling fund managers to make faster, data-driven decisions.",
-          "Currently leading an automation initiative for the DataDog platform to generate enhanced analysis reports for a key client, aiming to provide deeper observability and actionable insights."
-        ]
+      "Current_Status": "Currently Working",
+      "Duration": "10+ months",
+      "Key_Projects": [
+        {
+          "Project": "HR Resume Assistant",
+          "Description": "AI-powered bot deployed on Microsoft Teams to streamline recruitment workflows for HR professionals",
+          "Role": "Product Owner - Complete Product Lifecycle",
+          "Technologies": ["Microsoft Teams API", "OpenAI", "Apache NiFi", "n8n", "Adaptive Cards"],
+          "Features": ["AI-driven resume generation", "Semantic candidate search", "Intuitive Teams interface"],
+          "Impact": "Reduced manual screening effort by 95%"
+        },
+        {
+          "Project": "Real-Time Earnings Call Intelligence Platform",
+          "Description": "Internal tool for financial analysts and fund managers",
+          "Role": "Core Generative AI Engine Developer",
+          "Technologies": ["Generative AI", "OpenAI Whisper", "Python", "FastAPI", "WebSockets"],
+          "Features": ["Real-time speaker identification", "Financial segment summarization", "Automated alert generation"],
+          "Impact": "Enabled data-driven investment decisions for fund managers"
+        },
+        {
+          "Project": "DataDog Platform Automation",
+          "Description": "Automation initiative for enhanced analysis reports",
+          "Role": "Lead Developer",
+          "Technologies": ["DataDog API", "Python", "Excel Automation", "API Integration"],
+          "Features": ["Automated report generation", "Enhanced observability insights", "Real-time metrics dashboard"],
+          "Impact": "Improved client observability and actionable insights",
+          "Status": "Currently leading this initiative"
+        }
       ],
-      "Technologies_Used": []
-    },
-    {
-      "Title": "Software Engineer Intern",
-      "Company": "ShorthillsAI",
-      "Location": "Remote",
-      "Start_Date": "Feb 2025",
-      "End_Date": "June 2025",
+      "Technologies_Used": ["Python", "FastAPI", "Microsoft Teams API", "OpenAI", "Apache NiFi", "n8n", "RAG", "GenAI", "DataDog API", "WebSockets"],
       "Responsibilities": [
-        [
-          "Developed foundational automation workflows using Apache NiFi and n8n, which became the backend engine for the HR Resume Assistant Bot, proving the business case for the full product."
-        ]
-      ],
-      "Technologies_Used": []
+        "Owned complete product lifecycle of HR Resume Assistant",
+        "Led design of AI-driven resume generation and semantic candidate search",
+        "Architected user experience using Microsoft Teams Adaptive Cards",
+        "Spearheaded development of Generative AI engine for financial intelligence",
+        "Engineered real-time speaker identification and financial summarization",
+        "Developed foundational automation workflows using Apache NiFi and n8n",
+        "Leading DataDog platform automation for enhanced analysis reports"
+      ]
     },
     {
       "Title": "AI Project Intern",
       "Company": "ProdigalAI",
       "Location": "Remote",
-      "Start_Date": "Sep 2024",
-      "End_Date": "Nov 2024",
-      "Responsibilities": [
-        [
-          "Addressed user pain points in accessing information from unstructured documents by developing a domain-specific chatbot; owned the project from conception, utilizing LlamaIndex and Gemini within a RAG pipeline to improve query retrieval accuracy."
-        ]
+      "Start_Date": "September 2024",
+      "End_Date": "November 2024",
+      "Duration": "3 months",
+      "Key_Projects": [
+        {
+          "Project": "Knowledge-AI Chatbot",
+          "Description": "Domain-specific chatbot for querying unstructured documents",
+          "Technologies": ["LlamaIndex", "Gemini", "RAG Pipeline", "Python"],
+          "Achievement": "95% accuracy in document-based queries",
+          "Impact": "Improved information accessibility from unstructured documents"
+        }
       ],
-      "Technologies_Used": []
+      "Technologies_Used": ["LlamaIndex", "Gemini", "RAG", "Python", "NLP"],
+      "Responsibilities": [
+        "Developed domain-specific chatbot using RAG pipeline",
+        "Utilized LlamaIndex and Gemini for document queries",
+        "Owned project from conception to deployment",
+        "Improved query retrieval accuracy to 95%"
+      ]
     },
     {
       "Title": "Data Scientist Intern",
       "Company": "Deutsche Telekom Digital Labs",
-      "Location": "Remote",
-      "Start_Date": "Jun 2024",
-      "End_Date": "Aug 2024",
-      "Responsibilities": [
-        [
-          "Led the design of a non-LLM document parser to solve data extraction challenges, achieving over 95% coverage from complex HR forms and delivering a real-time analytics dashboard to stakeholders using Streamlit."
-        ]
+      "Location": "Gurugram, Haryana",
+      "Start_Date": "June 2024",
+      "End_Date": "August 2024",
+      "Duration": "3 months",
+      "Key_Projects": [
+        {
+          "Project": "Non-LLM Document Parser",
+          "Description": "Automated data extraction from complex HR policy documents",
+          "Technologies": ["Python", "NLP", "Regex", "PDF Processing", "Streamlit"],
+          "Achievement": "95% coverage from complex HR forms",
+          "Deliverable": "Real-time analytics dashboard using Streamlit",
+          "Impact": "Solved data extraction challenges for HR department"
+        }
       ],
-      "Technologies_Used": []
+      "Technologies_Used": ["Python", "NLP", "Streamlit", "PDF Processing", "Real-time Analytics"],
+      "Responsibilities": [
+        "Led design of non-LLM document parser",
+        "Achieved 95% data coverage from complex HR forms",
+        "Delivered real-time analytics dashboard using Streamlit",
+        "Solved data extraction challenges for stakeholders"
+      ]
     }
   ]
 }
