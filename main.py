@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException, Request, UploadFile, File, Depends, Form
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, FileResponse, HTMLResponse
-from fastapi.staticfiles import StaticFiles
+from fastapi.responses import JSONResponse, FileResponse
 from pydantic import BaseModel
 import os
 from pathlib import Path
@@ -10,11 +9,11 @@ from backend.rag.generator import generate_response
 from backend.rag.github_stats import get_github_stats
 from backend.rag.resume_tailoring import detect_resume_command, tailor_resume  # Add this import
 from backend.rag.auto_update import start_auto_update, stop_auto_update
-from backend.models import Document, create_tables, get_db
+from backend.models import create_tables, get_db
 from backend.document_service import DocumentService
 from backend.security import (
     check_rate_limit, sanitize_filename, validate_file_type, 
-    validate_file_size, authenticate_admin, create_access_token
+    validate_file_size
 )
 from sqlalchemy.orm import Session
 from typing import Optional, List
@@ -33,7 +32,7 @@ CREATIVE_ERROR_MESSAGES = [
 
 # Conditionally import whisper only if enabled
 if os.getenv("ENABLE_WHISPER", "false").lower() == "true":
-    import whisper
+    import whisper  # type: ignore
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -425,17 +424,17 @@ async def download_document(
     
     return FileResponse(
         path=document.file_path,
-        filename=document.filename,
+        filename=str(document.filename),
         media_type="application/pdf" if document.file_type == "pdf" else "application/octet-stream"
     )
 
 @app.post("/documents/upload")
 async def upload_document(
+    http_request: Request,
     file: UploadFile = File(...),
     title: str = Form(...),
     description: str = Form(""),
     category: str = Form("others"),
-    http_request: Request = None,
     db: Session = Depends(get_db)
 ):
     """Upload a new document"""
