@@ -4,7 +4,9 @@ import json
 import google.generativeai as genai
 from dotenv import load_dotenv
 from .pinecone_store import retrieve_from_pinecone
-from typing import Dict, List
+from typing import Dict, Optional, Any
+import hashlib
+from .config import SKIP_INTENT_CLASSIFICATION, DEFAULT_TOP_K, GEMINI_MODEL
 
 # Load environment variables
 load_dotenv()
@@ -14,10 +16,16 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
     raise ValueError("GEMINI_API_KEY environment variable is not set")
 
+# Set for langchain
+os.environ["GOOGLE_API_KEY"] = GEMINI_API_KEY
+
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Initialize Gemini model for intent classification
-model = genai.GenerativeModel("gemini-2.0-flash-exp")
+model = genai.GenerativeModel(GEMINI_MODEL)
+
+# Response cache (holds last 100 query-response pairs)
+_response_cache: Dict[str, Dict[str, Any]] = {}
 
 def classify_query_intent(query: str) -> Dict:
     """
@@ -85,133 +93,83 @@ def retrieve_documents(query, top_k=5):
     return docs
 
 def create_enhanced_prompt(query: str, context: str, intent: Dict) -> str:
-    """Create an enhanced prompt based on query intent and category"""
+    """Create a concise prompt to minimize token usage"""
     
-    base_instructions = """You are Kushagra Wadhwa's AI-powered portfolio assistant, expertly trained to help recruiters, hiring managers, and technical interviewers evaluate his candidacy.
+    # MUCH SHORTER PROMPT - saves API costs!
+    prompt = f"""You are Kushagra Wadhwa's portfolio assistant. Answer professionally using ONLY the provided context.
 
-CORE PRINCIPLES:
-✓ Provide precise, data-driven responses using ONLY the verified context
-✓ Maintain professional, interview-ready tone throughout
-✓ Highlight quantifiable achievements with specific metrics
-✓ Emphasize technical depth and practical applications
-✓ Structure responses for maximum readability and impact
-✓ Focus on business value and problem-solving capabilities
-✓ Use third-person perspective for professional objectivity
+Rules:
+- Be specific with numbers, metrics, and technologies
+- Use professional tone
+- If info unavailable, say so clearly
 
-RESPONSE QUALITY STANDARDS:
-• Include specific numbers, percentages, and measurable outcomes
-• Mention exact technologies, frameworks, and tools used
-• Provide context about project scale and complexity
-• Highlight unique contributions and innovative approaches
-• Connect skills to real-world applications and results
-• If information is unavailable, clearly state: "This specific information is not currently available in Kushagra's portfolio"
-"""
+Query: {query}
 
-    # Customize based on intent category
-    if intent.get('category') == 'work_experience':
-        format_guide = """
-WORK EXPERIENCE FORMAT:
-📍 Position & Company: [Role] at [Company]
-⏱️ Duration: [Time period] ([X] months/years)
-🎯 Key Responsibilities: [Main duties and scope]
-💡 Major Achievements: [Quantified results and impact]
-🛠️ Technology Stack: [Specific tools, languages, frameworks]
-📈 Business Impact: [Measurable outcomes, efficiency gains, value created]
-"""
-    
-    elif intent.get('category') == 'projects':
-        format_guide = """
-PROJECT SHOWCASE FORMAT:
-🚀 Project Name & Purpose: [Name] - [Problem it solves]
-🛠️ Technical Architecture: [Technologies, frameworks, design patterns]
-💻 Implementation Details: [Key features, algorithms, methodologies]
-📊 Results & Metrics: [Performance, users, efficiency gains]
-🎯 Business Value: [Impact, ROI, competitive advantage]
-🔗 Live Demo/Code: [Links if available]
-"""
-    
-    elif intent.get('category') == 'skills':
-        format_guide = """
-TECHNICAL SKILLS FORMAT:
-💡 Core Technologies: [Primary tech stack with proficiency levels]
-🔧 Frameworks & Libraries: [Specific tools and their applications]
-📚 Specialized Knowledge: [Advanced concepts, methodologies]
-🏗️ Real-World Applications: [Where and how skills were applied]
-📈 Proficiency Evidence: [Projects, certifications, achievements]
-🎓 Continuous Learning: [Recent additions to skill set]
-"""
-    
-    elif intent.get('category') == 'education':
-        format_guide = """
-EDUCATION FORMAT:
-🎓 Degree & Field: [Degree] in [Major]
-🏫 Institution: [University/College name]
-📅 Timeline: [Graduation year or expected]
-📚 Key Coursework: [Relevant courses and subjects]
-🏆 Academic Achievements: [GPA, honors, awards]
-💡 Notable Projects: [Academic projects with impact]
-"""
-    
-    else:
-        format_guide = """
-GENERAL RESPONSE FORMAT:
-• Start with a clear, direct answer
-• Provide supporting details with specific examples
-• Include relevant technical context
-• Highlight measurable outcomes where applicable
-• Close with broader implications or connections
-"""
-    
-    # Add complexity-based instructions
-    if intent.get('complexity') == 'complex':
-        detail_instruction = "\n⚡ COMPREHENSIVE ANALYSIS REQUIRED: Provide in-depth, multi-faceted response covering all relevant aspects with rich detail and context.\n"
-    elif intent.get('complexity') == 'moderate':
-        detail_instruction = "\n⚡ BALANCED RESPONSE: Provide clear answer with supporting details and 2-3 concrete examples.\n"
-    else:
-        detail_instruction = "\n⚡ CONCISE RESPONSE: Provide direct, focused answer with 1-2 key supporting points.\n"
-    
-    # Construct final prompt
-    prompt = f"""{base_instructions}
-{format_guide}
-{detail_instruction}
-
-RECRUITER QUERY: {query}
-
-VERIFIED CANDIDATE INFORMATION:
+Context:
 {context}
 
-PROFESSIONAL ASSESSMENT (Structured response following the format above):"""
+Answer:"""
     
     return prompt
 
 
-def generate_response(query):
+def generate_response(query: str, skip_intent_classification: Optional[bool] = None) -> Dict[str, Any]:
     """
-    Advanced RAG response generation with intent classification and adaptive retrieval.
+    Optimized RAG response generation with optional intent classification and caching.
     :param query: The user query.
+    :param skip_intent_classification: Skip intent classification for faster response (None = use config default)
     :return: Dict with enhanced response and metadata
     """
     
-    # Step 1: Classify query intent
-    print(f"\n🧠 Analyzing query intent...")
-    intent = classify_query_intent(query)
-    print(f"   Category: {intent.get('category')}")
-    print(f"   Complexity: {intent.get('complexity')}")
+    # Use config default if not specified
+    if skip_intent_classification is None:
+        skip_intent_classification = SKIP_INTENT_CLASSIFICATION
     
-    # Step 2: Adaptive retrieval based on complexity and category
-    # Increased retrieval to ensure we get relevant context
-    if intent.get('complexity') == 'simple':
-        top_k = 5  # Increased from 3 for better coverage
-    elif intent.get('complexity') == 'moderate':
-        top_k = 8  # Increased from 6
+    # Check cache first - SAVES API CALLS!
+    query_normalized = query.lower().strip()
+    query_hash = hashlib.md5(query_normalized.encode()).hexdigest()
+    
+    if query_hash in _response_cache:
+        print("💰 Cache HIT! Returning cached response (saved API call)")
+        return _response_cache[query_hash]
+    
+    # Step 1: Fast keyword-based classification (replaces slow LLM intent classification)
+    if skip_intent_classification:
+        # Simple keyword-based approach - much faster
+        query_lower = query.lower()
+        if any(word in query_lower for word in ['project', 'built', 'developed', 'implemented']):
+            top_k = DEFAULT_TOP_K
+            intent = {'category': 'projects', 'complexity': 'moderate'}
+        elif any(word in query_lower for word in ['work', 'job', 'company', 'experience', 'role']):
+            top_k = DEFAULT_TOP_K
+            intent = {'category': 'work_experience', 'complexity': 'moderate'}
+        elif any(word in query_lower for word in ['skill', 'technology', 'tech', 'know', 'programming']):
+            top_k = max(DEFAULT_TOP_K - 1, 3)
+            intent = {'category': 'skills', 'complexity': 'simple'}
+        elif any(word in query_lower for word in ['education', 'degree', 'university', 'college']):
+            top_k = max(DEFAULT_TOP_K - 1, 3)
+            intent = {'category': 'education', 'complexity': 'simple'}
+        else:
+            top_k = DEFAULT_TOP_K
+            intent = {'category': 'general', 'complexity': 'moderate'}
+        print(f"\n⚡ Fast classification: {intent.get('category')} (top_k={top_k})")
     else:
-        top_k = 12  # Increased from 10 for complex queries
+        # Original slower but more accurate classification
+        print("\n🧠 Analyzing query intent...")
+        intent = classify_query_intent(query)
+        print(f"   Category: {intent.get('category')}")
+        print(f"   Complexity: {intent.get('complexity')}")
+        
+        # Adaptive retrieval based on complexity
+        if intent.get('complexity') == 'simple':
+            top_k = 4
+        elif intent.get('complexity') == 'moderate':
+            top_k = 5
+        else:
+            top_k = 7
     
-    # For work experience queries, retrieve more to catch all relevant context
-    if 'work' in intent.get('category', '').lower() or 'experience' in intent.get('category', '').lower():
-        top_k = max(top_k, 8)
-    
-    llm = GoogleGenerativeAI(model="gemini-2.0-flash-exp", google_api_key=GEMINI_API_KEY)
+    # Initialize LLM (API key already set in environment at module level)
+    llm = GoogleGenerativeAI(model=GEMINI_MODEL)
     
     retrieved_chunks = retrieve_documents(query, top_k=top_k)
 
@@ -223,28 +181,35 @@ def generate_response(query):
             "num_chunks": 0
         }
 
-    # Step 3: Format context with enhanced metadata
+    # Step 3: Format context - SIMPLIFIED to save tokens
     context_text = ""
     for i, chunk in enumerate(retrieved_chunks, 1):
-        source = chunk.metadata.get('source', 'Unknown')
-        section = chunk.metadata.get('section', 'General')
-        context_text += f"[CONTEXT {i}] (Relevance: {chunk.metadata.get('score', 0):.2f})\n"
-        context_text += f"Source: {source} | Section: {section}\n"
-        context_text += f"Content: {chunk.page_content}\n\n"
+        # Only include essential info - no verbose metadata
+        context_text += f"[{i}] {chunk.page_content}\n\n"
 
     # Step 4: Create enhanced prompt based on intent
     prompt = create_enhanced_prompt(query, context_text, intent)
     
     # Step 5: Generate response with enhanced LLM
-    print(f"🤖 Generating enhanced response...")
+    print("🤖 Generating enhanced response...")
     response = llm.invoke(prompt).strip()
 
     # Return structured response with metadata
-    return {
+    result = {
         "answer": response,
         "intent": intent,
         "num_chunks": len(retrieved_chunks)
     }
+    
+    # Cache the response - limit cache to 100 entries
+    if len(_response_cache) >= 100:
+        # Remove oldest entry (simple FIFO)
+        oldest_key = next(iter(_response_cache))
+        del _response_cache[oldest_key]
+    _response_cache[query_hash] = result
+    print(f"💾 Response cached ({len(_response_cache)}/100 cached queries)")
+    
+    return result
 
 # Example usage
 if __name__ == "__main__":

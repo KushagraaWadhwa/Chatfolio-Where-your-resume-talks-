@@ -10,6 +10,7 @@ from pinecone import Pinecone, ServerlessSpec
 from langchain.docstore.document import Document
 from .data_loading import load_all_json_files
 from .text_chunking import extract_section_texts, split_documents
+from functools import lru_cache
 
 load_dotenv()
 
@@ -19,12 +20,21 @@ PINECONE_INDEX_NAME = "chatfolio"
 PINECONE_HOST = "https://chatfolio-5wg1pnt.svc.aped-4627-b74a.pinecone.io"
 PINECONE_EMBEDDING_MODEL = "llama-text-embed-v2"
 
-# Initialize Pinecone
+# Initialize Pinecone (singleton with connection pooling)
 pc = Pinecone(api_key=PINECONE_API_KEY)
+
+# Cache the index connection (reuse connection)
+_cached_index = None
 
 
 def get_pinecone_index():
-    """Get or create Pinecone index"""
+    """Get or create Pinecone index with connection caching"""
+    global _cached_index
+    
+    # Return cached connection if available
+    if _cached_index is not None:
+        return _cached_index
+    
     try:
         # Check if index exists
         existing_indexes = pc.list_indexes()
@@ -43,9 +53,9 @@ def get_pinecone_index():
             )
             print(f"✅ Index created successfully")
         
-        # Connect to index
-        index = pc.Index(PINECONE_INDEX_NAME, host=PINECONE_HOST)
-        return index
+        # Connect to index and cache it
+        _cached_index = pc.Index(PINECONE_INDEX_NAME, host=PINECONE_HOST)
+        return _cached_index
     
     except Exception as e:
         print(f"❌ Error with Pinecone index: {str(e)}")

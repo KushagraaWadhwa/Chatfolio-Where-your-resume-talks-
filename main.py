@@ -20,6 +20,16 @@ from sqlalchemy.orm import Session
 from typing import Optional, List
 import logging
 import tempfile
+import random
+
+# Creative error messages for RAG failure
+CREATIVE_ERROR_MESSAGES = [
+    "It seems my digital brain is taking a quick nap! This can happen with free hosting. Could you try asking again in a moment?",
+    "I'm running into a bit of a traffic jam on the information superhighway. My hosting plan is the free one, so sometimes it gets sleepy. Please try your query again.",
+    "My apologies, I'm having a bit of trouble connecting to my knowledge base. It's possible my API credits for the month have been used up. Kushagra has been notified!",
+    "Looks like my servers are catching some Z's to save energy on this free plan. Give me a poke by sending your message again in a few seconds!",
+    "I seem to have misplaced my train of thought... a common side effect of running on a free-tier server. Would you mind repeating that?"
+]
 
 # Conditionally import whisper only if enabled
 if os.getenv("ENABLE_WHISPER", "false").lower() == "true":
@@ -222,9 +232,10 @@ async def chat_endpoint(request: ChatRequest, http_request: Request):
             
         response = generate_response(query)
         if not response or not response.get("answer"):
+            error_message = random.choice(CREATIVE_ERROR_MESSAGES)
             raise HTTPException(
-                status_code=500,
-                detail="Failed to generate response. Please try again."
+                status_code=503,
+                detail=error_message
             )
             
         return ChatResponse(
