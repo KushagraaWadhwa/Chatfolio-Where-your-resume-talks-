@@ -230,9 +230,30 @@ async def chat_endpoint(request: ChatRequest, http_request: Request):
                 detail="Pinecone vector store is not initialized. Please try again later."
             )
             
-        response = generate_response(query)
-        if not response or not response.get("answer"):
+        try:
+            response = generate_response(query)
+            if not response or not response.get("answer"):
+                error_message = random.choice(CREATIVE_ERROR_MESSAGES)
+                raise HTTPException(
+                    status_code=503,
+                    detail=error_message
+                )
+        except HTTPException:
+            # Re-raise HTTP exceptions as-is
+            raise
+        except Exception as gen_error:
+            # Check if it's a quota/API error
+            error_str = str(gen_error).lower()
+            if any(keyword in error_str for keyword in ['quota', 'exceeded', 'rate limit', 'resourceexhausted', '429']):
+                error_message = random.choice(CREATIVE_ERROR_MESSAGES)
+                logger.warning(f"API quota exceeded: {str(gen_error)}")
+                raise HTTPException(
+                    status_code=503,
+                    detail=error_message
+                )
+            # For other errors, re-raise with creative message
             error_message = random.choice(CREATIVE_ERROR_MESSAGES)
+            logger.error(f"RAG generation error: {str(gen_error)}")
             raise HTTPException(
                 status_code=503,
                 detail=error_message
