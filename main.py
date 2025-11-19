@@ -177,7 +177,7 @@ async def chat_endpoint(request: ChatRequest, http_request: Request):
     """Handle chat requests"""
     try:
         # Rate limiting
-        client_ip = http_request.client.host
+        client_ip = http_request.client.host if http_request.client else "unknown"
         if not check_rate_limit(client_ip, "chat", max_requests=50, window_minutes=60):
             raise HTTPException(
                 status_code=429, 
@@ -341,12 +341,6 @@ async def download_resume(filename: str):
         media_type="application/pdf"
     )
 
-@app.get("/download_resume/")
-def download_resume(file_path: str):
-    # Security: Only allow files from the generated_resumes directory
-    if not file_path.startswith("backend/generated_resumes/"):
-        raise HTTPException(status_code=403, detail="Invalid file path")
-    return FileResponse(path=file_path, filename=file_path.split("/")[-1], media_type='application/pdf')
 
 # Document Management Endpoints
 @app.get("/documents/", response_model=List[dict])
@@ -441,12 +435,12 @@ async def upload_document(
     title: str = Form(...),
     description: str = Form(""),
     category: str = Form("others"),
-    db: Session = Depends(get_db),
-    http_request: Request = None
+    http_request: Request = None,
+    db: Session = Depends(get_db)
 ):
     """Upload a new document"""
     # Rate limiting
-    client_ip = http_request.client.host
+    client_ip = http_request.client.host if http_request and http_request.client else "unknown"
     if not check_rate_limit(client_ip, "upload", max_requests=10, window_minutes=60):
         raise HTTPException(
             status_code=429, 
